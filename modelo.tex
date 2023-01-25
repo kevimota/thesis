@@ -1,0 +1,344 @@
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+% Modelo de Trabalho Acadêmico utilizando classe repUERJ para
+% elaboração de teses, dissertação e trabalhos monográficos em
+% geral.
+%
+% Este arquivo está editado na codificação de caracteres UTF-8.
+%
+% As referencia estão baseadas no modelo bibtex e citação em
+% autor-data
+%
+% Este modelo foi criado por 
+% 	Dr. Luís Fernando de Oliveira
+% 	Professor Adjunto do Dep. de Física Aplicada e Termodinâmica
+% 	Instituto de Física Armando Dias Tavares
+% 	Universidade do Estado do Rio de Janeiro - UERJ
+%
+% A classe repUERJ.cls foi criada a partir do código original 
+% disponibilizado pelo grupo CódigoLivre (coordenado por
+% Gerald Weber). Foram feitas adequações para implementação das 
+% normas de elaboração de teses e dissertações da UERJ.
+%
+% Os estilos repUERJformat.sty codificam os elementos
+% pré-textuais e pós-textuais.
+%
+% O estilo repUERJpseudocode.sty codifica a elaboração de
+% algoritmos utilizando um glossário desenvolvido por mim 
+% (Luís Fernando), o mesmo usado em meu curso de Física
+% Computacional.
+%
+% Todo este material está disponível também no meu site
+%      http://sites.google.com/site/deoliveiralf
+%
+% As normas da UERJ para elaboração de teses e dissertações 
+% pode ser obtidas no documento disponível no site
+%      http://www.bdtd.uerj.br/roteiro_uerj_web.pdf
+%
+% Agradecimentos ao NPROTEC/Rede Sirius/UERJ e à Biblioteca
+% Setorial da Física.
+% ---------------------------------------------------------------
+% ---------------------------------------------------------------
+%
+\documentclass[a4paper,12pt,oneside,onecolumn,final,fleqn]{repUERJ}
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage[brazil, english]{babel}  % adequação para o português Brasil
+\usepackage[utf8]{inputenc} % Determina a codificação utilizada
+                            % (conversão automática dos acentos)
+\usepackage{makeidx}        % Cria o índice
+\usepackage{hyperref}       % Controla a formação do índice
+\usepackage{indentfirst}    % Indenta o primeiro paragrafo de
+                            % cada seção.
+\usepackage{graphicx}       % Inclusão de gráficos
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb}  % pacotes matemáticos
+\usepackage[num]{abntex2cite} % pacote para citacoes
+\citebrackets[]
+\usepackage[font=default,frame=no]{repUERJformat} % pacote para as 
+                                                  % normas da UERJ
+% ---
+% pacote auxiliar para elaboração de pseudocódigos
+% este pacote pode ser retirado caso nao se planeje
+% elaborar pseudocódigos
+% ---
+\usepackage[dots=yes]{repUERJpseudocode}
+
+\usepackage[maxfloats=25]{morefloats}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\setlength\extrarowheight{2pt}
+\usepackage{tikz-feynman}
+\usepackage{slashed}
+\usepackage{cite}
+
+\usetikzlibrary{intersections}
+\colorlet{beamcol}{orange!40!yellow!95!black}
+\colorlet{SVcol}{green!50!blue!80!white}
+\colorlet{Bccol}{green!80!blue!90!black}
+\colorlet{Jpsicol}{red!90!black}
+\colorlet{taucol}{orange!95!black}
+\colorlet{mygreen}{green!70!black}
+\tikzset{
+  ext/.style={shorten >=-#1,shorten <=-#1},
+  ext/.default=1cm,
+  smallarr/.style={{Latex[length={#1*4},width={#1*2.5}]}-{Latex[length={#1*4},width={#1*2.5}]}},
+  smallarr/.default=1,
+}
+
+% ***************************************************************
+% Informações de autoria e institucionais
+% ***************************************************************
+
+%----------------------------------------------------------------
+% Imagens pretextuais (precisam estar no mesmo diretório deste arquivo .tex)
+%----------------------------------------------------------------
+
+\logo{logo_uerj_cinza.png}
+\marcadagua{marcadagua_uerj_cinza.png}{1}{160}{255}
+
+%----------------------------------------------------------------
+% Informações da instituição
+%----------------------------------------------------------------
+
+\instituicao{Universidade do Estado do Rio de Janeiro}
+            {Centro de Tecnologia e Ciências}  
+            {Instituto de Física}{Armando Dias Tavares} 
+
+%----------------------------------------------------------------
+% Informações da autoria do documento
+%----------------------------------------------------------------
+
+% \oautor{Nóme}{Sóbrenome}
+%       {Iniciais do nome} % iniciais do nome
+
+\autor{Kevin}{Mota Amarilo}
+      {K} % iniciais do nome
+
+\titulo{Título do trabalho}
+\title{Título do trabalho em inglês}
+
+% se não for usar a quarta palavra chave, deixar o campo vazio: {}
+\palavraschaves{Primeira palavra-chave}
+               {Segunda palavra-chave}
+               {Terceira palavra-chave}
+               {Quarta palavra-chave (opcional) ou vazio}
+
+\keywords{First keyword}
+         {Second keyword}
+         {Third keyword}
+         {Fourth keyword or empty}
+
+\orientador{Prof. Dr.} 
+           {Wagner}{de Paula Carvalho} 
+           {Instituto de Física Armando Dias Tavares -- UERJ} 
+
+\coorientador{Prof. Dr.} 
+             {Alberto}{Franco de Sá Santoro} 
+             {Instituto de Física Armando Dias Tavares -- Instituição} 
+
+%----------------------------------------------------------------
+% Grau pretendido (Doutor, Mestre, Bacharel, Licenciado) e Curso
+%----------------------------------------------------------------
+
+\grau{Doutor} % Doutor, Mestre, Bacharel, Licenciado
+\curso{Física}
+%\areadeconcentracao{linha de pesquisa} % opcional
+
+%----------------------------------------------------------------
+% Informações adicionais (local, data e paginas)
+%----------------------------------------------------------------
+
+\local{Rio de Janeiro} 
+\data{dd}{mês}{aaaa} 
+
+% ***************************************************************
+% Configurações de aparência do PDF final
+% ***************************************************************
+
+% alterando o aspecto da cor azul
+%\definecolor{blue}{RGB}{41,5,195}
+%\definecolor{apricot}{RGB}{251,206,177}
+
+% informações do PDF
+\hypersetup{
+  unicode=false,
+  pdftitle={\UERJtitulo},
+  pdfauthor={\UERJautor},
+  pdfsubject={\UERJpreambulo},
+  pdfkeywords={PALAVRAS-CHAVES:}{ \chaveA}{ \chaveB}{ \chaveC}{ \chaveD},
+  pdfproducer={\packagename}, % producer of the document
+  colorlinks=true,   % false: boxed links; true: colored links
+  linkcolor=black,   % color of internal links blue
+  citecolor=black,   % color of links to bibliography blue
+  filecolor=black,   % color of file links magenta
+  urlcolor=black,
+  bookmarksdepth=4,
+%   backref=true,
+%   pagebackref=true,
+%   bookmarks=true,
+}
+
+% ***************************************************************
+% Índice remissivo
+% ***************************************************************
+%
+%\makeindex % compila o índice; se não for usar, comentar
+%
+% ***************************************************************
+% Fim do preâmbulo
+% ***************************************************************
+
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\begin{document}
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS PRE-TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\frontmatter % inicia a área dos elementos pré-textuais
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+% ----------------------------------------------------------
+% Capa e a folha de rosto
+% ----------------------------------------------------------
+%
+\capa
+\folhaderosto
+%
+% ----------------------------------------------------------
+% Inserir a ficha catalográfica
+% ----------------------------------------------------------
+% ---
+% A biblioteca deverá providenciar a ficha catalográfica. 
+% Salve a ficha no formato PDF. Use o nome do arquivo PDF 
+% como argumento do comando. 
+% Exemplo: ficha catalográfica no arquivo 'ficha.pdf'
+%     \fichacatalografica{ficha.pdf}
+%
+% Enquanto não possuir a ficha catalográfica, use o comando sem
+% argumentos.
+% ---
+%
+\fichacatalografica{}
+%
+% ----------------------------------------------------------
+% Folha de aprovação
+% ----------------------------------------------------------
+%
+\begin{folhadeaprovacao}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {Unidade -- Instituição}
+  \assinatura{Cargo Título Nome Completo}
+             {\UERJunidade \UERJunidadenome\ -- UERJ}
+\end{folhadeaprovacao}
+%
+% ----------------------------------------------------------
+% Dedicatória
+% ----------------------------------------------------------
+%
+\input{pre_textual/dedication}
+%
+% ----------------------------------------------------------
+% Agradecimentos
+% ----------------------------------------------------------
+%
+\input{pre_textual/acknowlegments}
+%
+% ----------------------------------------------------------
+% Epigrafe (opcional)
+% ----------------------------------------------------------
+%
+\pretextualchapter{}
+\vfill
+\begin{flushright}
+(opcional)\\
+Pensamento, reflexão\\    
+\textit{autor}
+\end{flushright}
+%
+% ----------------------------------------------------------
+% RESUMO
+% ----------------------------------------------------------
+%
+\input{pre_textual/abstract}
+%
+% ----------------------------------------------------------
+% Listas de ilustrações e tabelas
+% ----------------------------------------------------------
+%
+\listadefiguras    %\begin{figure}{largura}...\end{figure}
+%\listadegraficos   %\begin{graph}{largura}...\end{graph}
+%\listadequadros    %\begin{inframe}{largura}...\end{inframe}
+\listadetabelas    %\begin{table}{largura}...\end{table}
+%
+% ----------------------------------------------------------
+% Outras listas
+% ----------------------------------------------------------
+%
+%\listadealgoritmos % opcional %\begin{algorithm}...\end{algorithm}
+%
+% ----------------------------------------------------------
+% Lista de abreviaturas e siglas (opcional)
+% ----------------------------------------------------------
+%
+\input{pre_textual/abreviation_symbols}
+%
+% ----------------------------------------------------------
+% Sumario
+% ----------------------------------------------------------
+%
+\sumario
+%
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\mainmatter % inicia a área de desenvolvimento do conteúdo
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+\input{chapters/Introduction}
+\input{chapters/Standard_Model_MPS}
+\input{chapters/Experimental_setup}
+\input{chapters/RPC}
+\input{chapters/Physics_analysis}
+\input{chapters/Conclusion}
+
+%\index{Introdução!Capítulo}.
+
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% ELEMENTOS POS-TEXTUAIS
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\backmatter % inicia a área dos elementos pós-textuais
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+%===========================================================
+% Referencias via BibTeX
+%===========================================================
+
+\citeoption{abnt-options4}
+\bibliography{abnt-options4,bibliografia}
+
+\input{pos_textual/glossario}
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% Apêndices (opcionais)
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\appendix % inicia os apêndices
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\input{pos_textual/appendix}
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+% Anexos (opcionais)
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\annex % inicia os anexos
+%XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+\input{pos_textual/annex}
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\end{document}
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/

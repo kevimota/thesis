@@ -1,0 +1,142 @@
+\chapter{Physics Analysis}
+%================================================================
+
+This chapter will discuss about the cross section measurement of the associated production of $\Upsilon$ and $D^{*\pm}$ using the full CMS Run 2 data with 13 TeV center-of-mass energy. \textcolor{red}{falar mais}
+
+\section{Datasets and Simulation}
+\subsection{Data Samples}
+
+The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-2018 at a center-of-mass energy of 13 TeV and are composed only by events certified as good for physics analysis. The Table \ref{tab:datasamples} displays all the data samples used. The total recorded luminosity of all data samples is 137.61 fb$^{-1}$
+
+\begin{table}[!htbp]{15cm}
+  \caption{Data samples considered in this work}\label{tab:datasamples}
+  \begin{tabular}{ c }
+    Dataset \\ 
+    \hline
+    /MuOnia/Run2016B-21Feb2020\_ver1\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016B-21Feb2020\_ver2\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016C-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016D-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016E-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016F-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016G-21Feb2020\_UL2016-v1/AOD \\
+    /MuOnia/Run2016H-21Feb2020\_UL2016-v1/AOD \\
+    \hline
+    /MuOnia/Run2017B-09Aug2019\_UL2017-v1/AOD \\
+    /MuOnia/Run2017C-09Aug2019\_UL2017-v1/AOD \\
+    /MuOnia/Run2017D-09Aug2019\_UL2017-v1/AOD \\
+    /MuOnia/Run2017E-09Aug2019\_UL2017-v1/AOD \\
+    /MuOnia/Run2017F-09Aug2019\_UL2017-v1/AOD \\
+    \hline
+    /MuOnia/Run2018A-12Nov2019\_UL2018-v1/AOD \\
+    /MuOnia/Run2018B-12Nov2019\_UL2018-v1/AOD \\
+    /MuOnia/Run2018C-12Nov2019\_UL2018-v1/AOD \\
+    /MuOnia/Run2018D-12Nov2019\_UL2018-v1/AOD \\
+  \end{tabular}
+  \legend{Data Samples used in the analysis corresponding to the full CMS Run 2 data taking.}
+\end{table}
+
+\subsection{Simulation Samples}
+
+The simulation samples are done via Monte Carlo (MC) simulation, where the MC method is used in programs to model the physics processes. The starting point of the simulation is the event generation, where the events following a set of physics processes of interest are created by the MC generator.
+
+First, the parton level matrix element of the process is calculated perturbatively up to a fixed order. After, the parton showering is done to take into account the higher order effects, such as final and initial stated radiation. This is followed by the hadronization, where the quarks and gluons form the quarks. Finally, the simulation should also handle the particles decay.
+
+The detector simulation follows the event generation. Here, the interaction of the generated particles with the detector is simulated. In CMS, the detector response is simulated using \textsc{Geant4} \cite{GEANT4:2002zbu}. The simulated detector response pass through the same processing chain as the real data forming the final simulated sample.
+
+The MC samples were used in this analysis to simulate the two components of the signal, the SPS and DPS. The only background was not simulated, since it is only combinatorial
+
+The DPS was created using the \textsc{Pythia8} \cite{Sjostrand:2014zea} as event generator, parton showering and for hadronization. For the decays of the heavy flavour hadrons, \textsc{EvtGen} \cite{Lange:2001uf} was used. The SPS sample is similar to the DPS, with the addition of the \textsc{HELAC-Onia} \cite{Shao:2012iz, Shao:2015vga}, which was used for event generation.
+
+\section{\texorpdfstring{$\Upsilon$ + D$^{*\pm}$}{Y+D*} Reconstruction}
+
+The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in an event. As shown in Fig. \ref{fig:drawing_event}, there are five different particles in the final state an event - three coming from D$^*$ and two from $\Upsilon$. The D$^*$ have a low combinatorial background when compared with other open charm mesons because of it very characteristic signature - very small difference of mass between D$^*$ and D$^0$ restricting the phase space of the slow pion. Also, the kaon and pion can be identified even without a particle identification detector, since it should have a opposite charge to the slow pion, removing the ambiguity of the D$^0$ reconstruction.
+
+\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\caption{Drawing of an event of associated production of $\Upsilon$ and D$^{*+}$}%
+\label{fig:drawing_event}
+\fbox{
+\begin{tikzpicture}
+  \coordinate (PV) at ( 0,0);
+  \coordinate (SV) at ( 2.0,1.8);
+  \coordinate (BL) at (-3,0);
+  \coordinate (BR) at ( 4,0);
+
+  \draw[beamcol,dashed,name path=beam]
+    (BL) -- (BR);
+  \draw[SVcol,dashed]
+    (PV) -- (SV)
+    node[midway,above=0.1,left=0.1] {$D^0$};
+
+  \draw[->,mygreen,line width=1]
+    (SV) to[bend right] (1.0,3.0) node[above right] {$\pi^+$};
+  \draw[->,mygreen,line width=1]
+    (SV) to[bend left] (3.0,3.0) node[above left] {$K^-$};
+
+  \draw[->,red,line width=1]
+    (PV) to[bend right=20] (-2.0,1.0) node[below right] {$\mu^+$};
+  \draw[->,red,line width=1]
+    (PV) to[bend left=20] (-1.0,2.0) node[below left] {$\mu^-$};
+
+
+  \draw[->,SVcol,line width=1]
+    (PV) arc[start angle=150, end angle=0, radius=0.5] node[below right] {$\pi_s^+$};
+  
+  \fill[beamcol]
+    (PV) ellipse (9pt and 4.5pt)
+    node[beamcol!95!black,below left] {PV $\color{red}{\Upsilon} \color{beamcol}{+} \color{SVcol}{D^*}$};
+  \fill[SVcol]
+    (SV) circle (4pt) node[below right] {SV};
+\end{tikzpicture}
+}
+\legend{Drawing of an event of associated production of $\Upsilon$ and D$^*$. $\Upsilon$ decays into two opposite charge muons, while D$^{*+}$ decays into a pion and D$^0$, which later decays into a kaon and a pion.}
+\end{figure}
+
+The D$^*$ reconstruction starts by finding a suitable D$^0$ candidate. For this, two tracks of opposite charge are paired to check whether they form a common vertex using the Kalman Filter method \cite{Fruhwirth:1991pm, Speer:927395}. If the fit is valid and its p-value is greater than 1\%, the D$^0$ candidate is selected. The vertex determination also allows for a better calculation of the kinematic variables of the tracks and it is called secondary vertex (SV).
+
+A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest to the SV in order to calculate the decay length, defined as
+\begin{equation}
+    dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
+\end{equation}
+where $|\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}|$ is the distance between the PV and SV, the decay lenght significance is very important because it can be used to filter a lot of background, it is defined as
+\begin{equation}
+    dl_{sig} = \frac{dl}{dl_{err}},
+\end{equation}
+where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cossine of the angle between the PV and SV position vectors (pointing angle)
+\begin{equation}
+    \cos{\alpha} = \frac{dl}{\Delta\Vec{l}} \; ,
+\end{equation}
+which hints the alignment between the PV and the SV.
+
+After the D$^0$ candidates is reconstructed, a new track coming from the same PV of the D$^0$ is added to form the D$^*$ candidate and its momentum resolution is improved by adding the PV to the track fit.
+
+The $\Upsilon(nS)$ reconstruction is done in a similar way to the D$^0$. Two muons with opposite charge are selected and its vertex is determined from the fit. If the vertex is valid and has a p-value greater than 1\% we have a dimuon candidate. The invariant mass of the dimuon should be in the range of $8.5 < m_{\mu\mu} < 11.5$ GeV in order to be classified as a $\Upsilon(nS)$ candidate. 
+
+Finally, in order to pair the $\Upsilon(nS)$ and the $D^*$, a vertex fit of the two muons and the slow pion is performed. If valid, the vertex p-value is determined.
+
+In this stage of the reconstruction, very loose cuts are applied to the candidates, those are specified in the Sec. \ref{sec:preselection}.
+
+\section{Event Selection}
+
+\subsection{Preselection Cuts} \label{sec:preselection}
+
+\subsection{Trigger}
+
+\begin{table}[!htbp]{15cm}
+  \begin{tabular}{ c | c | c | c }
+    Year & Trigger & Recorded L ($fb^{-1}$) & L Uncertainty \\  \hline
+    2016 & HLT\_Dimuon13\_Upsilon & 36.18 & 2.5 \% \\ 
+    2017 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & 27.12 & 2.3 \% \\
+    2018 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & 59.82 & 2.5 \% \\
+  \end{tabular}
+  \caption{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS:2017sdi, CMS:2018elu, CMS:2019jhq}}
+  \label{tab:triggers}
+\end{table}
+
+\subsection{Selection Cuts}
+
+\section{Signal Extraction}
+
+\section{Acceptance and Efficiency}
+
+\section{Cross Section Measurement}

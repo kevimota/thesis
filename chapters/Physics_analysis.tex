@@ -6,7 +6,7 @@ This chapter will discuss about the cross section measurement of the associated 
 \section{Datasets and Simulation}
 \subsection{Data Samples}
 
-The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-2018 at a center-of-mass energy of 13 TeV and are composed only by events certified as good for physics analysis. The Table \ref{tab:datasamples} displays all the data samples used. The total recorded luminosity of all data samples is 137.61 fb$^{-1}$
+The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-2018 at a center-of-mass energy of 13 TeV and are composed only by events certified as good for physics analysis. The Table \ref{tab:datasamples} displays all the data samples used. The total recorded luminosity of all data samples is 137.61 fb$^{-1}$.
 
 \begin{table}[!htbp]{15cm}
   \caption{Data samples considered in this work}\label{tab:datasamples}
@@ -52,7 +52,7 @@ The DPS was created using the \textsc{Pythia8} \cite{Sjostrand:2014zea} as event
 
 The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in an event. As shown in Fig. \ref{fig:drawing_event}, there are five different particles in the final state an event - three coming from D$^*$ and two from $\Upsilon$. The D$^*$ have a low combinatorial background when compared with other open charm mesons because of it very characteristic signature - very small difference of mass between D$^*$ and D$^0$ restricting the phase space of the slow pion. Also, the kaon and pion can be identified even without a particle identification detector, since it should have a opposite charge to the slow pion, removing the ambiguity of the D$^0$ reconstruction.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Drawing of an event of associated production of $\Upsilon$ and D$^{*+}$}%
 \label{fig:drawing_event}
 \fbox{
@@ -98,7 +98,7 @@ A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest to t
 \begin{equation}
     dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
 \end{equation}
-where $|\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}|$ is the distance between the PV and SV, the decay lenght significance is very important because it can be used to filter a lot of background, it is defined as
+where $|\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}|$ is the distance between the PV and SV, the decay length significance is very important because it can be used to filter a lot of background, it is defined as
 \begin{equation}
     dl_{sig} = \frac{dl}{dl_{err}},
 \end{equation}
@@ -120,23 +120,124 @@ In this stage of the reconstruction, very loose cuts are applied to the candidat
 
 \subsection{Preselection Cuts} \label{sec:preselection}
 
-\subsection{Trigger}
+Preselection cuts are used to mitigate some of the combinatorial background and save disk space when recording the NTuple. They are very loose and are further improved when the analysis final cuts are applied (Sec. \ref{sec:selcuts}). The preselection cuts both for the $\Upsilon$ and the D$^*$ candidates are summarized in the Tab. \ref{tab:preselectioncuts}.
 
 \begin{table}[!htbp]{15cm}
-  \begin{tabular}{ c | c | c | c }
-    Year & Trigger & Recorded L ($fb^{-1}$) & L Uncertainty \\  \hline
-    2016 & HLT\_Dimuon13\_Upsilon & 36.18 & 2.5 \% \\ 
-    2017 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & 27.12 & 2.3 \% \\
-    2018 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & 59.82 & 2.5 \% \\
+  \caption{Preselection cuts.}
+  \begin{tabular}{ l | l }
+    \hline
+    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
+    \multicolumn{2}{c}{D$^*$ candidate} \\ \hline
+    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 0.3$ GeV \\ \hline
+    Transverse and longitudinal impact parameter of $K$ and $\pi$ track ($d_{xy}$ and $d_z$) & $< 0.5$ cm \\ \hline
+    Transverse and longitudinal impact parameter of $\pi_s$ track ($d_{xy}$ and $d_z$) & $< 2$ cm \\ \hline
+    Longitudinal distance between D$^0$ vertex and PV & $< 2$ cm \\ \hline
+    Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 0.9$ GeV \\ \hline
+    D$^0$ of D$^{*\pm}$ mass cut ($m_{D^0}$) & $1.5 < m_{D^0} < 2.3$ GeV \\ \hline
+    Mass difference between D$^{*\pm}$ and D$^0$ ($\Delta m$) & $< 0.17$ GeV \\ \hline
+    $D^0$ candidate vertex probability & $> 0.01$ \\ \hline
+
+    \multicolumn{2}{c}{$\Upsilon$ candidate} \\ \hline
+    Pseudorapidity separation between the two $\mu$ ($\Delta\eta_{\mu^+\mu^-}$) & $< 3.0$ \\ \hline
+    Transverse and longitudinal impact parameter of the two $\mu$ tracks, & $< 0.5$ cm \\ \hline
+    Longitudinal distance between the dimuon candidate vertex and the PV & $< 0.5$ cm \\ \hline
+    Dimuon candidate vertex probability & $> 0.01$ \\ \hline
+    Dimuon mass range & $8.5 < m_{\mu\mu} < 11.5$ GeV \\ \hline
   \end{tabular}
-  \caption{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS:2017sdi, CMS:2018elu, CMS:2019jhq}}
+  \legend{Preselection cuts used to save disk space when saving the NTuples.}
+  \label{tab:preselectioncuts}
+\end{table}
+
+\subsection{Trigger}
+
+The trigger strategy chosen was to use the HLT Paths that filters dimuons, it was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and lower $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers} all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum different for each trigger path.
+
+In the year 2017, the chosen trigger was not available in the whole data-taking resulting in a lower recorded luminosity (the total was 41.48 fb$^{-1}$ in full 2017 data). This should not pose a problem, since the statistics are large (123.1 fb$^{-1}$ for the three years) and the other triggers did only cover the central area of the detector, which can turn the discrimination between SPS and DPS more complicated. 
+
+\begin{table}[!htbp]{15cm}
+  \caption{Triggers used in this study in each year of data taking}
+  \begin{tabular}{ c | c | c | c | c }
+    Year & Trigger Path & $p_T$ Cut (GeV) & Recorded L ($fb^{-1}$) & L Uncertainty \\  \hline
+    2016 & HLT\_Dimuon13\_Upsilon & $>12.9$ & 36.18 & 2.5 \% \\ 
+    2017 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & $>13.9$ & 27.12 & 2.3 \% \\
+    2018 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & $>13.9$ & 59.82 & 2.5 \% \\
+  \end{tabular}
+  \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS:2017sdi, CMS:2018elu, CMS:2019jhq}}
   \label{tab:triggers}
 \end{table}
 
-\subsection{Selection Cuts}
+\subsection{Selection Cuts} \label{sec:selcuts}
+
+The analysis cuts are tighter cuts applied to the data in order to define the fiducial volume and to improve the signal to background ratio. A summary of them are displayed in the Tabs. \ref{tab:fiducialvol} and \ref{tab:selectioncuts}.
+
+\begin{table}[!htbp]{15cm}
+  \caption{Kinematic cuts that define the fiducial volume.}
+  \begin{tabular}{ l | l }
+    \hline
+    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
+    $\mu$ transverse momentum ($p_T^\mu$) & $> 3$ GeV \\ \hline
+    $\mu$ pseudorapidity ($\eta_\mu$) & $|\eta| < 2.4$ \\ \hline
+    $\Upsilon$ transverse momentum ($p_T^\Upsilon$) & $15 < p_T^\Upsilon < 300$ GeV \\ \hline
+    $\Upsilon$ rapidity ($\eta_\Upsilon$) & $|y| < 2.5$ \\ \hline
+    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 1$ GeV \\ \hline
+    Transverse momentum of $\pi_s$ ($p_T^{\pi_s}$) & $> 0.3$ GeV \\ \hline
+    Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 3$ GeV\\ \hline
+    D$^*$ transverse momentum ($p_T^{D^*}$) & $4 < p_T^{D^*} < 100$ GeV \\ \hline
+    D$^*$ rapidity ($y_{D^*}$) & $|y_{D^*}| < 2.5$ \\ \hline
+  \end{tabular}
+  \legend{Cuts on the kinematic variables of the system that define the fiducial volume of the analysis.}
+  \label{tab:fiducialvol}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Selection cuts.}
+  \begin{tabular}{ l | l }
+    \hline
+    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
+    \multicolumn{2}{c}{D$^*$ candidate} \\ \hline
+    Track $\chi^2$ of $K$ and $\pi$ & $< 2.5$ \\ \hline
+    Number of valid tracker detector hits for $K$ and $\pi$ & $> 4$ \\ \hline
+    Number of valid pixel detector hits for $K$ and $\pi$ & $> 1$ \\ \hline
+    transverse impact parameter of $K$ and $\pi$ & 0.5 cm \\ \hline
+    longitudinal impact parameter of $K$ and $\pi$ from PV & 0.5/$\sin{\theta}$ \\ \hline
+    Track $\chi^2$ of $\pi_s$ & $< 3$ \\ \hline
+    Number of valid tracker detector hits for $\pi_s$ & $> 2$\\ \hline
+    %$d_{xy}$ of $\pi_s$ from PV & \textcolor{red}{TO ADD} \\ \hline
+    %$d_{z}$ of $\pi_s$ from PV & \textcolor{red}{TO ADD} \\ \hline
+    D$^0$ mass ($m_{D^0}$) & $|m_{D^0} - 1.864| < 0.028$ GeV \\ \hline
+    D$^0$ cosine of the pointing angle ($\cos{\alpha_{D^0}}$) & $> 0.99$ \\ \hline
+    D$^0$ decay length significance ($dl_{sig}$) & $> 2.7$ \\ \hline
+    
+    \multicolumn{2}{c}{$\Upsilon$ candidate} \\ \hline
+    $\mu$ soft id flag & soft id = True \\ \hline
+
+    \multicolumn{2}{c}{$\Upsilon$ + D$^*$ candidate} \\ \hline
+    $\mu\mu\pi_s$ vertex probability & $> 0.01$ \\ \hline
+
+  \end{tabular}
+  \legend{Selection cuts used to improve the signal to background ratio.}
+  \label{tab:selectioncuts}
+\end{table}
+
+The cuts on Tab. \ref{tab:fiducialvol} were based on studies using MC simulations on the expected acceptance of the detector to each one of the objects. The cuts on the slow pion are more loose to the other tracks, in special, the transverse momentum cut is very important, as it directly correlated to the lower limit of the D$^*$ transverse momentum, since the slow pion phase space is restricted by the low mass difference between D$^0$ and D$^*$.
+
+On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selections on the muon: 
+\begin{itemize}
+  \item Muon track in tracker detector matched with at least one segment in the muon detector (in any station) in both X and Y coordinates (< 3$\sigma$).
+  \item Number of tracker layers with hits > 5, to guarantee good $p_T$ measurement. 
+  \item Number of pixel layers > 0.
+  \item Muon track has high-purity flag, rejecting bad quality tracks
+  \item Loose transverse and longitudinal impact parameter cuts, dxy < 0.3 cm and dz < 20 cm w.r.t. the primary vertex.
+\end{itemize}
 
 \section{Signal Extraction}
 
+
+
 \section{Acceptance and Efficiency}
 
+
+
 \section{Cross Section Measurement}
+
+

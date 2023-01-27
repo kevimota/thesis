@@ -40,13 +40,15 @@ The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-
 
 The simulation samples are done via Monte Carlo (MC) simulation, where the MC method is used in programs to model the physics processes. The starting point of the simulation is the event generation, where the events following a set of physics processes of interest are created by the MC generator.
 
-First, the parton level matrix element of the process is calculated perturbatively up to a fixed order. After, the parton showering is done to take into account the higher order effects, such as final and initial stated radiation. This is followed by the hadronization, where the quarks and gluons form the quarks. Finally, the simulation should also handle the particles decay.
+First, the parton level matrix element of the process is calculated perturbatively up to a fixed order. After, the parton showering is done to take into account the higher order effects, such as initial and final state radiation (ISR and FSR). This is followed by the hadronization, where the quarks and gluons form the quarks. Finally, the simulation should also handle the particles decay.
 
 The detector simulation follows the event generation. Here, the interaction of the generated particles with the detector is simulated. In CMS, the detector response is simulated using \textsc{Geant4} \cite{GEANT4:2002zbu}. The simulated detector response pass through the same processing chain as the real data forming the final simulated sample.
 
 The MC samples were used in this analysis to simulate the two components of the signal, the SPS and DPS. The only background was not simulated, since it is only combinatorial
 
 The DPS was created using the \textsc{Pythia8} \cite{Sjostrand:2014zea} as event generator, parton showering and for hadronization. For the decays of the heavy flavour hadrons, \textsc{EvtGen} \cite{Lange:2001uf} was used. The SPS sample is similar to the DPS, with the addition of the \textsc{HELAC-Onia} \cite{Shao:2012iz, Shao:2015vga}, which was used for event generation.
+
+\textcolor{red}{colocar imagens da simulação}
 
 \section{\texorpdfstring{$\Upsilon$ + D$^{*\pm}$}{Y+D*} Reconstruction}
 
@@ -98,11 +100,11 @@ A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest to t
 \begin{equation}
     dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
 \end{equation}
-where $|\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}|$ is the distance between the PV and SV, the decay length significance is very important because it can be used to filter a lot of background, it is defined as
+where $\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}$ is the distance between the PV and SV, the decay length significance is very important because it can be used to filter a lot of background, it is defined as
 \begin{equation}
     dl_{sig} = \frac{dl}{dl_{err}},
 \end{equation}
-where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cossine of the angle between the PV and SV position vectors (pointing angle)
+where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cosine of the angle between the PV and SV position vectors (pointing angle)
 \begin{equation}
     \cos{\alpha} = \frac{dl}{\Delta\Vec{l}} \; ,
 \end{equation}
@@ -114,11 +116,11 @@ The $\Upsilon(nS)$ reconstruction is done in a similar way to the D$^0$. Two muo
 
 Finally, in order to pair the $\Upsilon(nS)$ and the $D^*$, a vertex fit of the two muons and the slow pion is performed. If valid, the vertex p-value is determined.
 
-In this stage of the reconstruction, very loose cuts are applied to the candidates, those are specified in the Sec. \ref{sec:preselection}.
+In this stage of the reconstruction, very loose cuts are applied to the candidates, those are specified in the Sec. \ref{subsec:preselcuts}.
 
-\section{Event Selection}
+\section{Event Selection}\label{sec:evtsel}
 
-\subsection{Preselection Cuts} \label{sec:preselection}
+\subsection{Preselection Cuts} \label{subsec:preselcuts}
 
 Preselection cuts are used to mitigate some of the combinatorial background and save disk space when recording the NTuple. They are very loose and are further improved when the analysis final cuts are applied (Sec. \ref{sec:selcuts}). The preselection cuts both for the $\Upsilon$ and the D$^*$ candidates are summarized in the Tab. \ref{tab:preselectioncuts}.
 
@@ -148,6 +150,8 @@ Preselection cuts are used to mitigate some of the combinatorial background and 
   \label{tab:preselectioncuts}
 \end{table}
 
+\textcolor{red}{colocar imagens da pre seleção?}
+
 \subsection{Trigger}
 
 The trigger strategy chosen was to use the HLT Paths that filters dimuons, it was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and lower $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers} all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum different for each trigger path.
@@ -176,13 +180,13 @@ The analysis cuts are tighter cuts applied to the data in order to define the fi
     \hline
     \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
     $\mu$ transverse momentum ($p_T^\mu$) & $> 3$ GeV \\ \hline
-    $\mu$ pseudorapidity ($\eta_\mu$) & $|\eta| < 2.4$ \\ \hline
-    $\Upsilon$ transverse momentum ($p_T^\Upsilon$) & $15 < p_T^\Upsilon < 300$ GeV \\ \hline
-    $\Upsilon$ rapidity ($\eta_\Upsilon$) & $|y| < 2.5$ \\ \hline
+    $\mu$ pseudorapidity ($\eta_\mu$) & $|\eta_\mu| < 2.4$ \\ \hline
+    $\Upsilon$ transverse momentum ($p_T^\Upsilon$) & $15 < p_T^\Upsilon < 150$ GeV \\ \hline
+    $\Upsilon$ rapidity ($y_\Upsilon$) & $|y_\Upsilon| < 2.5$ \\ \hline
     Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 1$ GeV \\ \hline
     Transverse momentum of $\pi_s$ ($p_T^{\pi_s}$) & $> 0.3$ GeV \\ \hline
     Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 3$ GeV\\ \hline
-    D$^*$ transverse momentum ($p_T^{D^*}$) & $4 < p_T^{D^*} < 100$ GeV \\ \hline
+    D$^*$ transverse momentum ($p_T^{D^*}$) & $4 < p_T^{D^*} < 80$ GeV \\ \hline
     D$^*$ rapidity ($y_{D^*}$) & $|y_{D^*}| < 2.5$ \\ \hline
   \end{tabular}
   \legend{Cuts on the kinematic variables of the system that define the fiducial volume of the analysis.}
@@ -219,7 +223,7 @@ The analysis cuts are tighter cuts applied to the data in order to define the fi
   \label{tab:selectioncuts}
 \end{table}
 
-The cuts on Tab. \ref{tab:fiducialvol} were based on studies using MC simulations on the expected acceptance of the detector to each one of the objects. The cuts on the slow pion are more loose to the other tracks, in special, the transverse momentum cut is very important, as it directly correlated to the lower limit of the D$^*$ transverse momentum, since the slow pion phase space is restricted by the low mass difference between D$^0$ and D$^*$.
+The cuts on Tab. \ref{tab:fiducialvol} were based on studies using MC simulations on the expected acceptance of the detector to each one of the objects. The cuts on the slow pion are more loose to the other tracks, in special, the transverse momentum cut is very important, as it directly correlated to the lower limit of the D$^*$ transverse momentum, since the slow pion phase space is restricted by the low mass difference between D$^0$ and D$^*$. Also, the cut on the D$^0$ observables listed in Tab. \ref{tab:selectioncuts} are very important to improve the D$^*$ signal to background ratio at the expense to reduce greatly the statistics of the sample, so they were very well tunned for this work. 
 
 On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selections on the muon: 
 \begin{itemize}
@@ -227,16 +231,153 @@ On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selecti
   \item Number of tracker layers with hits > 5, to guarantee good $p_T$ measurement. 
   \item Number of pixel layers > 0.
   \item Muon track has high-purity flag, rejecting bad quality tracks
-  \item Loose transverse and longitudinal impact parameter cuts, dxy < 0.3 cm and dz < 20 cm w.r.t. the primary vertex.
+  \item Transverse and longitudinal impact parameter cuts, dxy < 0.3 cm and dz < 20 cm w.r.t. the primary vertex.
 \end{itemize}
+
+\textcolor{red}{colocar imagens da seleção}
 
 \section{Signal Extraction}
 
+The signal extraction is performed by doing a 2D fit to the dimuon invariant mass ($m_{\mu\mu}$) and D$^*$ $\Delta m$ distributions. To fulfill this a description of the signal and background for each distribution is created and a product of both is taken as the 2D model. Each of the distribution models contains components for signal and background and a non-extended composite PDF is constructed. The fit is performed using the RooFit package.
 
+\subsection{\texorpdfstring{$\Upsilon$}{Y} Model}
+
+The fit model has three signal components, one for each of the observed $\Upsilon(nS)$ states. All of them are modeled using the Crystal Ball distribution, defined as
+\begin{equation}
+  CB(x;\alpha,n,\bar x,\sigma) = N \cdot 
+  \begin{cases} 
+    \exp(- \frac{(x - \bar x)^2}{2 \sigma^2}), & \mbox{for }\frac{x - \bar x}{\sigma} > -\alpha \\
+    A \cdot (B - \frac{x - \bar x}{\sigma})^{-n}, & \mbox{for }\frac{x - \bar x}{\sigma} \leqslant -\alpha 
+  \end{cases}
+\end{equation}
+where
+\begin{equation}
+\begin{split}
+  A = & \left(\frac{n}{\left| \alpha \right|}\right)^n \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
+  B = & \frac{n}{\left| \alpha \right|}  - \left| \alpha \right|, \\
+  N = & \frac{1}{\sigma (C + D)}, \\
+  C = & \frac{n}{\left| \alpha \right|} \cdot \frac{1}{n-1} \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
+  D = & \sqrt{\frac{\pi}{2}} \left(1 + \operatorname{erf}\left(\frac{\left| \alpha \right|}{\sqrt 2}\right)\right). \\
+\end{split}
+\end{equation}
+With N as the normalization factor, $\alpha$, $n$, $\bar x$ and $\sigma$ are the fit parameters and erf is the error function. This function behaves like a Gaussian for $(x-\bar x)/\sigma$ greater than $-\alpha$ and presents a tail for values less than equals $-\alpha$, being able to model the effects of FSR to the dimuon invariant mass distribution.
+
+In order to reduce the amount of free parameters of the fit, the following constraints are imposed to the CB parameters:
+\begin{itemize}
+  \item The mean of all the CBs are fixed to the PDG mass value of its $\Upsilon$ state times a mass scale (to take into account the uncertainties on muon momentum scale calibration). $\bar x_{\Upsilon(nS)} = m_{scale}\cdot m_{\Upsilon(nS)}$;
+  \item The sigma of the CBs used to model 2S and 3S states are set to be proportional to their mass ratio with respect to the 1S state. Therefore, only one sigma is taken as free parameter. $\sigma_{\Upsilon(2S)} = \sigma_{1S}\times m_{\Upsilon(2S)}/m_{\Upsilon(1S)}$ and $\sigma_{\Upsilon(3S)} = \sigma_{1S}\times m_{\Upsilon(3S)}/m_{\Upsilon(1S)}$;
+  \item The tail parameters ($\alpha$ and $n$) are set as the same for the three CBs;
+  \item The parameter $n$ is set to be constant and its value is chosen from a previous 1D fit on the dimuon mass distribution.
+\end{itemize}
+
+Finally, the fit model for $\Upsilon(nS)$ signal is
+\begin{equation} \label{eq:upsilon_sig}
+  S_{\Upsilon}(m_{\mu\mu}) = f_{\Upsilon(1S)}\cdot CB_{\Upsilon(1S)} (m_{\mu\mu}) + f_{\Upsilon(2S)}\cdot CB_{\Upsilon(2S)} (m_{\mu\mu}) + (1-f_{\Upsilon(1S)}-f_{\Upsilon(2S)}) \cdot CB_{\Upsilon(3S)} (m_{\mu\mu})
+\end{equation}
+
+For the background, Chebyshev polynomials of the first kind are used up to second order. They are defined as:
+\begin{equation} \label{eq:upsilon_bkg}
+\begin{split}
+  T_0(x) = & 1 \\
+  T_1(x) = & x \\
+  T_{n+1}(x) = & 2xT_n(x) - T_{n-1}(x).
+\end{split}
+\end{equation}
+The background component is written as
+\begin{equation}
+  B_{\Upsilon}(m_{\mu\mu}) = N[1 + b_1 T_1(m_{\mu\mu}) + b_2 T_2(m_{\mu\mu})],
+\end{equation}
+where N is the normalization constant and $b_1$ and $b_2$ as free parameters for the fit.
+
+The final fit model is a sum of the four components with recursive coefficients:
+
+\subsection{\texorpdfstring{D$^{*}$}{D*} Model}
+
+For D$^*$ signal component, it is used a Johnson's distribution
+\begin{equation}\label{eq:dstar_sig}
+  S_{D^*}(\Delta m) = \frac{\delta}{\lambda\sqrt{2\pi}} \frac{1}{\sqrt{1 + \left(\frac{\Delta m-\mu}{\lambda}\right)^2}}\exp{\left[-\frac{1}{2}\left(\gamma+\delta\sinh^{-1}\left(\frac{\Delta m-\mu}{\lambda}\right)\right)^2\right]},
+\end{equation}
+where $\delta$, $\lambda$, $\gamma$ and $\mu$ are the free parameters. This function is often used to describe the mass difference of charm decays and fits well the $\Delta$m distribution.
+
+For the D$^*$ background a threshold function given by:
+\begin{equation} \label{eq:dstar_bkg}
+  B_{D^*}(\Delta m) = A \cdot (\Delta m - m_\pi)^B \cdot \exp[C\cdot (\Delta m - m_\pi)]
+\end{equation}
+is used, where $m_\pi$ is the pion mass and $A$, $B$ and $C$ are free parameters.
+
+\subsection{\texorpdfstring{$\Upsilon$ + D$^{*}$}{Y+D*} 2D Model}
+
+Finally, the construction of the 2D model takes into account the 4 distributions from Eqs. \ref{eq:upsilon_sig}, \ref{eq:upsilon_bkg}, \ref{eq:dstar_sig} and \ref{eq:dstar_bkg}, creating the final four component distribution:
+\begin{equation}
+\begin{split}
+  M_{\Upsilon D^*}(m_{\mu\mu}, \Delta m) & = f_s \cdot S_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\
+  & + f_{b1} \cdot S_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m) \\
+  & + f_{b1} \cdot B_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\ 
+  & + (1-f_{b1}-f_{b2}) \cdot B_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m)
+\end{split}
+\end{equation}
+
+The firs component, composed by both signal models, is used to estimate the associated $\Upsilon$ and $D^*$ yield.
+
+\textcolor{red}{colocar imagens do fit}
 
 \section{Acceptance and Efficiency}
 
+The acceptance and efficiency of the channel is determined from the signal MC. The strategy for computing the acceptance and efficiency is to factorize it into the components,
+\begin{equation}
+  (Acc\cdot\epsilon) = (Acc\cdot\epsilon_{precuts})^\Upsilon \cdot 
+  (Acc\cdot\epsilon_{precuts})^{D^*} \cdot \epsilon_{cuts}^\Upsilon \cdot 
+  \epsilon_{cuts}^{D^*} \cdot \epsilon_{HLT} \cdot \epsilon_{association},
+\end{equation}
+where the $Acc\cdot\epsilon_{precuts}$ is the acceptance coupled to the precuts efficiency, $\epsilon_{cuts}$ is the analysis cuts efficiency, $\epsilon_{HLT}$ is the trigger efficiency and the $\epsilon_{association}$ is the efficiency related to the $\Upsilon-D^*$ association criteria. Sec. \ref{sec:evtsel} gives details of the precuts and cuts applied.
 
+\subsection{Acceptance}
+
+The acceptance is calculated taking into account the precuts (Tab. \ref{tab:preselectioncuts}) and the cuts that define the fiducial volume of the sample on Tab. \ref{tab:fiducialvol}. The acceptance coupled to the precuts is calculated by
+\begin{equation}
+    (Acc \cdot \epsilon_{precuts})^P = \frac{N_{reco}^P}{N_{gen}^P},
+\end{equation}
+where the superscript P refers either to $\Upsilon$ or $D^*$, $N_gen$ is the number of generated particles within the fiducial volume, and $N_reco$ is the number of reconstructed particles within the same fiducial volume, passing the precuts and satisfying the respective matching criteria for that kind of particle:
+\begin{itemize}
+  \item For $\Upsilon$: the two muons used for its reconstruction must be matched to the muons from the decay of the generated Y within a cone of $\Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} < 0.03$.
+  \item For $D^*$: The reconstructed $D^*$ matches the generated $D^*$ with the requirements:
+  $$\frac{|p_T^{reco} - p_T^{gen}|}{p_T^{gen}} < 0.2, |\eta_{gen} - \eta_{reco}|
+  < 0.3, remainder(|\phi_{gen} - \phi_{reco}|, 2\pi) < 0.3.$$
+\end{itemize}
+
+\textcolor{red}{TO ADD FIGURES of the maps}
+
+\subsection{Cuts Efficiency}
+
+The cuts considered for this efficiency component are the ones stated in the Tab. \ref{tab:selectioncuts} with exception to the cut on the $\mu\mu\pi_s$ vertex probability cut, which is treated separately. The denominator is the number of reconstructed events that passed the precuts criteria and the numerator is the number of events that passed the cuts and the precuts:
+\begin{equation}
+  \epsilon_{cuts}^P = \frac{N_{reco\&cuts}^P}{N_{reco}^P} (P = \Upsilon, D^*).
+\end{equation}
+
+\textcolor{red}{TO ADD FIGURES on the maps}
+
+\subsection{Trigger Efficiency}
+
+The triggers used depend only on the dimuons, therefore, their efficiency is only evaluated from the 
+$\Upsilon$ candidates. The denominator is the number of events that passed both the precuts and cuts criteria and the numerator the number of events passing the trigger, cuts and precuts:
+\begin{equation}
+  \epsilon_{HLT} = \frac{N_{reco\&cuts\&trigger}^\Upsilon}{N_{reco\&cuts}^\Upsilon}
+\end{equation}
+
+\textcolor{red}{TO ADD FIGURES on the maps}
+
+\subsection{Association efficiency}
+
+The last efficiency is related to the association between $\Upsilon$ and $D^*$. It is given by
+\begin{equation}
+  \epsilon_{association} = 
+  \frac{N_{reco\&cuts\&trigger\&association}^{\Upsilon D^*}}{N_{reco\&cuts\&trigger}^{\Upsilon D^*}},
+\end{equation}
+where the denominator is the number events that passed all the previous selections and the numerator is the number of events after the addition of the association cut, which is the $\mu\mu\pi_s$ vertex probability $> 0.01$.
+
+\textcolor{red}{TO ADD FIGURES on the maps}
+
+The shown efficiency maps are used to calculate efficiency that will be used in the cross section determination.
 
 \section{Cross Section Measurement}
 

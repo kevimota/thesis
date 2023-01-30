@@ -19,6 +19,8 @@ The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-
     /MuOnia/Run2016D-21Feb2020\_UL2016\_HIPM-v1/AOD \\
     /MuOnia/Run2016E-21Feb2020\_UL2016\_HIPM-v1/AOD \\
     /MuOnia/Run2016F-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    \hline
+    /MuOnia/Run2016F-21Feb2020\_UL2016-v1/AOD \\
     /MuOnia/Run2016G-21Feb2020\_UL2016-v1/AOD \\
     /MuOnia/Run2016H-21Feb2020\_UL2016-v1/AOD \\
     \hline
@@ -36,6 +38,8 @@ The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-
   \legend{Data Samples used in the analysis corresponding to the full CMS Run 2 data taking.}
 \end{table}
 
+From the analysis point view, data samples are divided into four subsamples (2016APV, 2016, 2017 and 2018), to take into account the differences in the detector in the course of Run 2 (e.g. lose in the efficiency due to aging and installation of new detectors).
+
 \subsection{Simulation Samples}
 
 The simulation samples are done via Monte Carlo (MC) simulation, where the MC method is used in programs to model the physics processes. The starting point of the simulation is the event generation, where the events following a set of physics processes of interest are created by the MC generator.
@@ -47,6 +51,8 @@ The detector simulation follows the event generation. Here, the interaction of t
 The MC samples were used in this analysis to simulate the two components of the signal, the SPS and DPS. The only background was not simulated, since it is only combinatorial
 
 The DPS was created using the \textsc{Pythia8} \cite{Sjostrand:2014zea} as event generator, parton showering and for hadronization. For the decays of the heavy flavour hadrons, \textsc{EvtGen} \cite{Lange:2001uf} was used. The SPS sample is similar to the DPS, with the addition of the \textsc{HELAC-Onia} \cite{Shao:2012iz, Shao:2015vga}, which was used for event generation.
+
+In the same way as the data, the MC samples are divided into subsamples to take into account the detector differences in the course of Run 2. The detector simulation is tunned to better represent the detector conditions in each subsample.
 
 \textcolor{red}{colocar imagens da simulação}
 
@@ -131,8 +137,10 @@ Preselection cuts are used to mitigate some of the combinatorial background and 
     \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
     \multicolumn{2}{c}{D$^*$ candidate} \\ \hline
     Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 0.3$ GeV \\ \hline
-    Transverse and longitudinal impact parameter of $K$ and $\pi$ track ($d_{xy}$ and $d_z$) & $< 0.5$ cm \\ \hline
-    Transverse and longitudinal impact parameter of $\pi_s$ track ($d_{xy}$ and $d_z$) & $< 2$ cm \\ \hline
+    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
+    of $K$ and $\pi$ track ($d_{xy}$ and $d_z$) & \\ \hline
+    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 2$ cm} \\ 
+    of $\pi_s$ track ($d_{xy}$ and $d_z$) & \\ \hline
     Longitudinal distance between D$^0$ vertex and PV & $< 2$ cm \\ \hline
     Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 0.9$ GeV \\ \hline
     D$^0$ of D$^{*\pm}$ mass cut ($m_{D^0}$) & $1.5 < m_{D^0} < 2.3$ GeV \\ \hline
@@ -141,8 +149,10 @@ Preselection cuts are used to mitigate some of the combinatorial background and 
 
     \multicolumn{2}{c}{$\Upsilon$ candidate} \\ \hline
     Pseudorapidity separation between the two $\mu$ ($\Delta\eta_{\mu^+\mu^-}$) & $< 3.0$ \\ \hline
-    Transverse and longitudinal impact parameter of the two $\mu$ tracks, & $< 0.5$ cm \\ \hline
-    Longitudinal distance between the dimuon candidate vertex and the PV & $< 0.5$ cm \\ \hline
+    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
+    of the two $\mu$ tracks & \\ \hline
+    Longitudinal distance between the dimuon & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
+    candidate vertex and the PV & \\ \hline
     Dimuon candidate vertex probability & $> 0.01$ \\ \hline
     Dimuon mass range & $8.5 < m_{\mu\mu} < 11.5$ GeV \\ \hline
   \end{tabular}
@@ -152,7 +162,7 @@ Preselection cuts are used to mitigate some of the combinatorial background and 
 
 \textcolor{red}{colocar imagens da pre seleção?}
 
-\subsection{Trigger}
+\subsection{Trigger}\label{sec:trigger}
 
 The trigger strategy chosen was to use the HLT Paths that filters dimuons, it was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and lower $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers} all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum different for each trigger path.
 
@@ -162,9 +172,12 @@ In the year 2017, the chosen trigger was not available in the whole data-taking 
   \caption{Triggers used in this study in each year of data taking}
   \begin{tabular}{ c | c | c | c | c }
     Year & Trigger Path & $p_T$ Cut (GeV) & Recorded L ($fb^{-1}$) & L Uncertainty \\  \hline
-    2016 & HLT\_Dimuon13\_Upsilon & $>12.9$ & 36.18 & 2.5 \% \\ 
-    2017 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & $>13.9$ & 27.12 & 2.3 \% \\
-    2018 & HLT\_Dimuon24\_Upsilon\_noCorrL1 & $>13.9$ & 59.82 & 2.5 \% \\
+    \multirow[c]{2}{*}{2016} & HLT\_Dimuon13 & \multirow[c]{2}{*}{$>12.9$} & \multirow[c]{2}{*}{36.18} & \multirow[c]{2}{*}{2.5 \%} \\
+    & \_Upsilon & & \\ \hline
+    \multirow[c]{2}{*}{2017} & HLT\_Dimuon24 & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{27.12} & \multirow[c]{2}{*}{2.3 \%} \\ 
+    & \_Upsilon\_noCorrL1 & & & \\ \hline
+    \multirow[c]{2}{*}{2018} & HLT\_Dimuon24 & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{59.82} & \multirow[c]{2}{*}{2.5 \%} \\
+    & \_Upsilon\_noCorrL1 & & & \\ \hline
   \end{tabular}
   \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS:2017sdi, CMS:2018elu, CMS:2019jhq}}
   \label{tab:triggers}
@@ -202,12 +215,11 @@ The analysis cuts are tighter cuts applied to the data in order to define the fi
     Track $\chi^2$ of $K$ and $\pi$ & $< 2.5$ \\ \hline
     Number of valid tracker detector hits for $K$ and $\pi$ & $> 4$ \\ \hline
     Number of valid pixel detector hits for $K$ and $\pi$ & $> 1$ \\ \hline
-    transverse impact parameter of $K$ and $\pi$ & 0.5 cm \\ \hline
-    longitudinal impact parameter of $K$ and $\pi$ from PV & 0.5/$\sin{\theta}$ \\ \hline
+    transverse impact parameter of $K$ and $\pi$ from PV & 0.5 cm \\ \hline
+    longitudinal impact parameter of $K$ and $\pi$ & \multirow[c]{2}{*}{0.5/$\sin{\theta}$} \\
+    from PV & \\ \hline
     Track $\chi^2$ of $\pi_s$ & $< 3$ \\ \hline
     Number of valid tracker detector hits for $\pi_s$ & $> 2$\\ \hline
-    %$d_{xy}$ of $\pi_s$ from PV & \textcolor{red}{TO ADD} \\ \hline
-    %$d_{z}$ of $\pi_s$ from PV & \textcolor{red}{TO ADD} \\ \hline
     D$^0$ mass ($m_{D^0}$) & $|m_{D^0} - 1.864| < 0.028$ GeV \\ \hline
     D$^0$ cosine of the pointing angle ($\cos{\alpha_{D^0}}$) & $> 0.99$ \\ \hline
     D$^0$ decay length significance ($dl_{sig}$) & $> 2.7$ \\ \hline
@@ -289,7 +301,14 @@ The background component is written as
 \end{equation}
 where N is the normalization constant and $b_1$ and $b_2$ as free parameters for the fit.
 
-The final fit model is a sum of the four components with recursive coefficients:
+The 1D fit to the 2018 data sample is given in Fig. \ref{fig:fit1D_upsilon}.
+
+\begin{figure}[!htm]{15cm}
+  \caption{One dimensional fit to selected $\Upsilon$ data}%
+  \label{fig:fit1D_upsilon}
+  \fbox{\includegraphics[width=0.68\textwidth]{figures/fit/upsilon_2018_fit.png}}
+  \legend{One dimensional fit to selected $\Upsilon$ 2018 data sample. The fit is done to separate signal from the background for the three $\Upsilon$ states. The curves represent the fit for the full model (red) and each of the components (blue, green and purple for the $\Upsilon(1S)$, $\Upsilon(2S)$ and $\Upsilon(3S)$ signal and dashed orange for the combinatorial background).}
+\end{figure}
 
 \subsection{\texorpdfstring{D$^{*}$}{D*} Model}
 
@@ -305,6 +324,15 @@ For the D$^*$ background, a threshold function \cite{ZEUS:2013fws} given by:
 \end{equation}
 is used, where $m_\pi$ is the pion mass and $A$, $B$ and $C$ are free parameters.
 
+The 1D fit to the 2018 data sample is given in Fig. \ref{fig:fit1D_dstar}.
+
+\begin{figure}[!htm]{15cm}
+  \caption{One dimensional fit to the selected D$^{*\pm}$ data}%
+  \label{fig:fit1D_dstar}
+  \fbox{\includegraphics[width=0.68\textwidth]{figures/fit/dstar_2018_fit.png}}
+  \legend{One dimensional fit to the selected D$^{*\pm}$ 2018 data sample. The curves represent the fit for the full model (red) and each of the components (blue for signal and dashed green for the combinatorial background).}
+\end{figure}
+
 \subsection{\texorpdfstring{$\Upsilon$ + D$^{*}$}{Y+D*} 2D Model}
 
 Finally, the construction of the 2D model takes into account the 4 distributions from Eqs. \ref{eq:upsilon_sig}, \ref{eq:upsilon_bkg}, \ref{eq:dstar_sig} and \ref{eq:dstar_bkg}, creating the final four component distribution:
@@ -317,19 +345,115 @@ Finally, the construction of the 2D model takes into account the 4 distributions
 \end{split}
 \end{equation}
 
-The firs component, composed by both signal models, is used to estimate the associated $\Upsilon$ and $D^*$ yield.
+The firs component, composed by both signal models, is used to estimate the associated $\Upsilon$ and D$^*$ yield.
 
-\textcolor{red}{colocar imagens do fit}
+The projections to the dimuon invariant mass and D$^*$ $\Delta$m, extracted from the fit for all data samples, are given in Fig. \ref{fig:fit2D_upsilondstar}.
+
+\begin{landscape}
+  \begin{figure}[!htm]{23.7cm}
+    \caption{Projections of the two dimensional fit to the selected associated $\Upsilon +$ D$^{*\pm}$ for all data samples.} 
+    \label{fig:fit2D_upsilondstar}
+    \subfloat[][2016APV $\Upsilon$ projection.]{\label{subfig:fit2D_upsilon_proj_2016APV}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_upsilon_proj_2016APV.png}}}\hfill
+    \subfloat[][2016 $\Upsilon$ projection.]{\label{subfig:fit2D_upsilon_proj_2016}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_upsilon_proj_2016.png}}}\hfill
+    \subfloat[][2017 $\Upsilon$ projection.]{\label{subfig:fit2D_upsilon_proj_2017}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_upsilon_proj_2017.png}}}\hfill
+    \subfloat[][2018 $\Upsilon$ projection.]{\label{subfig:fit2D_upsilon_proj_2018}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_upsilon_proj_2018.png}}}\\
+    \subfloat[][2016APV D$^{*\pm}$ projection.]{\label{subfig:fit2D_dstar_proj_2016APV}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_dstar_proj_2016APV.png}}}\hfill
+    \subfloat[][2016 D$^{*\pm}$ projection.]{\label{subfig:fit2D_dstar_proj_2016}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_dstar_proj_2016.png}}}\hfill
+    \subfloat[][2017 D$^{*\pm}$ projection.]{\label{subfig:fit2D_dstar_proj_2017}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_dstar_proj_2017.png}}}\hfill
+    \subfloat[][2018 D$^{*\pm}$ projection.]{\label{subfig:fit2D_dstar_proj_2018}%
+      \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_dstar_proj_2018.png}}}\\
+    \legend{Projections to the dimuon invariant mass (a-d) and D$^{*\pm}$ $\Delta$m (e-f) taken from the fit to the selected associated $\Upsilon + $ D$^{*\pm}$ for all data samples. The curves represent the full fit (in red) and each of the components - signal in blue and continuous line and background components using dashed lines in green, purple and orange.}
+  \end{figure}
+\end{landscape}
+
+The summary of the fits parameters for each of the samples are found in Tabs. \ref{tab:fit_summary_2016APV} to \ref{tab:fit_summary_2018}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Summary of fit parameters for the sample 2016APV}\label{tab:fit_summary_2016APV}
+  \begin{tabular}{ c | c }
+    Parameter & Value \\ 
+    \hline
+    N$_{evt}$                    & 6570 \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $453 \pm 52$ \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $187 \pm 24$ \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $131 \pm 18$ \\ \hline
+    m$_{scale}$                  & $0.9981 \pm 0.0004$ \\ \hline
+    $\Delta$m mean               & $145.38 \pm 0.04$ MeV \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.58 \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.58 \\ \hline
+  \end{tabular}
+  \legend{A summary with the more important fit parameters for sample 2016APV.}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Summary of fit parameters for the sample 2016}\label{tab:fit_summary_2016}
+  \begin{tabular}{ c | c }
+    Parameter & Value \\ 
+    \hline
+    N$_{evt}$                    & 6190 \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $466 \pm 61$ \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $180 \pm 27$ \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $113 \pm 19$ \\ \hline
+    m$_{scale}$                  & $0.9980 \pm 0.0005$ \\ \hline
+    $\Delta$m mean               & $145.42 \pm 0.01$ MeV \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.13 \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.57 \\ \hline
+  \end{tabular}
+  \legend{A summary with the more important fit parameters for sample 2016.}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Summary of fit parameters for the sample 2017}\label{tab:fit_summary_2017}
+  \begin{tabular}{ c | c }
+    Parameter & Value \\ 
+    \hline
+    N$_{evt}$                    & 8153 \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $582 \pm 47$ \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $231 \pm 21$ \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $152 \pm 15$ \\ \hline
+    m$_{scale}$                  & $0.9982 \pm 0.0003$ \\ \hline
+    $\Delta$m mean               & $145.36 \pm 0.05$ MeV \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.05 \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.22 \\ \hline
+  \end{tabular}
+  \legend{A summary with the more important fit parameters for sample 2017.}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Summary of fit parameters for the sample 2018}\label{tab:fit_summary_2018}
+  \begin{tabular}{ c | c }
+    Parameter & Value \\ 
+    \hline 
+    N$_{evt}$                    & 16281 \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $1184 \pm 70$ \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $473 \pm 31$ \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $310 \pm 22$ \\ \hline
+    m$_{scale}$                  & $0.9987 \pm 0.0002$ \\ \hline
+    $\Delta$m mean               & $145.39 \pm 0.02$ MeV \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.28 \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.11 \\ \hline
+  \end{tabular}
+  \legend{A summary with the more important fit parameters for sample 2018.}
+\end{table}
 
 \section{Acceptance and Efficiency}
 
-The acceptance and efficiency of the channel is determined from the signal MC. The strategy for computing the acceptance and efficiency is to factorize it into the components,
+The acceptance and efficiency of the process is determined from the signal MC. The strategy for computing the acceptance and efficiency is to factorize it into the components,
 \begin{equation}
   (Acc\cdot\epsilon) = (Acc\cdot\epsilon_{precuts})^\Upsilon \cdot 
   (Acc\cdot\epsilon_{precuts})^{D^*} \cdot \epsilon_{cuts}^\Upsilon \cdot 
   \epsilon_{cuts}^{D^*} \cdot \epsilon_{HLT} \cdot \epsilon_{association},
 \end{equation}
-where the $Acc\cdot\epsilon_{precuts}$ is the acceptance coupled to the precuts efficiency, $\epsilon_{cuts}$ is the analysis cuts efficiency, $\epsilon_{HLT}$ is the trigger efficiency and the $\epsilon_{association}$ is the efficiency related to the $\Upsilon-D^*$ association criteria. Sec. \ref{sec:evtsel} gives details of the precuts and cuts applied.
+where the $Acc\cdot\epsilon_{precuts}$ is the acceptance coupled to the precuts efficiency, $\epsilon_{cuts}$ is the selection cuts efficiency, $\epsilon_{HLT}$ is the trigger efficiency and the $\epsilon_{association}$ is the efficiency related to the $\Upsilon+D^*$ association criteria. Sec. \ref{sec:evtsel} gives details of the precuts and cuts applied.
+
+Each of the components are calculated to create two dimensional maps used to extract the efficiency of the data samples.
 
 \subsection{Acceptance}
 
@@ -337,7 +461,7 @@ The acceptance is calculated taking into account the precuts (Tab. \ref{tab:pres
 \begin{equation}
     (Acc \cdot \epsilon_{precuts})^P = \frac{N_{reco}^P}{N_{gen}^P},
 \end{equation}
-where the superscript P refers either to $\Upsilon$ or $D^*$, $N_gen$ is the number of generated particles within the fiducial volume, and $N_reco$ is the number of reconstructed particles within the same fiducial volume, passing the precuts and satisfying the respective matching criteria for that kind of particle:
+where the superscript P refers either to $\Upsilon$ or D$^*$, $N_{gen}$ is the number of generated particles within the fiducial volume, and $N_{reco}$ is the number of reconstructed particles within the same fiducial volume, passing the precuts and satisfying the respective matching criteria for that kind of particle:
 \begin{itemize}
   \item For $\Upsilon$: the two muons used for its reconstruction must be matched to the muons from the decay of the generated Y within a cone of $\Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} < 0.03$.
   \item For $D^*$: The reconstructed $D^*$ matches the generated $D^*$ with the requirements:
@@ -345,26 +469,85 @@ where the superscript P refers either to $\Upsilon$ or $D^*$, $N_gen$ is the num
   < 0.3, remainder(|\phi_{gen} - \phi_{reco}|, 2\pi) < 0.3.$$
 \end{itemize}
 
-\textcolor{red}{TO ADD FIGURES of the maps}
+The plots of the acceptance extracted from the 2018 MC sample are given in Figs. \ref{fig:acc_dimu} and \ref{fig:acc_dstar} for $\Upsilon$ and D$^*$, respectively.
 
-\subsection{Cuts Efficiency}
+\begin{figure}[!htm]{15cm}
+  \caption{$\Upsilon$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:acc_dimu}
+  \subfloat[][]{\label{subfig:acc_dimu_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:acc_dimu_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_rap_2018.png}}}\hfill\\
+    \subfloat[][]{\label{subfig:acc_dimu_2D}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_2018.png}}}\\
+  \legend{$\Upsilon$ acceptance extracted from the 2018 MC data sample. The acceptance is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the acceptance, one.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{D$^*$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:acc_dstar}
+  \subfloat[][]{\label{subfig:acc_dstar_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:acc_dstar_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_rap_2018.png}}}\hfill\\
+    \subfloat[][]{\label{subfig:acc_dstar_2D}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_2018.png}}}\\
+  \legend{D$^*$ acceptance extracted from the 2018 MC data sample. The acceptance is given with respect to the reconstructed D$^*$ $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the acceptance, one.}
+\end{figure}
+
+\subsection{Selection Cuts Efficiency}
 
 The cuts considered for this efficiency component are the ones stated in the Tab. \ref{tab:selectioncuts} with exception to the cut on the $\mu\mu\pi_s$ vertex probability cut, which is treated separately. The denominator is the number of reconstructed events that passed the precuts criteria and the numerator is the number of events that passed the cuts and the precuts:
 \begin{equation}
   \epsilon_{cuts}^P = \frac{N_{reco\&cuts}^P}{N_{reco}^P} (P = \Upsilon, D^*).
 \end{equation}
 
-\textcolor{red}{TO ADD FIGURES on the maps}
+The plots of the selection cuts efficiency extracted from the 2018 MC sample are given in Figs. \ref{fig:eff_cuts_dimu} and \ref{fig:eff_cuts_dstar} for $\Upsilon$ and D$^*$, respectively.
+
+\begin{figure}[!htm]{15cm}
+  \caption{$\Upsilon$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:eff_cuts_dimu}
+  \subfloat[][]{\label{subfig:eff_cuts_dimu_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:eff_cuts_dimu_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_rap_2018.png}}}\hfill\\
+    \subfloat[][]{\label{subfig:eff_cuts_dimu_2D}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_2018.png}}}\\
+  \legend{$\Upsilon$ selection cuts efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{D$^*$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:eff_cuts_dstar}
+  \subfloat[][]{\label{subfig:eff_cuts_dstar_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:eff_cuts_dstar_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_rap_2018.png}}}\hfill\\
+    \subfloat[][]{\label{subfig:eff_cuts_dstar_2D}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_2018.png}}}\\
+  \legend{D$^*$ selection cuts efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the D$^*$ $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
+\end{figure}
 
 \subsection{Trigger Efficiency}
 
-The triggers used depend only on the dimuons, therefore, their efficiency is only evaluated from the 
-$\Upsilon$ candidates. The denominator is the number of events that passed both the precuts and cuts criteria and the numerator the number of events passing the trigger, cuts and precuts:
+The triggers used depend only on the dimuons, therefore, their efficiency is only evaluated from the $\Upsilon$ candidates. The denominator is the number of events that passed both the precuts and cuts criteria and the numerator the number of events passing the trigger, cuts and precuts:
 \begin{equation}
   \epsilon_{HLT} = \frac{N_{reco\&cuts\&trigger}^\Upsilon}{N_{reco\&cuts}^\Upsilon}
 \end{equation}
 
-\textcolor{red}{TO ADD FIGURES on the maps}
+The plots of the trigger efficiency extracted from the 2018 MC sample are given in Fig. \ref{fig:eff_trigger}.
+
+\begin{figure}[!htm]{15cm}
+  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:eff_trigger}
+  \subfloat[][]{\label{subfig:eff_trigger_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:eff_trigger_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_rap_2018.png}}}\hfill\\
+    \subfloat[][]{\label{subfig:eff_trigger_2D}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_2018.png}}}\\
+  \legend{Trigger efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
+\end{figure}
 
 \subsection{Association efficiency}
 
@@ -375,10 +558,79 @@ The last efficiency is related to the association between $\Upsilon$ and $D^*$. 
 \end{equation}
 where the denominator is the number events that passed all the previous selections and the numerator is the number of events after the addition of the association cut, which is the $\mu\mu\pi_s$ vertex probability $> 0.01$.
 
-\textcolor{red}{TO ADD FIGURES on the maps}
+The plots of the trigger efficiency extracted from the 2018 MC sample are given in Fig. \ref{fig:eff_asso}.
 
-The shown efficiency maps are used to calculate efficiency that will be used in the cross section determination.
+\begin{figure}[!htm]{15cm}
+  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \label{fig:eff_asso}
+  \subfloat[][]{\label{subfig:eff_asso_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_asso_pt_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:eff_asso_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_asso_rap_2018.png}}}\hfill\\
+  \legend{Associuation efficiency extracted from the 2018 MC data sample. The efficiency maps are given with respect to the dimuon and D$^*$ $p_T$ in (a) and $y$ in (b).}
+\end{figure}
 
-\section{Cross Section Measurement}
+\subsection{Total efficiency}\label{sec:total_eff}
 
+The shown efficiency maps are used to calculate efficiency that will be used in the cross section determination. The final efficiency for each subsample is shown in Tab. \ref{tab:totaleff}.
 
+\begin{table}[!htbp]{15cm}
+  \caption{Total efficiency per data sample.}
+  \begin{tabular}{ l | c }
+    \hline
+    \multicolumn{1}{c|}{Sample} & \multicolumn{1}{c}{Total Efficiency (\%)} \\ \hline
+    2016APV & $7.50^{+0.96}_{-1.57}$ \\ \hline
+    2016    & $9.38^{+1.14}_{-2.64}$ \\ \hline
+    2017    & $6.89^{+1.18}_{-1.67}$ \\ \hline
+    2018    & $4.49^{+1.53}_{-1.73}$ \\ \hline
+  \end{tabular}
+  \legend{Total efficiency per data sample. The uncertainties shown are only statistical.}
+  \label{tab:totaleff}
+\end{table}
+
+\section{Associated \texorpdfstring{$\Upsilon(nS)$ + D$^{*}$}{Y+D*} Cross Section}
+
+The cross section of the associated $\Upsilon$ + D$^{*}$ is calculated by the formula:
+\begin{equation}
+  \sigma = \frac{N_{\Upsilon(nS) D^*}}{L\cdot eff \cdot BR(\Upsilon(nS))BR(D^*)},
+\end{equation}
+where $nS$ refers to the $\Upsilon$ states (1S, 2S and 3S), $N_{\Upsilon(nS) D^*}$ is the number of associated $\Upsilon(nS)$ + D$^*$ extracted from the 2D fit, $L$ is the integrated luminosity of the sample (Sec. \ref{sec:trigger}), $eff$ is the total efficiency (Sec. \ref{sec:total_eff}) and $BR(\Upsilon(nS))$ and $BR(D^*)$ are the branch ratios of $\Upsilon$ and D$^*$, respectively.
+
+Table \ref{tab:cross_section} presents the fiducial cross section for each data sample and $\Upsilon$ state. The values are compatible with each other so that the can be combined.
+
+\begin{table}[!htbp]{15cm}
+  \caption{$\Upsilon(nS)$ + D$^{*}$ fiducial cross section per data sample.}
+  \begin{tabular}{ l | l | c }
+    \hline
+    $\Upsilon$ state & Sample & Cross section (pb) \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(1S)$ + D$^{*\pm}$} 
+    & 2016APV & $4.7^{+0.8}_{-1.1}$ \bigstrut\\\cline{2-3} 
+    & 2016    & $4.5^{+0.8}_{-1.4}$ \bigstrut\\\cline{2-3} 
+    & 2017    & $4.7^{+0.9}_{-1.2}$ \bigstrut\\\cline{2-3} 
+    & 2018    & $6.7^{+2.3}_{-2.6}$ \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(2S)$ + D$^{*\pm}$} 
+    & 2016APV & $2.5^{+0.5}_{-0.6}$ \bigstrut\\\cline{2-3} 
+    & 2016    & $2.2^{+0.4}_{-0.7}$ \bigstrut\\\cline{2-3} 
+    & 2017    & $2.4^{+0.5}_{-0.6}$ \bigstrut\\\cline{2-3} 
+    & 2018    & $3.4^{+1.2}_{-1.3}$ \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(3S)$ + D$^{*\pm}$} 
+    & 2016APV & $1.6^{+0.3}_{-0.4}$ \bigstrut\\\cline{2-3} 
+    & 2016    & $1.2^{+0.3}_{-0.4}$ \bigstrut\\\cline{2-3} 
+    & 2017    & $1.4^{+0.3}_{-0.4}$ \bigstrut\\\cline{2-3} 
+    & 2018    & $2.0^{+0.7}_{-0.8}$ \\ \hline
+  \end{tabular}
+  \legend{$\Upsilon(nS)$ + D$^{*}$ cross section per data sample. The cross section is determined for each of the $\Upsilon$ states and its uncertainties are only statistical.}
+  \label{tab:cross_section}
+\end{table}
+
+Finally, the combined cross section for each $\Upsilon$ state are:
+\begin{equation}
+\begin{split}
+  \sigma_{Y(1S)+D*} &= 5.6^{+1.2}_{-1.3} \; \text{pb},\\
+  \sigma_{Y(2S)+D*} &= 2.9^{+0.6}_{-0.7} \; \text{pb},\\
+  \sigma_{Y(3S)+D*} &= 1.7^{+0.3}_{-0.4} \; \text{pb},
+\end{split} 
+\end{equation}
+where only statistical errors are considered.
+
+\section{Systematic Uncertainties}

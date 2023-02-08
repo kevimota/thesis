@@ -248,7 +248,7 @@ On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selecti
 
 \textcolor{red}{colocar imagens da seleção}
 
-\section{Signal Extraction}
+\section{Signal Extraction}\label{sec:sig_extraction}
 
 The signal extraction is performed by doing a 2D fit to the dimuon invariant mass ($m_{\mu\mu}$) and D$^*$ $\Delta m$ distributions. To fulfill this a description of the signal and background for each distribution is created and a product of both is taken as the 2D model. Each of the distribution models contains components for signal and background and a non-extended composite PDF is constructed. The fit is performed using the RooFit package.
 
@@ -279,7 +279,6 @@ In order to reduce the amount of free parameters of the fit, the following const
   \item The mean of all the CBs are fixed to the PDG mass value of its $\Upsilon$ state times a mass scale (to take into account the uncertainties on muon momentum scale calibration). $\bar x_{\Upsilon(nS)} = m_{scale}\cdot m_{\Upsilon(nS)}$;
   \item The sigma of the CBs used to model 2S and 3S states are set to be proportional to their mass ratio with respect to the 1S state. Therefore, only one sigma is taken as free parameter. $\sigma_{\Upsilon(2S)} = \sigma_{1S}\times m_{\Upsilon(2S)}/m_{\Upsilon(1S)}$ and $\sigma_{\Upsilon(3S)} = \sigma_{1S}\times m_{\Upsilon(3S)}/m_{\Upsilon(1S)}$;
   \item The tail parameters ($\alpha$ and $n$) are set as the same for the three CBs;
-  \item The parameter $n$ is set to be constant and its value is chosen from a previous 1D fit on the dimuon mass distribution.
 \end{itemize}
 
 Finally, the fit model for $\Upsilon(nS)$ signal is
@@ -647,7 +646,7 @@ The $\sigma^{DPS}$ is different from the cross section determined in Sec. \ref{s
 \begin{equation}
   \sigma_{\Upsilon D^*} = \sigma_{\Upsilon D^*}^{SPS} + \sigma_{\Upsilon D^*}^{DPS}.
 \end{equation}
-To calculate the $\sigma_{eff}$, the fraction of the DPS contribution needs to be computed, which is normally done by inspection of the $\Delta$y and/or $\Delta\phi$ distributions \cite{Lansberg:2019adr}. In this work, the fraction is assumed to be one, and the value presented can be assumed as a lower bound for the $\sigma_eff$.
+To calculate the $\sigma_{eff}$, the fraction of the DPS contribution needs to be computed, which is normally done by inspection of the $\Delta$y and/or $\Delta\phi$ distributions \cite{Lansberg:2019adr}. In this work, the fraction is assumed to be one, and the value presented can be assumed as a lower bound for the $\sigma_{eff}$.
 
 The inclusive cross section of $\Upsilon(nS)$ and D$^*$ can be found in Tab. \ref{tab:inclusive_xsec}.
 
@@ -713,14 +712,22 @@ Finally, combining all the values from Tab. \ref{tab:xsec_eff}, it is possible t
 
 \section{Systematic Uncertainties}
 
-The systematic uncertainties include all the uncertainties that do not arise from the fluctuations in a finite set of measurements. This includes bias coming from the experiment, the assumptions made and models used to make the conclusions.
+The systematic uncertainties include all the uncertainties that do not arise from the fluctuations in a finite set of measurements. This includes bias coming from the experiment, the assumptions made and models used to make the conclusions. The evaluation of this kind of uncertainty is analysis dependant, as one needs to consider all assumptions made in the measurement process.
+
+That being said, the complete systematic uncertainty definition is not finished in this analysis due to time constraints, but some of them are brought in the following lines.
 
 \begin{itemize}
-  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainty is given in Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and is summarized in Tab. \ref{tab:triggers}. 
+  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainties are given in Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and are summarized in Tab. \ref{tab:triggers}. 
   \item \textbf{Branching Fraction}: The uncertainties on the branching fractions of each considered decay channel are given in Ref. \cite{Workman:2022ynf}. The values are pointed out in Sec. \ref{sec:theoryY+D}
-  \item \textbf{Determination of the signal yields}:
-  \item \textbf{Pileup Reweighting}:
-  \item \textbf{Tracking Efficiency}:
-  \item \textbf{Cuts Efficiency}:
-  \item \textbf{Trigger Efficiency}:
+  \item \textbf{D$^*$ signal model}: For D$^*$ signal, the model was changed to a double Gaussian
+  \item \textbf{D$^*$ background model}: the background was modified to another threshold function \cite{CMS:2021lab} with the form
+  \begin{equation}
+    f = \left[ 1- \exp{\left( -\frac{\Delta m - m_\pi}{p_0} \right)} \right]\left( \frac{\Delta m}{m_\pi} \right)^{p_1} +p_2 \left( \frac
+    {\Delta m}{m_\pi} - 1 \right),
+  \end{equation}
+  where $m_\pi$ is taken as the pion mass and $p_0$, $p_1$ and $p_2$ are free parameters.
+  \item \textbf{$\Upsilon$ signal model}: To evaluate this systematic, the shape of the CB is commonly changed to a Gaussian, but it can lead to bad fits, this models does not properly describe the tails in the dimuon invariant mass distribution. Therefore, rather than changing the signal model, 
+  \item \textbf{$\Upsilon$ background model}
+  \item \textbf{Selection Cuts}: The selection cuts 
+  \item \textbf{Tracking Efficiencies}: The tracking efficiency for charged hadrons is given by Ref. \cite{CMS-DP-2022-012}, using the branching ratios two D$^*$ decays: $D^* \rightarrow K\pi\pi_s$ and $D^* \rightarrow K3\pi\pi_s$. The uncertainty is given depending on the sample and it is combined for the two D$^0$ tracks. For $\pi_s$, a different procedure should be done, since it has a soft $p_T$ distribution. The value of 5.2 \%, given in Ref. \cite{CMS:2021lab} is used.
 \end{itemize}

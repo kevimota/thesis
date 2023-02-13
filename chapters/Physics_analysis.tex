@@ -639,7 +639,7 @@ where only statistical errors are considered.
 \subsection{Effective Cross Section}
 
 The effective cross section can be determined by rearranging the Eq. \ref{eq:xsecDPS}
-\begin{equation}
+\begin{equation}\label{eq:sigmaeff_YD}
   \sigma_{eff} = \frac{\sigma_\Upsilon \cdot \sigma_{D^*}}{\sigma_{\Upsilon D^*}^{DPS}}.
 \end{equation}
 The $\sigma^{DPS}$ is different from the cross section determined in Sec. \ref{subsec:fiducial_xsec}, as this one is composed from the SPS and DPS components. It is possible to write
@@ -665,7 +665,9 @@ The inclusive cross section of $\Upsilon(nS)$ and D$^*$ can be found in Tab. \re
   \source{\cite{CMS:2017dju, CMS:2021lab}}
 \end{table}
 
-Since the kinematic region in Tab. \ref{tab:inclusive_xsec} are different from the ones chosen in the cross section determination in Sec. \ref{subsec:fiducial_xsec} these numbers cannot be used directly in the $\sigma_{eff}$ calculation. One simple way to solve this problem is to restrict the associated $\Upsilon$ + D$^*$ fiducial cross section to match the phase space of the inclusive measurement. This restriction have the effect of lowering the number of events of the samples, which is bad for the fit procedure, in special for the $\Upsilon(2S)$ and $\Upsilon(3S)$ in the 2016 and 2016APV subsamples, which have less statistics as shown in Fig. \ref{fig:fit2D_upsilondstar_rest}. For this reason, the lower limit for effective cross section will be determined only for $\Upsilon(1S) +$ D$^*$. Table \ref{tab:xsec_eff} displays a summary the values for the $\sigma_{eff}$ lower bound, as well as other important parameters.
+Since the kinematic region in Tab. \ref{tab:inclusive_xsec} are different from the ones chosen in the cross section determination in Sec. \ref{subsec:fiducial_xsec} these numbers cannot be used directly in the $\sigma_{eff}$ calculation. One simple way to solve this problem is to restrict the associated $\Upsilon$ + D$^*$ fiducial cross section to match the phase space of the inclusive measurement. This restriction have the effect of lowering the number of events of the samples, which is bad for the fit procedure, in special for the $\Upsilon(2S)$ and $\Upsilon(3S)$ in the 2016 and 2016APV subsamples, which have less statistics as shown in Fig. \ref{fig:fit2D_upsilondstar_rest}. For this reason, the lower limit for effective cross section will be determined only for $\Upsilon(1S) +$ D$^*$, but it is intended to extend the phase space of the inclusive cross sections to the ones used in the Sec. \ref{subsec:fiducial_xsec} so that we can refine our measurement with more statistics. 
+
+Table \ref{tab:xsec_eff} displays a summary the values for the $\sigma_{eff}$ lower bound, as well as other important parameters.
 
 \begin{table}[!htbp]{15cm}
   \caption{Lower bound for $\Upsilon(1S)$ + D$^{*}$ effective cross section per data sample.}
@@ -729,6 +731,96 @@ That being said, the complete systematic uncertainty definition is not finished 
   For $\Upsilon$ signal, a change from CBs to Gaussians resulted to bad fits, as the later one cannot describe well the tails of the invariant mass distribution. Another method is to evaluate the CB shape changes with the change of its parameters. The tail parameters $n$ and $\alpha$ are specially sensitive as they are strongly correlated. $n$ was left as free parameter and $\alpha$ was moved by $\pm 2\sigma$. Half of the maximum observed variation was taken as systematic, because these variations are correlated. Another parameter analyzed was the mean of the CBs, which is defined from a common factor and the mass of the $\Upsilon$ state taken from Ref. \cite{Workman:2022ynf}. The means were left as a free parameter and the deviation in the yield is taken as a systematic.
 
   Finally, the $\Upsilon$ background model was modified to a 3rd order Chebychev polynomials and the deviation was taken as systematic.
-  \item \textbf{Selection Cuts}: The selection cuts 
-  \item \textbf{Tracking Efficiencies}: The tracking efficiency for charged hadrons is given by Ref. \cite{CMS-DP-2022-012}, using the branching ratios two D$^*$ decays: $D^* \rightarrow K\pi\pi_s$ and $D^* \rightarrow K3\pi\pi_s$. The uncertainty is given depending on the sample and it is combined for the two D$^0$ tracks. For $\pi_s$, a different procedure should be done, since it has a soft $p_T$ distribution. The value of 5.2 \%, given in Ref. \cite{CMS:2021lab} is used.
+  \item \textbf{Selection Cuts}: A study on the choice of the selection cuts on the cross section determination was made by slightly changing the cuts and recalculating the cross section. The maximum observed variation on the cross section was taken as systematic.
+  \item \textbf{Tracking Efficiencies}: The tracking efficiency for charged hadrons is given by Ref. \cite{CMS-DP-2022-012}, using the branching ratios two D$^*$ decays: $D^* \rightarrow K\pi\pi_s$ and $D^* \rightarrow K3\pi\pi_s$. The uncertainty is given depending on the sample and it is combined for the two D$^0$ tracks. For the slow pion, a different procedure should be done, since it has a soft $p_T$ distribution. The value of 5.2 \%, given in Ref. \cite{CMS:2021lab} is used.
 \end{itemize}
+
+A summary of the systematic uncertainties for each of the calculated cross sections are given in Tabs. \ref{tab:systematics1S}, \ref{tab:systematics2S} and \ref{tab:systematics3S}.
+
+\begin{table}[!htbp]{15cm}
+  \caption{Systematic Uncertainties for $\Upsilon(1S) + $D$^{*}$ cross section measurement.}
+  \begin{tabular}{ c | c | c | c | c }
+    \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
+    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
+    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
+    $\Upsilon(1S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
+    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
+    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
+    Selection Cuts & 6.1 \% & 8.2 \% & 7.5 \% & 5.3 \% \\ \hline
+    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
+    Total & 11.8 \% & 13.7 \% & 11.1 \% & 10.8 \% \\ \hline
+  \end{tabular}
+  \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(1S) + $D$^*$ cross section measurement.}
+  \label{tab:systematics1S}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Systematic Uncertainties for $\Upsilon(2S) + $D$^{*}$ cross section measurement.}
+  \begin{tabular}{ c | c | c | c | c }
+    \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
+    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
+    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
+    $\Upsilon(2S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
+    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
+    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
+    Selection Cuts & 5.9 \% & 14.9 \% & 8.3 \% & 6.0 \% \\ \hline
+    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
+    Total & 14.8 \% & 20.6 \% & 14.6 \% & 14.2 \% \\ \hline
+  \end{tabular}
+  \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(2S) + $D$^*$ cross section measurement.}
+  \label{tab:systematics2S}
+\end{table}
+
+\begin{table}[!htbp]{15cm}
+  \caption{Systematic Uncertainties for $\Upsilon(3S) + $D$^{*}$ cross section measurement.}
+  \begin{tabular}{ c | c | c | c | c }
+    \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
+    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
+    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
+    $\Upsilon(3S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
+    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
+    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
+    Selection Cuts & 23.7 \% & 18.7 \% & 15.9 \% & 8.5 \% \\ \hline
+    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
+    Total & 27.5 \% & 23.8 \% & 20.3 \% & 15.9 \% \\ \hline
+  \end{tabular}
+  \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(3S) + $D$^*$ cross section measurement.}
+  \label{tab:systematics3S}
+\end{table}
+
+\section{Discussion of the results}
+
+The final measurement of the fiducial cross section with systematics are 
+\begin{equation}
+\begin{split}
+  \sigma_{Y(1S)D^{*\pm}} &= 474^{+44}_{-68} \text{(stat)} \pm 30 \text{(syst)} \; \text{pb},\\
+  \sigma_{Y(2S)D^{*\pm}} &= 230^{+23}_{-34} \text{(stat)} \pm 19 \text{(syst)} \; \text{pb},\\
+  \sigma_{Y(3S)D^{*\pm}} &= 152^{+16}_{-22} \text{(stat)} \pm 17 \text{(syst)} \; \text{pb}.
+\end{split} 
+\end{equation}
+The addition other systematic uncertainty sources are being developed, e.g. the uncertainties on the $\Upsilon$ polarization on the trigger efficiencies, which still need more treatment.
+
+A determination of the contamination of non-prompt \footnote{result from decays of B-hadrons} D$^*$ is also lacking, but it is expected to be negligible because of the cuts on the cosine of the pointing angle and the vertex fit of the two muons and the slow pion.
+
+And the lower bound of $\sigma_{eff}$, with only statistical uncertainties is
+\begin{equation}
+  \sigma_{eff} > 8.1^{+1.0}_{-1.2} \text{(stat)} \; \text{mb}.
+\end{equation}
+
+The effective cross section value is within the expected region as shown in Fig. \ref{fig:sigmaeff_measurements}. A further analysis is needed to determine the fraction of events that come from DPS and it is being developed with the help of the modeling of MC samples. Still, it is expected that the DPS has the main contribution in this channel, with fraction close to one.
+
+Also, another method of extracting the $\sigma_{eff}$ is being studied, by manipulating the Eq. \ref{eq:sigmaeff_YD} one can write
+\begin{equation}
+\begin{split}
+  \sigma_{eff} &= \frac{\sigma_{\Upsilon(nS)} \cdot \sigma_{D^*}}{\sigma_{\Upsilon(nS) D^*}^{DPS}} \\
+  &= \frac{N_{\Upsilon(nS)}}{L \cdot eff_{\Upsilon(nS)} \cdot BR_{\Upsilon(nS)}} \cdot \frac{N_{D^*}}{L \cdot eff_{D^*} \cdot BR_{D^*}} \cdot \frac{L \cdot eff_{\Upsilon(nS) D^*} \cdot BR_{\Upsilon(nS)} \cdot BR_{D^*}}{N_{\Upsilon(nS) D^*}} \\
+  \sigma_{eff} &= \frac{N_{\Upsilon(nS)} \cdot N_{D^*}}{L \cdot N_{\Upsilon(nS) D^*}} \cdot \frac{eff_{\Upsilon(nS) D^*}}{eff_{\Upsilon(nS)} \cdot eff_{D^*}}.
+\end{split}
+\end{equation}
+
+This approach has many advantages - the statistics are higher, since we can extend the measurements to the full CMS phase space, also many terms that are source of systematic uncertainties cancel out (e.g. the branching ratios and the trigger efficiency), resulting in a much more precise measurements.
+
+That being said, this measurement can help to understand the DPS mechanisms as the current results shows deviations depending on the final state. This is not expected in the MPS model, but, as pointed out by Ref. \cite{Lansberg:2019adr}, as far as quarkonium measurements are concerned, those in the forward region hint at larger $\sigma_{eff}$ values, thus smaller DPS contributions, than those in the central rapidity region.

@@ -5,9 +5,9 @@ This chapter will discuss about on the CMS RPC system, where the author was able
 
 \section{Brief history of gaseous detectors}
 
-The first gaseous detector was introduced by E. Rutherford and H. Geiger in 1908 \cite{rutherford1908electrical}. The device consisted in a thin wire, the anode, coaxial to a cylindrical cathode filled with gas. When a ionising particle passed through the gas, it ionised the gas particles. By applying a difference of potential to the device, the released electrons accelerate to the anode and inelastic collisions with other molecules multiplying the effect of the ionisation in the so-called avalanche process, which was studied by John Sealy Townsend, between 1897 to 1901 \cite{peskov2018resistive}. An illustration of the avalanche formation in gaseous detectors is shown in Fig. \ref{fig:avalanche}. This kind of detector is still used up to today, mainly on radiation detection and monitoring.
+The first gaseous detector was introduced by E. Rutherford and H. Geiger in 1908 \cite{rutherford1908electrical}. The device consisted in a thin wire, the anode, coaxial to a cylindrical cathode filled with gas. When a ionizing particle passed through the gas, it ionized the gas particles. By applying a difference of potential to the device, the released electrons accelerate to the anode and inelastic collisions with other molecules multiplying the effect of the ionization in the so-called avalanche process, which was studied by John Sealy Townsend, between 1897 to 1901 \cite{peskov2018resistive}. An illustration of the avalanche formation in gaseous detectors is shown in Fig. \ref{fig:avalanche}. This kind of detector is still used up to today, mainly on radiation detection and monitoring.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Avalanche formation in gaseous detectors}%
 \label{fig:avalanche}
 \fbox{\includegraphics[width=0.5\hsize]{figures/avalanche_formation.png}}
@@ -15,9 +15,9 @@ The first gaseous detector was introduced by E. Rutherford and H. Geiger in 1908
 \source{\cite{Shopova:2626243}}
 \end{figure}
 
-This device operation depends on the applied voltage as shown Fig. \ref{fig:gaseous_curve}. At lower electric field strength, the electron and ions drifts with no avalanche multiplication and the number of electron-ion pairs is independent of of the voltage, at the ionisation chamber mode. At the proportional mode the avalanche process occurs for each ionisation, so that the number of electron-ion pairs is proportional to the energy deposited by the ionising particle in the detector. Finally, at even higher voltage, in the Geiger-Müller counter region, there is emission of UV photons creating multiple avalanches along the anode wire \cite{o1961detection}. Also, at higher voltage levels the avalanches can increase into streamers, and even to sparks.
+This device operation depends on the applied voltage as shown Fig. \ref{fig:gaseous_curve}. At lower electric field strength, the electron and ions drifts with no avalanche multiplication and the number of electron-ion pairs is independent of of the voltage, at the ionization chamber mode. At the proportional mode the avalanche process occurs for each ionization, so that the number of electron-ion pairs is proportional to the energy deposited by the ionizing particle in the detector. Finally, at even higher voltage, in the Geiger-Müller counter region, there is emission of UV photons creating multiple avalanches along the anode wire \cite{o1961detection}. Also, at higher voltage levels the avalanches can increase into streamers, and even to sparks.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm} 
 \caption{Gaseous Counter Characteristic Curve}%
 \label{fig:gaseous_curve}
 \fbox{\includegraphics[width=0.5\hsize]{figures/gaseous_detector_curve.png}}
@@ -27,12 +27,12 @@ This device operation depends on the applied voltage as shown Fig. \ref{fig:gase
 
 But this devices are not suitable for the use in high-energy particle physics tracking. From the 1930s to the 1960s, the research was mainly done using cloud chambers as bubble chambers, which have excellent imaging capabilities, with the major drawback of being active during a selected time interval, being unsuitable to analysis of rare events \cite{sauli2015gaseous}.
 
-The first gaseous detector to be able to have an very good tracking capability was the spark chambers \cite{fukui1959new}. On this one, rather than a constant voltage applied to its terminals, they had a pulse voltage applied to a parallel-plate gap shortly after the detection of a coincidence signal from scintillation detectors. A visible track would grow from the ionisation trail left in the gas. Combined to a photography readout, they became great assets to the particle detection, with a major drawback, the slow rates they could operate on, around dozens of Hertz \cite{sauli2015gaseous}.
+The first gaseous detector to be able to have an very good tracking capability was the spark chambers \cite{fukui1959new}. On this one, rather than a constant voltage applied to its terminals, they had a pulse voltage applied to a parallel-plate gap shortly after the detection of a coincidence signal from scintillation detectors. A visible track would grow from the ionization trail left in the gas. Combined to a photography readout, they became great assets to the particle detection, with a major drawback, the slow rates they could operate on, around dozens of Hertz \cite{sauli2015gaseous}.
 
 In 1968, Georges Charpak created the multiwire proportional chamber (MWPC) \cite{Charpak:1968kd}. A schematic of a MWPC is shown in Fig. \ref{fig:MWPCsch}. It had a fast electronic readout, capable of withstanding high rates, had excellent time and space resolutions and was a continuously operating device. It was a major development in the particle detector field, the MWPCs and other detectors based on it\footnote{Such as drift chambers, time projection chambers, etc.} replaced other detectors with photographic readout. Still, a major drawback of such detectors was the time resolution, in the order of $\mu$s, because the drift time variate a lot depending on the position where the primary electron is created. 
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
-\caption{Multiwire Proportinal Chamber Schematic}%
+\begin{figure}[!htm]{15cm}
+\caption{Multiwire Proportional Chamber Schematic}%
 \label{fig:MWPCsch}
 \fbox{\includegraphics[width=0.5\hsize]{figures/Wire_chamber_schematic.png}}
 \legend{A schematic of a multiwire proportinal chamber. The blue plates are the cathodes and the wires are the anodes. When the a particle ionises the gas, the electrons drift towards the wires and, because of the avalanche multiplication, many electron are collected and a measurable signal is obtained at the anodes.}
@@ -47,7 +47,7 @@ The RPC was created in 1981 by Santonico and Cardarelli \cite{santonico1981devel
 
 The two plates form a region where a mixture of gases is flushed, denominated gas gap. The thickness normally goes from 1-2 mm\footnote{Some designs have lower thickness, for instance, check \cite{Deppner:2016yku}} and it is maintained constant by a network of spacers distributed throughout the plane. The signal readout is independent of the HV, it can be performed by copper strips or pads where the avalanche induces signals. A typical design of a RPC chamber is shown in Fig. \ref{fig:RPC_schematic}.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Resistive Plate Chamber Schematic}%
 \label{fig:RPC_schematic}
 \fbox{\includegraphics[width=0.5\hsize]{figures/RPC_schematic.png}}
@@ -55,7 +55,7 @@ The two plates form a region where a mixture of gases is flushed, denominated ga
 \source{\cite{Mondal:2018eov}}
 \end{figure}
 
-The gas mixture is very important for efficient operation of the RPC. Normally, a mixture of tetraﬂuoroethane (C$_2$H$_2$F$_4$, commercially known as R134a or Freon) to enhance ionisation of the incident particles, that can compose more than 90\% of the mixture, isobutane (iC$_4$H$_10$) as a quencher gas and (SF$_6$) to improve the electronegativity of the mixture and reduce the secondary ionisation. Nowadays, the search of eco-friendly gas mixtures is very important research field for the RPCs. The replacement is very important for the R134a and SF$_6$ as they contribute the most to the high global warming potential (GWP) of the mixture. The commercial replacement to the R134a are the HydroFluoroOlefyns (HFOs), for example the HFO1234ze (C$_2$H$_2$F$_4$) which brings the HV working point (WP) of the RPCs to higher values. Normally, it is added CO$_2$ or Helium to the HFO to bring the WP to a lower level. For the SF$_6$ some gases are being researched, for example, 3M Novec 5110, 3M Novec 4710, AMOLEA HFO-1224yd, etc. More details on the eco gas research can be found in \cite{Guida:2022pyg}. Some alternatives to reduce the flushing of fresh gas into the system, such as gas re-circulation systems, are also being developed \cite{Corbetta:2020esl}.
+The gas mixture is very important for efficient operation of the RPC. Normally, a mixture of tetraﬂuoroethane (C$_2$H$_2$F$_4$, commercially known as R134a or Freon) to enhance ionization of the incident particles, that can compose more than 90\% of the mixture, isobutane (iC$_4$H$_10$) as a quencher gas and (SF$_6$) to improve the electronegativity of the mixture and reduce the secondary ionization. Nowadays, the search of eco-friendly gas mixtures is very important research field for the RPCs. The replacement is very important for the R134a and SF$_6$ as they contribute the most to the high global warming potential (GWP) of the mixture. The commercial replacement to the R134a are the HydroFluoroOlefyns (HFOs), for example the HFO1234ze (C$_2$H$_2$F$_4$) which brings the HV working point (WP) of the RPCs to higher values. Normally, it is added CO$_2$ or Helium to the HFO to bring the WP to a lower level. For the SF$_6$ some gases are being researched, for example, 3M Novec 5110, 3M Novec 4710, AMOLEA HFO-1224yd, etc. More details on the eco gas research can be found in \cite{Guida:2022pyg}. Some alternatives to reduce the flushing of fresh gas into the system, such as gas re-circulation systems, are also being developed \cite{Corbetta:2020esl}.
 
 The detector operates on a very high electrical field strength, in the order of 4-5 kV/mm. The authors of \cite{Santonico:1988qi} pointed out that, when a particle passes by the gas volume, the primary electron-ion pairs gives rise to a small discharge that is quenched without affecting the whole gas volume by the following mechanisms:
 \begin{itemize}
@@ -68,9 +68,9 @@ Because of these mechanisms, the discharges in the RPC are not harmful, not dest
 
 \section{CMS RPC Project}
 
-The CMS RPC system consists in 1056 double-gap chambers operating in avalanche mode. Each gap is constructed with two HPL sheets of bulk resistivity 1-6 $\times 10^{10} \; \Omega$ cm. The HPL sheets are spaced 2 mm apart by a grid of plastic spacers. The internal surfaces of the gaps are coated with a 35 to 45 $\mu$m linseed oil. This treatment improves greatly the performance of the chambers, because it smooths the internal surfaces and quench UV photons \cite{Abbrescia:687074, Lu:2009zzd}. The outside surfaces are coated with a conductive graphite paint, forming the electrodes, and isolated by a PET film. One gap is placed on top of the other with a readout of copper strips placed in between. The layout of a double-gap RPC is shown in Figure \ref{fig:RPClayout}. Everything is placed inside a aluminium case.
+The CMS RPC system consists in 1056 double-gap chambers operating in avalanche mode. Each gap is constructed with two HPL sheets of bulk resistivity 1-6 $\times 10^{10} \; \Omega$ cm. The HPL sheets are spaced 2 mm apart by a grid of plastic spacers. The internal surfaces of the gaps are coated with a 35 to 45 $\mu$m linseed oil. This treatment improves greatly the performance of the chambers, because it smooths the internal surfaces and quench UV photons \cite{Abbrescia:687074, Lu:2009zzd}. The outside surfaces are coated with a conductive graphite paint, forming the electrodes, and isolated by a PET film. One gap is placed on top of the other with a readout of copper strips placed in between. The layout of a double-gap RPC is shown in Figure \ref{fig:RPClayout}. Everything is placed inside a aluminum case.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Double-gap CMS RPC layout}%
 \label{fig:RPClayout}
 \fbox{\includegraphics[width=0.5\hsize]{figures/RPC_layout.png}}
@@ -86,7 +86,7 @@ The RPC system is able to withstand high rate capability of the order of 300 Hz/
 
 In barrel, there are 480 chambers distributed in 5 wheels (Wheel $\pm$ 2, $\pm$ 1 and 0) along the beam pipe. Each wheel consists in 4 stations (RB1-RB4) along the radius. The two inner stations consists of two RPC chambers with a DT in the middle and the two outer stations have only one RPC and one DT. Also, the wheel is divided in 12 sectors (S01-S12) along the direction of the azimuthal angle $\phi$. Due to mechanical reasons, RB3 and RB4 are further divided into two chambers (named + and –) along $\phi$ in all sectors but S04, S09 and S11 in RB4. Since RB4/S09 and RB4/S11 are in the feet of the barrel wheel, they have a single RPC. RB4/S04 have four chambers (named --, -, + and ++). The RPC barrel is given in Figure \ref{fig:RPC_barrel_layout}.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC barrel layout}%
 \label{fig:RPC_barrel_layout}
 \fbox{\includegraphics[width=.7\hsize]{figures/RPC_barrel_layout.png}}
@@ -111,7 +111,7 @@ Each RPC chamber is divided into partitions with respect to the pseudorapidity c
 
 In Endcap, there are 576 chambers divided into the 8 disks (RE$\pm$1, RE$\pm$2, RE$\pm$3, RE$\pm$4). Each disk have 72 chambers of trapezoidal shape divided in 2 concentric rings and 36 sectors. Each chamber is divided into 3 rolls, named A, B and C. The higher segmentation with respect to the barrel is driven by the higher particle multiplicity in the frontal regions. A layout of the Endcap geometry is shown in Fig. \ref{fig:RPC_endcap_layout}.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC endcap layout}%
 \label{fig:RPC_endcap_layout}
 \fbox{\includegraphics[width=.7\hsize]{figures/RPC_Endcap_layout.png}}
@@ -123,7 +123,7 @@ In Endcap, there are 576 chambers divided into the 8 disks (RE$\pm$1, RE$\pm$2, 
 
 The new requirements of the HL-LHC upgrade in terms of pile-up,  background and detector ageing will pose a big challenge for the correct muon identification and transverse momentum determination. The full muon system is preparing upgrades for the HL-LHC. In particular the RPC system is has two important foreseen developments.
 
-The first upgrade is the replacement of the off-detector electronics (called link system). The current link system role is to process, synchronise and zero-suppress the signals coming from the RPC Front-End Boards (FEB) providing the RPC hits in a BX. The new link system will be able to deliver time of the hits, bringing the full timing potential of this detector. Also it will employ techniques and materials to suppress problems and deterioration caused by the high radiation environment.
+The first upgrade is the replacement of the off-detector electronics (called link system). The current link system role is to process, synchronize and zero-suppress the signals coming from the RPC Front-End Boards (FEB) providing the RPC hits in a BX. The new link system will be able to deliver time of the hits, bringing the full timing potential of this detector. Also it will employ techniques and materials to suppress problems and deterioration caused by the high radiation environment.
 
 And the second upgrade is the extension of the RPC coverage from |$\eta$| = 1.9 to 2.4 with the new improved RPC (iRPC) detectors. An extensive R\&D program is taking place to fulfil the demanding conditions of the HL-LHC. Two new RPC layers are going to be installed in the innermost rings of the disks RE$\pm$4 and RE$\pm$3. The new chambers will have a complete new design, with double-gap chambers with 1.4 mm thickness, to improve the time resolution. Also, the readout in two sides of the strip plane, allowing determination of the position in the 2D plane and a completely new front-end electronics. 
 
@@ -143,7 +143,7 @@ An extensive HV and low voltage (LV) maintenance campaign was performed. The goa
 
 The problems in HV were normally in one of the HV connectors, either because of bad connection, which was solved by a proper connection, or by defective connector, as shown in Fig. \ref{fig:HV_crack}. If this was the case, a the replacement of the connector or the use of spare channels was enough to bring back the gap to a good performance. In some cases the gaps itself were problematic, for example, because of problems with gas leakage. A total of 65 HV channels were repaired during LS2. 
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Defective HV connector}%
 \label{fig:HV_crack}
 \fbox{\includegraphics[width=.7\hsize]{figures/HV_crack.jpg}}
@@ -154,11 +154,11 @@ The LV maintenance aim was to ensure a proper operation and configuration of the
 
 Another important activity was the extraction of the chambers from the two RE4 stations to allow the CSC ME4/1 chambers extraction for electronics  refurbishment. The chambers were brought to the surface, and accommodated to a new laboratory with controlled environmental conditions and the infrastructure needed to test them (HV, LV and gas). All needed reparation and re-validation was done in this laboratory, before all the chambers were installed back.
 
-The most priority activity, was gas system consolidation. The aim was to minimise the environmental impact of the RPC system. The actions taken were:
+The most priority activity, was gas system consolidation. The aim was to minimize the environmental impact of the RPC system. The actions taken were:
 \begin{itemize}
     \item Gas Leak identification and repair. Often, the problems with the gas leaks were because of broken gas pipes and inlets inside the chambers. A endoscope was employed to find the problematic points and reparation was done when accessible. Figure \ref{fig:gas_problems} shows examples of problems found with the endoscope. Out of the identified 122 leaky chambers in barrel 49 where repaired, 14 are non-recoverable.
     \item Recuperation of the Exhaust, which was not working during Run-2 for the installation of the first C2H2F4 recuperation system with efficiency of 80 \%, which have been developed by CERN EP-DT Gas team \cite{Corbetta:2020esl}.
-    \item Installation automatic pressure regulation valves on the redistribution gas racks to minimise pressure variations in the chambers, which can be a possible source of new leaks.
+    \item Installation automatic pressure regulation valves on the redistribution gas racks to minimize pressure variations in the chambers, which can be a possible source of new leaks.
     \item Turn off the remaining leaky chambers which was not possible to repair, to keep the amount of fresh gas added to the system at a minimum.
 \end{itemize}
 A summary of the activities in LS2 can be found in \cite{Amarilo_2022}.
@@ -175,7 +175,7 @@ A summary of the activities in LS2 can be found in \cite{Amarilo_2022}.
 
 The performance of the repaired chambers can be seen in Figs. \ref{fig:repaired_gas} and \ref{fig:repaired_HV} as a comparison between cosmic-rays data-taking of 2018 and 2021. There was great improvement, 34 rolls were recovered by gas leak repairs and the HV repairs translated into a gain of ~6\% in the efficiency of these chambers. Overall, the results of the repairs were successful bringing higher efficiency to the repaired channels. In Fig. \ref{fig:overallefficiency2018vs2022} a comparison of the distribution of roll efficiency in pp collisions taken in 2018 and 2022 is given for barrel and endcap and the results mentioned are confirmed.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Performance of repaired gas leak chambers in cosmic data taking}%
 \label{fig:repaired_gas}
 \fbox{\includegraphics[width=.5\hsize]{figures/Repaired_gas.png}}
@@ -183,7 +183,7 @@ The performance of the repaired chambers can be seen in Figs. \ref{fig:repaired_
 \source{\cite{CMSPublic:DPGRPC2021}}
 \end{figure}
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Performance of repaired gas leak chambers in cosmic data taking}%
 \label{fig:repaired_HV}
 \fbox{\includegraphics[width=.5\hsize]{figures/Repaired_HV.png}}
@@ -208,7 +208,7 @@ A big experiment like CMS need a control software for all the required needs for
 
 Each subsystem at CMS is tasked to develop the DCS for itself to be able to react to the commands passed from the CMS Central DCS. The RPC DCS is divided into several subsystems that are part of the infrastructure needed for the operation of the RPCs chambers as shown in Figure \ref{fig:RPC_DCS_layout}. Each subsystem communicates with DCS, passing information that is archived in a ORACLE database and receiving commands.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC DCS layout}%
 \label{fig:RPC_DCS_layout}
 \fbox{\includegraphics[width=\hsize]{figures/RPC_DCS_subsystems.png}}
@@ -218,7 +218,7 @@ Each subsystem at CMS is tasked to develop the DCS for itself to be able to reac
 
 The Power system for HV and LV is based on the CAEN EASY project \cite{CAENEASY}. It is designed to operate in hostile areas (high radiation and magnetic field strength) and connected to the DCS through the OPC protocol \cite{OPCFoundation}.  Temperature and relative humidity (RH) sensors are read by ADCs connected to the CAEN EASY system and sent to DCS. The gas infrastructure data is acquired from Programmable Logic Controllers and distributed via DIP \cite{Barillere:2003fi}. In the same way all the information concerning the CMS infrastructure, (e.g. Cooling, Detector Safety System (DSS), LHC and Magnet status), is available through DIP. Finally, FEB information is available through XDAQ, the online CMS framework, using SOAP (Simple Object Access Protocol)  messages to PSX \cite{gutleber2002software}.
 
-All this control subsystems are able to run by itself as components of the RPC system. However, all the information is gathered around a hierarchical hierarchical double-tree control structure, shown in Fig. \ref{fig:RPC_DCS_structure}, implemented through a Finite State Machine (FSM). This automation schema reduces the amount of human intervention in the system, for all the repetitive tasks, and optimise recovery procedures in case of undesired states. The FSM is defined by its states and the commands. The states are:
+All this control subsystems are able to run by itself as components of the RPC system. However, all the information is gathered around a hierarchical hierarchical double-tree control structure, shown in Fig. \ref{fig:RPC_DCS_structure}, implemented through a Finite State Machine (FSM). This automation schema reduces the amount of human intervention in the system, for all the repetitive tasks, and optimize recovery procedures in case of undesired states. The FSM is defined by its states and the commands. The states are:
 \begin{itemize}
     \item ON - RPC is ready for data taking.
     \item STANDBY - High voltages are on standby voltage (6500 V for the CMS RPCs and 5000 V for the iRPCs), low voltages are on. It is used as a safe state.
@@ -228,7 +228,7 @@ All this control subsystems are able to run by itself as components of the RPC s
 \end{itemize}
 The commands are ON, OFF and STANDBY, which effectuates the transitions to the states with same name.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC hierarchy tree}%
 \label{fig:RPC_DCS_structure}
 \fbox{\includegraphics[width=\hsize]{figures/RPC_DCS_Structure.png}}
@@ -238,9 +238,9 @@ hierarchy, while information and error messages are reported upwards.}
 \source{\cite{Polese:2010zz}}
 \end{figure}
 
-The WinCC software can also be used to develop a Graphical User Interface (GUI). It is developed to be a easy way for the user interact to the system, being able to control and monitor the desired parameters of the system, as well as display the important alerts. It is structured in approximately 40 panels to provide easy visualisation and navigation through the system structure. The GUI can be accessed remotely, which is very important for a collaboration with people from different countries in the world, like CMS, and provides a authentication system, to prevent use from non-experts. Figure \ref{fig:RPC_DCS_GUI} displays a overview of the RPC DCS GUI.
+The WinCC software can also be used to develop a Graphical User Interface (GUI). It is developed to be a easy way for the user interact to the system, being able to control and monitor the desired parameters of the system, as well as display the important alerts. It is structured in approximately 40 panels to provide easy visualization and navigation through the system structure. The GUI can be accessed remotely, which is very important for a collaboration with people from different countries in the world, like CMS, and provides a authentication system, to prevent use from non-experts. Figure \ref{fig:RPC_DCS_GUI} displays a overview of the RPC DCS GUI.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC DCS GUI overview}%
 \label{fig:RPC_DCS_GUI}
 \fbox{\includegraphics[width=\hsize]{figures/RPC_DCS_GUI.png}}
@@ -252,7 +252,7 @@ More details on the design of the RPC DCS can be found in \cite{Polese:2010zz, P
 
 The work done at the CMS RPC DCS were the update of the system for the upgrade from WinCC version 3.15 to 3.16, which introduced some breaking changes, so the current software needed to be adapted to this new version. The correction of bugs and addition of new functionalities. The most important tasks were the creation of a new panel, shown in Fig. \ref{fig:RPC_DCS_Demo_panel}, for four iRPCs installed as a Demonstrator.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{CMS RPC DCS Demonstrator panel}%
 \label{fig:RPC_DCS_Demo_panel}
 \fbox{\includegraphics[width=\hsize]{figures/Demo_panel.png}}
@@ -298,7 +298,7 @@ where $\epsilon_\gamma$ is the fake efficiency from gammas, that can be extracte
 
 Figure \ref{fig:GIF_setup} shows the experimental setup at GIF++. There are two trolleys, in the one closest to the gamma source the test chamber is placed (from now on refereed to as KODEL-C). On the trolley farther from the gamma source, two tracking RPC chambers are installed (from now on refereed to as GT1 and GT2), with their strip planes oriented perpendicular to each other to allow measurement in two directions. Details on the used chambers characteristics.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{Experimental Setup at GIF++.}%
 \label{fig:GIF_setup}
 \fbox{\includegraphics[width=0.7\hsize]{figures/GIF_setup.pdf}}
@@ -328,7 +328,7 @@ Figure \ref{fig:GIF_setup} shows the experimental setup at GIF++. There are two 
 
 To start the tracking analysis first the events are chosen so that at least there is at least one hit inside the muon time window for the two tracking chambers. This is required so that the the probability of hits from background or tracking is very low. A 2D hit profile is constructed to check the alignment of the tracking chambers and the muon beam (Fig. \ref{fig:2D_hit_profile}). the tracking chambers position in the trolley is adjusted so that the muon beam is centred in the run, this way we can avoid the muons to fall out of the detecting region by possible beam adjustments during the data taking. 
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{2D hit profile of tracking chambers at GIF++.}%
 \label{fig:2D_hit_profile}
 \fbox{\includegraphics[width=0.7\hsize]{figures/muonHitProfile.pdf}}
@@ -338,15 +338,15 @@ To start the tracking analysis first the events are chosen so that at least ther
 
 The tracking algorithm relies on the assumption that the beam is perpendicular to the strip plane, therefore it is only needed to extrapolate the position of the hit from the tracking to the test chamber and check for a matching hit. For every event, the following steps are taken \cite{https://doi.org/10.48550/arxiv.2211.16591}:
 \begin{enumerate}
-    \item Perform the clusterization of the hits in the tracking chambers, where events with more than one cluster are rejected. The cluster barycentres are defined as the mean position in the cluster;
-    \item Perform the clusterization for the test chambers and calculate the clusters' barycentres;
-    \item Form a perpendicular track starting from the tracking cluster barycentre;
+    \item Perform the clusterization of the hits in the tracking chambers, where events with more than one cluster are rejected. The cluster barycenters are defined as the mean position in the cluster;
+    \item Perform the clusterization for the test chambers and calculate the clusters' barycenters;
+    \item Form a perpendicular track starting from the tracking cluster barycenter;
     \item Check for a match in any cluster on the test chamber. 
 \end{enumerate}
 
-The clusterization is done by grouping hits that are adjacent and does not exceed a difference of time. The difference of time is previously determined in cosmic or source off data taking and depends on the chambers and front-end electronics and DAQ used. The cluster barycentre is defined as the geometrical mean position of the cluster. Figure \ref{fig:tracking_evt} shows an example of a event where a matching hit was found.
+The clusterization is done by grouping hits that are adjacent and does not exceed a difference of time. The difference of time is previously determined in cosmic or source off data taking and depends on the chambers and front-end electronics and DAQ used. The cluster barycenter is defined as the geometrical mean position of the cluster. Figure \ref{fig:tracking_evt} shows an example of a event where a matching hit was found.
 
-\begin{figure}[!htm]{15cm} %<-largura da janela da figura
+\begin{figure}[!htm]{15cm}
 \caption{2D hit profile of tracking chambers at GIF++.}%
 \label{fig:tracking_evt}
 \fbox{\includegraphics[width=0.5\hsize]{figures/event_0.png}}
@@ -375,9 +375,9 @@ where HV$_gas$ is the corrected HV, HV$_app$ is the applied HV, R is the resista
   \source{\cite{https://doi.org/10.48550/arxiv.2211.16591}}
 \end{figure}
 
-In Fig. \ref{subfig:ABSOFF} the curves are equivalent, this behaviour is expected, since at lower rates, the currents are low, so there are no fake hits nor HV correction. In Figure \ref{subfig:ABS10}, the background rate becomes substantial, so we can see a shift to the right in the curves without resistance correction, caused by the aforementioned voltage drop, which is much more noticeable in Fig. \ref{subfig:ABS10}. A decrease of the maximum efficiency with the increase of rate is expected, because of the dead time of the front-end electronics, but we can see an increase in the raw efficiency, which indicates a high fake hit contamination.
+In Fig. \ref{subfig:ABSOFF} the curves are equivalent, this behavior is expected, since at lower rates, the currents are low, so there are no fake hits nor HV correction. In Figure \ref{subfig:ABS10}, the background rate becomes substantial, so we can see a shift to the right in the curves without resistance correction, caused by the aforementioned voltage drop, which is much more noticeable in Fig. \ref{subfig:ABS10}. A decrease of the maximum efficiency with the increase of rate is expected, because of the dead time of the front-end electronics, but we can see an increase in the raw efficiency, which indicates a high fake hit contamination.
 
-To finalise the discussion, the plots of the efficiency curves with tracking and with tracking and resistance correction can be seen in Fig. \ref{fig:eff_curves}. The effect of the voltage drop on the electrodes is very noticeable in Fig. \ref{subfig:sigmoids_trk} and it is also possible to see the expected decrease maximum efficiency, proving that the fake hit contamination was removed using the tracking. In Fig. \ref{subfig:sigmoids_trk_corr} it is still possible to see a shift to the right in the curves, this is also expected, since the high rates induce an efficiency drop in the RPCs, because of the reduce of the gas amplification caused by the space charge effect \cite{Lippmann:2003yb}. 
+To finalize the discussion, the plots of the efficiency curves with tracking and with tracking and resistance correction can be seen in Fig. \ref{fig:eff_curves}. The effect of the voltage drop on the electrodes is very noticeable in Fig. \ref{subfig:sigmoids_trk} and it is also possible to see the expected decrease maximum efficiency, proving that the fake hit contamination was removed using the tracking. In Fig. \ref{subfig:sigmoids_trk_corr} it is still possible to see a shift to the right in the curves, this is also expected, since the high rates induce an efficiency drop in the RPCs, because of the reduce of the gas amplification caused by the space charge effect \cite{Lippmann:2003yb}. 
 
 \begin{figure}[!htm]{15cm}
   \caption{Efficiency curves for various gamma background rates.} 

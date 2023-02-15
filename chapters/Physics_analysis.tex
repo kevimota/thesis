@@ -1,7 +1,7 @@
 \chapter{Physics Analysis}
 %================================================================
 
-This chapter will discuss about the cross section measurement of the associated production of $\Upsilon$ and $D^{*\pm}$ using the full CMS Run 2 data with 13 TeV center-of-mass energy. \textcolor{red}{falar mais}
+This chapter will discuss about the cross section measurement of the associated production of $\Upsilon$ and D$^{*\pm}$ using the full CMS Run 2 data with 13 TeV center-of-mass energy. First, the data and simulation samples used will be presented. Then, the selection cuts will be discussed and the strategy to determine the signal yields and efficiency will be shown. Finally, the fiducial and effective cross sections will be evaluated and the results will be discussed.
 
 \section{Datasets and Simulation}
 \subsection{Data Samples}
@@ -11,29 +11,29 @@ The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-
 \begin{table}[!htbp]{15cm}
   \caption{Data samples considered in this work}\label{tab:datasamples}
   \begin{tabular}{ c }
-    Dataset \\ 
+    Dataset                                               \\
     \hline
     /MuOnia/Run2016B-21Feb2020\_ver1\_UL2016\_HIPM-v1/AOD \\
     /MuOnia/Run2016B-21Feb2020\_ver2\_UL2016\_HIPM-v1/AOD \\
-    /MuOnia/Run2016C-21Feb2020\_UL2016\_HIPM-v1/AOD \\
-    /MuOnia/Run2016D-21Feb2020\_UL2016\_HIPM-v1/AOD \\
-    /MuOnia/Run2016E-21Feb2020\_UL2016\_HIPM-v1/AOD \\
-    /MuOnia/Run2016F-21Feb2020\_UL2016\_HIPM-v1/AOD \\
+    /MuOnia/Run2016C-21Feb2020\_UL2016\_HIPM-v1/AOD       \\
+    /MuOnia/Run2016D-21Feb2020\_UL2016\_HIPM-v1/AOD       \\
+    /MuOnia/Run2016E-21Feb2020\_UL2016\_HIPM-v1/AOD       \\
+    /MuOnia/Run2016F-21Feb2020\_UL2016\_HIPM-v1/AOD       \\
     \hline
-    /MuOnia/Run2016F-21Feb2020\_UL2016-v1/AOD \\
-    /MuOnia/Run2016G-21Feb2020\_UL2016-v1/AOD \\
-    /MuOnia/Run2016H-21Feb2020\_UL2016-v1/AOD \\
+    /MuOnia/Run2016F-21Feb2020\_UL2016-v1/AOD             \\
+    /MuOnia/Run2016G-21Feb2020\_UL2016-v1/AOD             \\
+    /MuOnia/Run2016H-21Feb2020\_UL2016-v1/AOD             \\
     \hline
-    /MuOnia/Run2017B-09Aug2019\_UL2017-v1/AOD \\
-    /MuOnia/Run2017C-09Aug2019\_UL2017-v1/AOD \\
-    /MuOnia/Run2017D-09Aug2019\_UL2017-v1/AOD \\
-    /MuOnia/Run2017E-09Aug2019\_UL2017-v1/AOD \\
-    /MuOnia/Run2017F-09Aug2019\_UL2017-v1/AOD \\
+    /MuOnia/Run2017B-09Aug2019\_UL2017-v1/AOD             \\
+    /MuOnia/Run2017C-09Aug2019\_UL2017-v1/AOD             \\
+    /MuOnia/Run2017D-09Aug2019\_UL2017-v1/AOD             \\
+    /MuOnia/Run2017E-09Aug2019\_UL2017-v1/AOD             \\
+    /MuOnia/Run2017F-09Aug2019\_UL2017-v1/AOD             \\
     \hline
-    /MuOnia/Run2018A-12Nov2019\_UL2018-v1/AOD \\
-    /MuOnia/Run2018B-12Nov2019\_UL2018-v1/AOD \\
-    /MuOnia/Run2018C-12Nov2019\_UL2018-v1/AOD \\
-    /MuOnia/Run2018D-12Nov2019\_UL2018-v1/AOD \\
+    /MuOnia/Run2018A-12Nov2019\_UL2018-v1/AOD             \\
+    /MuOnia/Run2018B-12Nov2019\_UL2018-v1/AOD             \\
+    /MuOnia/Run2018C-12Nov2019\_UL2018-v1/AOD             \\
+    /MuOnia/Run2018D-12Nov2019\_UL2018-v1/AOD             \\
   \end{tabular}
   \legend{Data Samples used in the analysis corresponding to the full CMS Run 2 data taking.}
 \end{table}
@@ -61,66 +61,66 @@ In the same way as the data, the MC samples are divided into subsamples to take 
 The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in an event. As shown in Fig. \ref{fig:drawing_event}, there are five different particles in the final state an event - three coming from D$^*$ and two from $\Upsilon$. The D$^*$ have a low combinatorial background when compared with other open charm mesons because of it very characteristic signature - very small difference of mass between D$^*$ and D$^0$ restricting the phase space of the slow pion. Also, the kaon and pion can be identified even without a particle identification detector, since it should have a opposite charge to the slow pion, removing the ambiguity of the D$^0$ reconstruction.
 
 \begin{figure}[!htm]{15cm}
-\caption{Drawing of an event of associated production of $\Upsilon$ and D$^{*+}$}%
-\label{fig:drawing_event}
-\fbox{
-\begin{tikzpicture}
-  \coordinate (PV) at ( 0,0);
-  \coordinate (SV) at ( 2.0,1.8);
-  \coordinate (BL) at (-3,0);
-  \coordinate (BR) at ( 4,0);
+  \caption{Drawing of an event of associated production of $\Upsilon$ and D$^{*+}$}%
+  \label{fig:drawing_event}
+  \fbox{
+    \begin{tikzpicture}
+      \coordinate (PV) at ( 0,0);
+      \coordinate (SV) at ( 2.0,1.8);
+      \coordinate (BL) at (-3,0);
+      \coordinate (BR) at ( 4,0);
 
-  \draw[beamcol,dashed,name path=beam]
-    (BL) -- (BR);
-  \draw[SVcol,dashed]
-    (PV) -- (SV)
-    node[midway,above=0.1,left=0.1] {$D^0$};
+      \draw[beamcol,dashed,name path=beam]
+      (BL) -- (BR);
+      \draw[SVcol,dashed]
+      (PV) -- (SV)
+      node[midway,above=0.1,left=0.1] {$D^0$};
 
-  \draw[->,mygreen,line width=1]
-    (SV) to[bend right] (1.0,3.0) node[above right] {$\pi^+$};
-  \draw[->,mygreen,line width=1]
-    (SV) to[bend left] (3.0,3.0) node[above left] {$K^-$};
+      \draw[->,mygreen,line width=1]
+      (SV) to[bend right] (1.0,3.0) node[above right] {$\pi^+$};
+      \draw[->,mygreen,line width=1]
+      (SV) to[bend left] (3.0,3.0) node[above left] {$K^-$};
 
-  \draw[->,red,line width=1]
-    (PV) to[bend right=20] (-2.0,1.0) node[below right] {$\mu^+$};
-  \draw[->,red,line width=1]
-    (PV) to[bend left=20] (-1.0,2.0) node[below left] {$\mu^-$};
+      \draw[->,red,line width=1]
+      (PV) to[bend right=20] (-2.0,1.0) node[below right] {$\mu^+$};
+      \draw[->,red,line width=1]
+      (PV) to[bend left=20] (-1.0,2.0) node[below left] {$\mu^-$};
 
 
-  \draw[->,SVcol,line width=1]
-    (PV) arc[start angle=150, end angle=0, radius=0.5] node[below right] {$\pi_s^+$};
-  
-  \fill[beamcol]
-    (PV) ellipse (9pt and 4.5pt)
-    node[beamcol!95!black,below left] {PV $\color{red}{\Upsilon} \color{beamcol}{+} \color{SVcol}{D^*}$};
-  \fill[SVcol]
-    (SV) circle (4pt) node[below right] {SV};
-\end{tikzpicture}
-}
-\legend{Drawing of an event of associated production of $\Upsilon$ and D$^*$. $\Upsilon$ decays into two opposite charge muons, while D$^{*+}$ decays into a pion and D$^0$, which later decays into a kaon and a pion.}
+      \draw[->,SVcol,line width=1]
+      (PV) arc[start angle=150, end angle=0, radius=0.5] node[below right] {$\pi_s^+$};
+
+      \fill[beamcol]
+      (PV) ellipse (9pt and 4.5pt)
+      node[beamcol!95!black,below left] {PV $\color{red}{\Upsilon} \color{beamcol}{+} \color{SVcol}{D^*}$};
+      \fill[SVcol]
+      (SV) circle (4pt) node[below right] {SV};
+    \end{tikzpicture}
+  }
+  \legend{Drawing of an event of associated production of $\Upsilon$ and D$^*$. $\Upsilon$ decays into two opposite charge muons, while D$^{*+}$ decays into a pion and D$^0$, which later decays into a kaon and a pion.}
 \end{figure}
 
 The D$^*$ reconstruction starts by finding a suitable D$^0$ candidate. For this, two tracks of opposite charge are paired to check whether they form a common vertex using the Kalman Filter method \cite{Fruhwirth:1991pm, Speer:927395}. If the fit is valid and its p-value is greater than 1\%, the D$^0$ candidate is selected. The vertex determination also allows for a better calculation of the kinematic variables of the tracks and it is called secondary vertex (SV).
 
 A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest to the SV in order to calculate the decay length, defined as
 \begin{equation}
-    dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
+  dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
 \end{equation}
 where $\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}$ is the distance between the PV and SV, the decay length significance is very important because it can be used to filter a lot of background, it is defined as
 \begin{equation}
-    dl_{sig} = \frac{dl}{dl_{err}},
+  dl_{sig} = \frac{dl}{dl_{err}},
 \end{equation}
 where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cosine of the angle between the PV and SV position vectors (pointing angle)
 \begin{equation}
-    \cos{\alpha} = \frac{dl}{\Delta\Vec{l}} \; ,
+  \cos{\alpha} = \frac{dl}{\Delta\Vec{l}} \; ,
 \end{equation}
 which hints the alignment between the PV and the SV.
 
 After the D$^0$ candidates is reconstructed, a new track coming from the same PV of the D$^0$ is added to form the D$^*$ candidate and its momentum resolution is improved by adding the PV to the track fit.
 
-The $\Upsilon(nS)$ reconstruction is done in a similar way to the D$^0$. Two muons with opposite charge are selected and its vertex is determined from the fit. If the vertex is valid and has a p-value greater than 1\% we have a dimuon candidate. The invariant mass of the dimuon should be in the range of $8.5 < m_{\mu\mu} < 11.5$ GeV in order to be classified as a $\Upsilon(nS)$ candidate. 
+The $\Upsilon(nS)$ reconstruction is done in a similar way to the D$^0$. Two muons with opposite charge are selected and its vertex is determined from the fit. If the vertex is valid and has a p-value greater than 1\% we have a dimuon candidate. The invariant mass of the dimuon should be in the range of $8.5 < m_{\mu\mu} < 11.5$ GeV in order to be classified as a $\Upsilon(nS)$ candidate.
 
-Finally, in order to pair the $\Upsilon(nS)$ and the $D^*$, a vertex fit of the two muons and the slow pion is performed. If valid, the vertex p-value is determined.
+Finally, in order to pair the $\Upsilon(nS)$ and the D$^*$, a vertex fit of the two muons and the slow pion is performed. If valid, the vertex p-value is determined.
 
 In this stage of the reconstruction, very loose cuts are applied to the candidates, those are specified in the Sec. \ref{subsec:preselcuts}.
 
@@ -128,56 +128,66 @@ In this stage of the reconstruction, very loose cuts are applied to the candidat
 
 \subsection{Preselection Cuts} \label{subsec:preselcuts}
 
-Preselection cuts are used to mitigate some of the combinatorial background and save disk space when recording the NTuple. They are very loose and are further improved when the analysis final cuts are applied (Sec. \ref{sec:selcuts}). The preselection cuts both for the $\Upsilon$ and the D$^*$ candidates are summarized in the Tab. \ref{tab:preselectioncuts}.
+Preselection cuts are used to mitigate some of the combinatorial background and save disk space when recording the data. They are very loose and are further improved when the analysis final cuts are applied (Sec. \ref{sec:selcuts}). The preselection cuts both for the $\Upsilon$ and the D$^*$ candidates are summarized in the Tab. \ref{tab:preselectioncuts}.
 
 \begin{table}[!htbp]{15cm}
   \caption{Preselection cuts.}
   \begin{tabular}{ l | l }
     \hline
-    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
-    \multicolumn{2}{c}{D$^*$ candidate} \\ \hline
-    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 0.3$ GeV \\ \hline
-    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
-    of $K$ and $\pi$ track ($d_{xy}$ and $d_z$) & \\ \hline
-    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 2$ cm} \\ 
-    of $\pi_s$ track ($d_{xy}$ and $d_z$) & \\ \hline
-    Longitudinal distance between D$^0$ vertex and PV & $< 2$ cm \\ \hline
-    Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 0.9$ GeV \\ \hline
-    D$^0$ of D$^{*\pm}$ mass cut ($m_{D^0}$) & $1.5 < m_{D^0} < 2.3$ GeV \\ \hline
-    Mass difference between D$^{*\pm}$ and D$^0$ ($\Delta m$) & $< 0.17$ GeV \\ \hline
-    $D^0$ candidate vertex probability & $> 0.01$ \\ \hline
+    \multicolumn{1}{c|}{Variable}                                               & \multicolumn{1}{|c}{Cut}       \\ \hline
+    \multicolumn{2}{c}{D$^*$ candidate}                                                                          \\ \hline
+    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$)                       & $> 0.3$ GeV                    \\ \hline
+    Transverse and longitudinal impact parameter                                & \multirow[c]{2}{*}{$< 0.5$ cm} \\
+    of $K$ and $\pi$ track ($d_{xy}$ and $d_z$)                                 &                                \\ \hline
+    Transverse and longitudinal impact parameter                                & \multirow[c]{2}{*}{$< 2$ cm}   \\
+    of $\pi_s$ track ($d_{xy}$ and $d_z$)                                       &                                \\ \hline
+    Longitudinal distance between D$^0$ vertex and PV                           & $< 2$ cm                       \\ \hline
+    Transverse momentum of D$^0$ ($p_T^{D^0}$)                                  & $> 0.9$ GeV                    \\ \hline
+    D$^0$ of D$^{*\pm}$ mass cut ($m_{D^0}$)                                    & $1.5 < m_{D^0} < 2.3$ GeV      \\ \hline
+    Mass difference between D$^{*\pm}$ and D$^0$ ($\Delta m$)                   & $< 0.17$ GeV                   \\ \hline
+    $D^0$ candidate vertex probability                                          & $> 0.01$                       \\ \hline
 
-    \multicolumn{2}{c}{$\Upsilon$ candidate} \\ \hline
-    Pseudorapidity separation between the two $\mu$ ($\Delta\eta_{\mu^+\mu^-}$) & $< 3.0$ \\ \hline
-    Transverse and longitudinal impact parameter & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
-    of the two $\mu$ tracks & \\ \hline
-    Longitudinal distance between the dimuon & \multirow[c]{2}{*}{$< 0.5$ cm} \\ 
-    candidate vertex and the PV & \\ \hline
-    Dimuon candidate vertex probability & $> 0.01$ \\ \hline
-    Dimuon mass range & $8.5 < m_{\mu\mu} < 11.5$ GeV \\ \hline
+    \multicolumn{2}{c}{$\Upsilon$ candidate}                                                                     \\ \hline
+    Pseudorapidity separation between the two $\mu$ ($\Delta\eta_{\mu^+\mu^-}$) & $< 3.0$                        \\ \hline
+    Transverse and longitudinal impact parameter                                & \multirow[c]{2}{*}{$< 0.5$ cm} \\
+    of the two $\mu$ tracks                                                     &                                \\ \hline
+    Longitudinal distance between the dimuon                                    & \multirow[c]{2}{*}{$< 0.5$ cm} \\
+    candidate vertex and the PV                                                 &                                \\ \hline
+    Dimuon candidate vertex probability                                         & $> 0.01$                       \\ \hline
+    Dimuon mass range                                                           & $8.5 < m_{\mu\mu} < 11.5$ GeV  \\ \hline
   \end{tabular}
   \legend{Preselection cuts used to save disk space when saving the NTuples.}
   \label{tab:preselectioncuts}
 \end{table}
 
-\textcolor{red}{colocar imagens da pre seleção?}
+Figure \ref{fig:invmass_preselection} shows the dimuon invariant mass and the D$^{*}$ $\Delta$m after the preselection cuts. Mainly on D$^*$, the background is still huge, the selection cuts are very important to clean the data improving the signal-to-background ratio.
+
+\begin{figure}[!htm]{15cm}
+  \caption{Dimuon Invariant mass and D$^*$ $\Delta$m distribution after the preselection cuts}
+  \label{fig:invmass_preselection}
+  \subfloat[][]{\label{subfig:dimu_mass}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/raw_data_hists/2018/Dimu/mass_2018.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_deltam}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/raw_data_hists/2018/Dstar/deltamr_2018.png}}}\\
+  \legend{Dimuon Invariant mass (a) and D$^*$ $\Delta$m (b) after the preselection cuts in 2018 data. There is still a lot of background in (b), this is improved with the selection cuts.}
+\end{figure}
 
 \subsection{Trigger}\label{sec:trigger}
 
 The trigger strategy chosen was to use the HLT Paths that filters dimuons, it was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and lower $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers} all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum different for each trigger path.
 
-In the year 2017, the chosen trigger was not available in the whole data-taking resulting in a lower recorded luminosity (the total was 41.48 fb$^{-1}$ in full 2017 data). This should not pose a problem, since the statistics are large (123.1 fb$^{-1}$ for the three years) and the other triggers did only cover the central area of the detector, which can turn the discrimination between SPS and DPS more complicated. 
+In the year 2017, the chosen trigger was not available in the whole data-taking resulting in a lower recorded luminosity (the total was 41.48 fb$^{-1}$ in full 2017 data). This should not pose a problem, since the statistics are large (123.1 fb$^{-1}$ for the three years) and the other triggers did only cover the central area of the detector, which can turn the discrimination between SPS and DPS more complicated.
 
 \begin{table}[!htbp]{15cm}
   \caption{Triggers used in this study in each year of data taking}
   \begin{tabular}{ c | c | c | c | c }
-    Year & Trigger Path & $p_T$ Cut (GeV) & Recorded L ($fb^{-1}$) & L Uncertainty \\  \hline
-    \multirow[c]{2}{*}{2016} & HLT\_Dimuon13 & \multirow[c]{2}{*}{$>12.9$} & \multirow[c]{2}{*}{36.18} & \multirow[c]{2}{*}{2.5 \%} \\
-    & \_Upsilon & & \\ \hline
-    \multirow[c]{2}{*}{2017} & HLT\_Dimuon24 & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{27.12} & \multirow[c]{2}{*}{2.3 \%} \\ 
-    & \_Upsilon\_noCorrL1 & & & \\ \hline
-    \multirow[c]{2}{*}{2018} & HLT\_Dimuon24 & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{59.82} & \multirow[c]{2}{*}{2.5 \%} \\
-    & \_Upsilon\_noCorrL1 & & & \\ \hline
+    Year                     & Trigger Path        & $p_T$ Cut (GeV)             & Recorded L ($fb^{-1}$)    & L Uncertainty              \\  \hline
+    \multirow[c]{2}{*}{2016} & HLT\_Dimuon13       & \multirow[c]{2}{*}{$>12.9$} & \multirow[c]{2}{*}{36.18} & \multirow[c]{2}{*}{2.5 \%} \\
+                             & \_Upsilon           &                             &                                                        \\ \hline
+    \multirow[c]{2}{*}{2017} & HLT\_Dimuon24       & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{27.12} & \multirow[c]{2}{*}{2.3 \%} \\
+                             & \_Upsilon\_noCorrL1 &                             &                           &                            \\ \hline
+    \multirow[c]{2}{*}{2018} & HLT\_Dimuon24       & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{59.82} & \multirow[c]{2}{*}{2.5 \%} \\
+                             & \_Upsilon\_noCorrL1 &                             &                           &                            \\ \hline
   \end{tabular}
   \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002}}
   \label{tab:triggers}
@@ -191,16 +201,16 @@ The analysis cuts are tighter cuts applied to the data in order to define the fi
   \caption{Kinematic cuts that define the fiducial volume.}
   \begin{tabular}{ l | l }
     \hline
-    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
-    $\mu$ transverse momentum ($p_T^\mu$) & $> 3$ GeV \\ \hline
-    $\mu$ pseudorapidity ($\eta_\mu$) & $|\eta_\mu| < 2.4$ \\ \hline
-    $\Upsilon$ transverse momentum ($p_T^\Upsilon$) & $15 < p_T^\Upsilon < 150$ GeV \\ \hline
-    $\Upsilon$ rapidity ($y_\Upsilon$) & $|y_\Upsilon| < 2.5$ \\ \hline
-    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 1$ GeV \\ \hline
-    Transverse momentum of $\pi_s$ ($p_T^{\pi_s}$) & $> 0.3$ GeV \\ \hline
-    Transverse momentum of D$^0$ ($p_T^{D^0}$) & $> 3$ GeV\\ \hline
-    D$^*$ transverse momentum ($p_T^{D^*}$) & $4 < p_T^{D^*} < 80$ GeV \\ \hline
-    D$^*$ rapidity ($y_{D^*}$) & $|y_{D^*}| < 2.5$ \\ \hline
+    \multicolumn{1}{c|}{Variable}                         & \multicolumn{1}{|c}{Cut}      \\ \hline
+    $\mu$ transverse momentum ($p_T^\mu$)                 & $> 3$ GeV                     \\ \hline
+    $\mu$ pseudorapidity ($\eta_\mu$)                     & $|\eta_\mu| < 2.4$            \\ \hline
+    $\Upsilon$ transverse momentum ($p_T^\Upsilon$)       & $15 < p_T^\Upsilon < 150$ GeV \\ \hline
+    $\Upsilon$ rapidity ($y_\Upsilon$)                    & $|y_\Upsilon| < 2.5$          \\ \hline
+    Transverse momentum of $K$ and $\pi$ ($p_T^{K, \pi}$) & $> 1$ GeV                     \\ \hline
+    Transverse momentum of $\pi_s$ ($p_T^{\pi_s}$)        & $> 0.3$ GeV                   \\ \hline
+    Transverse momentum of D$^0$ ($p_T^{D^0}$)            & $> 3$ GeV                     \\ \hline
+    D$^*$ transverse momentum ($p_T^{D^*}$)               & $4 < p_T^{D^*} < 80$ GeV      \\ \hline
+    D$^*$ rapidity ($y_{D^*}$)                            & $|y_{D^*}| < 2.5$             \\ \hline
   \end{tabular}
   \legend{Cuts on the kinematic variables of the system that define the fiducial volume of the analysis.}
   \label{tab:fiducialvol}
@@ -210,37 +220,36 @@ The analysis cuts are tighter cuts applied to the data in order to define the fi
   \caption{Selection cuts.}
   \begin{tabular}{ l | l }
     \hline
-    \multicolumn{1}{c|}{Variable} & \multicolumn{1}{|c}{Cut} \\ \hline
-    \multicolumn{2}{c}{D$^*$ candidate} \\ \hline
-    Track $\chi^2$ of $K$ and $\pi$ & $< 2.5$ \\ \hline
-    Number of valid tracker detector hits for $K$ and $\pi$ & $> 4$ \\ \hline
-    Number of valid pixel detector hits for $K$ and $\pi$ & $> 1$ \\ \hline
-    transverse impact parameter of $K$ and $\pi$ from PV & 0.5 cm \\ \hline
-    longitudinal impact parameter of $K$ and $\pi$ & \multirow[c]{2}{*}{0.5/$\sin{\theta}$ cm} \\
-    from PV & \\ \hline
-    Track $\chi^2$ of $\pi_s$ & $< 3$ \\ \hline
-    Number of valid tracker detector hits for $\pi_s$ & $> 2$\\ \hline
-    D$^0$ mass ($m_{D^0}$) & $|m_{D^0} - 1.864| < 0.028$ GeV \\ \hline
-    D$^0$ cosine of the pointing angle ($\cos{\alpha_{D^0}}$) & $> 0.99$ \\ \hline
-    D$^0$ decay length significance ($dl_{sig}$) & $> 2.7$ \\ \hline
-    
-    \multicolumn{2}{c}{$\Upsilon$ candidate} \\ \hline
-    $\mu$ soft id flag & soft id = True \\ \hline
+    \multicolumn{1}{c|}{Variable}                             & \multicolumn{1}{|c}{Cut}                  \\ \hline
+    \multicolumn{2}{c}{D$^*$ candidate}                                                                   \\ \hline
+    Track $\chi^2$ of $K$ and $\pi$                           & $< 2.5$                                   \\ \hline
+    Number of valid tracker detector hits for $K$ and $\pi$   & $> 4$                                     \\ \hline
+    Number of valid pixel detector hits for $K$ and $\pi$     & $> 1$                                     \\ \hline
+    transverse impact parameter of $K$ and $\pi$ from PV      & 0.5 cm                                    \\ \hline
+    longitudinal impact parameter of $K$ and $\pi$            & \multirow[c]{2}{*}{0.5/$\sin{\theta}$ cm} \\
+    from PV                                                   &                                           \\ \hline
+    Track $\chi^2$ of $\pi_s$                                 & $< 3$                                     \\ \hline
+    Number of valid tracker detector hits for $\pi_s$         & $> 2$                                     \\ \hline
+    D$^0$ mass ($m_{D^0}$)                                    & $|m_{D^0} - 1.864| < 0.028$ GeV           \\ \hline
+    D$^0$ cosine of the pointing angle ($\cos{\alpha_{D^0}}$) & $> 0.99$                                  \\ \hline
+    D$^0$ decay length significance ($dl_{sig}$)              & $> 2.7$                                   \\ \hline
 
-    \multicolumn{2}{c}{$\Upsilon$ + D$^*$ candidate} \\ \hline
-    $\mu\mu\pi_s$ vertex probability & $> 0.01$ \\ \hline
+    \multicolumn{2}{c}{$\Upsilon$ candidate}                                                              \\ \hline
+    $\mu$ soft id flag                                        & soft id = True                            \\ \hline
 
+    \multicolumn{2}{c}{$\Upsilon$ + D$^*$ candidate}                                                      \\ \hline
+    $\mu\mu\pi_s$ vertex probability                          & $> 0.01$                                  \\ \hline
   \end{tabular}
   \legend{Selection cuts used to improve the signal to background ratio.}
   \label{tab:selectioncuts}
 \end{table}
 
-The cuts on Tab. \ref{tab:fiducialvol} were based on studies using MC simulations on the expected acceptance of the detector to each one of the objects. The cuts on the slow pion are more loose to the other tracks, in special, the transverse momentum cut is very important, as it directly correlated to the lower limit of the D$^*$ transverse momentum, since the slow pion phase space is restricted by the low mass difference between D$^0$ and D$^*$. Also, the cut on the D$^0$ observables listed in Tab. \ref{tab:selectioncuts} are very important to improve the D$^*$ signal to background ratio at the expense to reduce greatly the statistics of the sample, so they were very well tunned for this work. 
+The cuts on Tab. \ref{tab:fiducialvol} were based on studies using MC simulations on the expected acceptance of the detector to each one of the objects. The cuts on the slow pion are more loose to the other tracks, in special, the transverse momentum cut is very important, as it directly correlated to the lower limit of the D$^*$ transverse momentum, since the slow pion phase space is restricted by the low mass difference between D$^0$ and D$^*$. Also, the cut on the D$^0$ observables listed in Tab. \ref{tab:selectioncuts} are very important to improve the D$^*$ signal to background ratio at the expense to reduce greatly the statistics of the sample, so they were very well tunned for this work.
 
-On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selections on the muon: 
+On Tab. \ref{tab:selectioncuts} the soft id flag refers to the following selections on the muon:
 \begin{itemize}
   \item Muon track in tracker detector matched with at least one segment in the muon detector (in any station) in both X and Y coordinates (< 3$\sigma$).
-  \item Number of tracker layers with hits > 5, to guarantee good $p_T$ measurement. 
+  \item Number of tracker layers with hits > 5, to guarantee good $p_T$ measurement.
   \item Number of pixel layers > 0.
   \item Muon track has high-purity flag, rejecting bad quality tracks
   \item Transverse and longitudinal impact parameter cuts, dxy < 0.3 cm and dz < 20 cm w.r.t. the primary vertex.
@@ -256,21 +265,21 @@ The signal extraction is performed by doing a 2D fit to the dimuon invariant mas
 
 The fit model has three signal components, one for each of the observed $\Upsilon(nS)$ states. All of them are modeled using the Crystal Ball distribution, defined as
 \begin{equation}
-  CB(x;\alpha,n,\bar x,\sigma) = N \cdot 
-  \begin{cases} 
-    \exp(- \frac{(x - \bar x)^2}{2 \sigma^2}), & \mbox{for }\frac{x - \bar x}{\sigma} > -\alpha \\
-    A \cdot (B - \frac{x - \bar x}{\sigma})^{-n}, & \mbox{for }\frac{x - \bar x}{\sigma} \leqslant -\alpha 
+  CB(x;\alpha,n,\bar x,\sigma) = N \cdot
+  \begin{cases}
+    \exp(- \frac{(x - \bar x)^2}{2 \sigma^2}),    & \mbox{for }\frac{x - \bar x}{\sigma} > -\alpha         \\
+    A \cdot (B - \frac{x - \bar x}{\sigma})^{-n}, & \mbox{for }\frac{x - \bar x}{\sigma} \leqslant -\alpha
   \end{cases}
 \end{equation}
 where
 \begin{equation}
-\begin{split}
-  A = & \left(\frac{n}{\left| \alpha \right|}\right)^n \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
-  B = & \frac{n}{\left| \alpha \right|}  - \left| \alpha \right|, \\
-  N = & \frac{1}{\sigma (C + D)}, \\
-  C = & \frac{n}{\left| \alpha \right|} \cdot \frac{1}{n-1} \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
-  D = & \sqrt{\frac{\pi}{2}} \left(1 + \operatorname{erf}\left(\frac{\left| \alpha \right|}{\sqrt 2}\right)\right). \\
-\end{split}
+  \begin{split}
+    A = & \left(\frac{n}{\left| \alpha \right|}\right)^n \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
+    B = & \frac{n}{\left| \alpha \right|}  - \left| \alpha \right|, \\
+    N = & \frac{1}{\sigma (C + D)}, \\
+    C = & \frac{n}{\left| \alpha \right|} \cdot \frac{1}{n-1} \cdot \exp\left(- \frac {\left| \alpha \right|^2}{2}\right), \\
+    D = & \sqrt{\frac{\pi}{2}} \left(1 + \operatorname{erf}\left(\frac{\left| \alpha \right|}{\sqrt 2}\right)\right). \\
+  \end{split}
 \end{equation}
 With N as the normalization factor, $\alpha$, $n$, $\bar x$ and $\sigma$ are the fit parameters and erf is the error function. This function behaves like a Gaussian for $(x-\bar x)/\sigma$ greater than $-\alpha$ and presents a tail for values less than equals $-\alpha$, being able to model the effects of FSR to the dimuon invariant mass distribution.
 
@@ -288,11 +297,11 @@ Finally, the fit model for $\Upsilon(nS)$ signal is
 
 For the background, Chebychev polynomials of the first kind are used up to second order. They are defined as:
 \begin{equation} \label{eq:upsilon_bkg}
-\begin{split}
-  T_0(x) = & 1 \\
-  T_1(x) = & x \\
-  T_{n+1}(x) = & 2xT_n(x) - T_{n-1}(x).
-\end{split}
+  \begin{split}
+    T_0(x) = & 1 \\
+    T_1(x) = & x \\
+    T_{n+1}(x) = & 2xT_n(x) - T_{n-1}(x).
+  \end{split}
 \end{equation}
 The background component is written as
 \begin{equation}
@@ -336,12 +345,12 @@ The 1D fit to the 2018 data sample is given in Fig. \ref{fig:fit1D_dstar}.
 
 Finally, the construction of the 2D model takes into account the 4 distributions from Eqs. \ref{eq:upsilon_sig}, \ref{eq:upsilon_bkg}, \ref{eq:dstar_sig} and \ref{eq:dstar_bkg}, creating the final four component distribution:
 \begin{equation}
-\begin{split}
-  M_{\Upsilon D^*}(m_{\mu\mu}, \Delta m) & = f_s \cdot S_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\
-  & + f_{b1} \cdot S_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m) \\
-  & + f_{b1} \cdot B_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\ 
-  & + (1-f_{b1}-f_{b2}) \cdot B_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m)
-\end{split}
+  \begin{split}
+    M_{\Upsilon D^*}(m_{\mu\mu}, \Delta m) & = f_s \cdot S_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\
+    & + f_{b1} \cdot S_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m) \\
+    & + f_{b1} \cdot B_\Upsilon(m_{\mu\mu}) \cdot S_{D^*}(\Delta m) \\
+    & + (1-f_{b1}-f_{b2}) \cdot B_\Upsilon(m_{\mu\mu}) \cdot B_{D^*}(\Delta m)
+  \end{split}
 \end{equation}
 
 The firs component, composed by both signal models, is used to estimate the associated $\Upsilon$ and D$^*$ yield.
@@ -350,7 +359,7 @@ The projections to the dimuon invariant mass and D$^*$ $\Delta$m, extracted from
 
 \begin{landscape}
   \begin{figure}[!htm]{23.7cm}
-    \caption{Projections of the two dimensional fit to the selected associated $\Upsilon +$ D$^{*\pm}$ for all data samples.} 
+    \caption{Projections of the two dimensional fit to the selected associated $\Upsilon +$ D$^{*\pm}$ for all data samples.}
     \label{fig:fit2D_upsilondstar}
     \subfloat[][2016APV $\Upsilon$ projection.]{\label{subfig:fit2D_upsilon_proj_2016APV}%
       \fbox{\includegraphics[width=0.23\textwidth]{figures/fit/fit2D_upsilon_proj_2016APV.png}}}\hfill
@@ -377,16 +386,16 @@ The summary of the fits parameters for each of the samples are found in Tabs. \r
 \begin{table}[!htbp]{15cm}
   \caption{Summary of fit parameters for the sample 2016APV}\label{tab:fit_summary_2016APV}
   \begin{tabular}{ c | c }
-    Parameter & Value \\ 
+    Parameter                    & Value                 \\
     \hline
-    N$_{evt}$                    & 6785 \\ \hline
-    N$_{sig} \Upsilon(1S)$       & $427 \pm 51$ \\ \hline
-    N$_{sig} \Upsilon(2S)$       & $165 \pm 23$ \\ \hline
-    N$_{sig} \Upsilon(3S)$       & $111 \pm 17$ \\ \hline
-    m$_{scale}$                  & $0.9981 \pm 0.0004$ \\ \hline
+    N$_{evt}$                    & 6785                  \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $427 \pm 51$          \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $165 \pm 23$          \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $111 \pm 17$          \\ \hline
+    m$_{scale}$                  & $0.9981 \pm 0.0004$   \\ \hline
     $\Delta$m mean               & $145.35 \pm 0.04$ MeV \\ \hline
-    $\chi^2 \Upsilon$ projection & 1.55 \\ \hline
-    $\chi^2 D^{*\pm}$ projection & 1.64 \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.55                  \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.64                  \\ \hline
   \end{tabular}
   \legend{A summary with the more important fit parameters for sample 2016APV.}
 \end{table}
@@ -394,16 +403,16 @@ The summary of the fits parameters for each of the samples are found in Tabs. \r
 \begin{table}[!htbp]{15cm}
   \caption{Summary of fit parameters for the sample 2016}\label{tab:fit_summary_2016}
   \begin{tabular}{ c | c }
-    Parameter & Value \\ 
+    Parameter                    & Value                 \\
     \hline
-    N$_{evt}$                    & 6421 \\ \hline
-    N$_{sig} \Upsilon(1S)$       & $479 \pm 35$ \\ \hline
-    N$_{sig} \Upsilon(2S)$       & $174 \pm 17$ \\ \hline
-    N$_{sig} \Upsilon(3S)$       & $141 \pm 15$ \\ \hline
-    m$_{scale}$                  & $0.9981 \pm 0.0004$ \\ \hline
+    N$_{evt}$                    & 6421                  \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $479 \pm 35$          \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $174 \pm 17$          \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $141 \pm 15$          \\ \hline
+    m$_{scale}$                  & $0.9981 \pm 0.0004$   \\ \hline
     $\Delta$m mean               & $145.42 \pm 0.01$ MeV \\ \hline
-    $\chi^2 \Upsilon$ projection & 1.19 \\ \hline
-    $\chi^2 D^{*\pm}$ projection & 1.56 \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.19                  \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.56                  \\ \hline
   \end{tabular}
   \legend{A summary with the more important fit parameters for sample 2016.}
 \end{table}
@@ -411,16 +420,16 @@ The summary of the fits parameters for each of the samples are found in Tabs. \r
 \begin{table}[!htbp]{15cm}
   \caption{Summary of fit parameters for the sample 2017}\label{tab:fit_summary_2017}
   \begin{tabular}{ c | c }
-    Parameter & Value \\ 
+    Parameter                    & Value                 \\
     \hline
-    N$_{evt}$                    & 8454 \\ \hline
-    N$_{sig} \Upsilon(1S)$       & $613 \pm 53$ \\ \hline
-    N$_{sig} \Upsilon(2S)$       & $230 \pm 22$ \\ \hline
-    N$_{sig} \Upsilon(3S)$       & $184 \pm 18$ \\ \hline
-    m$_{scale}$                  & $0.9982 \pm 0.0003$ \\ \hline
+    N$_{evt}$                    & 8454                  \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $613 \pm 53$          \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $230 \pm 22$          \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $184 \pm 18$          \\ \hline
+    m$_{scale}$                  & $0.9982 \pm 0.0003$   \\ \hline
     $\Delta$m mean               & $145.37 \pm 0.04$ MeV \\ \hline
-    $\chi^2 \Upsilon$ projection & 1.07 \\ \hline
-    $\chi^2 D^{*\pm}$ projection & 1.15 \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.07                  \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.15                  \\ \hline
   \end{tabular}
   \legend{A summary with the more important fit parameters for sample 2017.}
 \end{table}
@@ -428,26 +437,26 @@ The summary of the fits parameters for each of the samples are found in Tabs. \r
 \begin{table}[!htbp]{15cm}
   \caption{Summary of fit parameters for the sample 2018}\label{tab:fit_summary_2018}
   \begin{tabular}{ c | c }
-    Parameter & Value \\ 
-    \hline 
-    N$_{evt}$                    & 16765 \\ \hline
-    N$_{sig} \Upsilon(1S)$       & $1200 \pm 70$ \\ \hline
-    N$_{sig} \Upsilon(2S)$       & $478 \pm 31$ \\ \hline
-    N$_{sig} \Upsilon(3S)$       & $310 \pm 22$ \\ \hline
-    m$_{scale}$                  & $0.9987 \pm 0.0002$ \\ \hline
+    Parameter                    & Value                 \\
+    \hline
+    N$_{evt}$                    & 16765                 \\ \hline
+    N$_{sig} \Upsilon(1S)$       & $1200 \pm 70$         \\ \hline
+    N$_{sig} \Upsilon(2S)$       & $478 \pm 31$          \\ \hline
+    N$_{sig} \Upsilon(3S)$       & $310 \pm 22$          \\ \hline
+    m$_{scale}$                  & $0.9987 \pm 0.0002$   \\ \hline
     $\Delta$m mean               & $145.39 \pm 0.02$ MeV \\ \hline
-    $\chi^2 \Upsilon$ projection & 1.28 \\ \hline
-    $\chi^2 D^{*\pm}$ projection & 1.12 \\ \hline
+    $\chi^2 \Upsilon$ projection & 1.28                  \\ \hline
+    $\chi^2 D^{*\pm}$ projection & 1.12                  \\ \hline
   \end{tabular}
   \legend{A summary with the more important fit parameters for sample 2018.}
 \end{table}
 
-\section{Acceptance and Efficiency}
+\section{Acceptance and Efficiency} \label{sec:efficiency}
 
 The acceptance and efficiency of the process is determined from the signal MC. The strategy for computing the acceptance and efficiency is to factorize it into the components,
 \begin{equation}
-  (Acc\cdot\epsilon) = (Acc\cdot\epsilon_{precuts})^\Upsilon \cdot 
-  (Acc\cdot\epsilon_{precuts})^{D^*} \cdot \epsilon_{cuts}^\Upsilon \cdot 
+  (Acc\cdot\epsilon) = (Acc\cdot\epsilon_{precuts})^\Upsilon \cdot
+  (Acc\cdot\epsilon_{precuts})^{D^*} \cdot \epsilon_{cuts}^\Upsilon \cdot
   \epsilon_{cuts}^{D^*} \cdot \epsilon_{HLT} \cdot \epsilon_{association},
 \end{equation}
 where the $Acc\cdot\epsilon_{precuts}$ is the acceptance coupled to the precuts efficiency, $\epsilon_{cuts}$ is the selection cuts efficiency, $\epsilon_{HLT}$ is the trigger efficiency and the $\epsilon_{association}$ is the efficiency related to the $\Upsilon+D^*$ association criteria. Sec. \ref{sec:evtsel} gives details of the precuts and cuts applied.
@@ -458,38 +467,38 @@ Each of the components are calculated to create two dimensional maps used to ext
 
 The acceptance is calculated taking into account the precuts (Tab. \ref{tab:preselectioncuts}) and the cuts that define the fiducial volume of the sample on Tab. \ref{tab:fiducialvol}. The acceptance coupled to the precuts is calculated by
 \begin{equation}
-    (Acc \cdot \epsilon_{precuts})^P = \frac{N_{reco}^P}{N_{gen}^P},
+  (Acc \cdot \epsilon_{precuts})^P = \frac{N_{reco}^P}{N_{gen}^P},
 \end{equation}
 where the superscript P refers either to $\Upsilon$ or D$^*$, $N_{gen}$ is the number of generated particles within the fiducial volume, and $N_{reco}$ is the number of reconstructed particles within the same fiducial volume, passing the precuts and satisfying the respective matching criteria for that kind of particle:
 \begin{itemize}
   \item For $\Upsilon$: the two muons used for its reconstruction must be matched to the muons from the decay of the generated Y within a cone of $\Delta R = \sqrt{\Delta \eta^2 + \Delta \phi^2} < 0.03$.
-  \item For $D^*$: The reconstructed $D^*$ matches the generated $D^*$ with the requirements:
-  $$\frac{|p_T^{reco} - p_T^{gen}|}{p_T^{gen}} < 0.2, |\eta_{gen} - \eta_{reco}|
-  < 0.3, remainder(|\phi_{gen} - \phi_{reco}|, 2\pi) < 0.3.$$
+  \item For D$^*$: The reconstructed D$^*$ matches the generated D$^*$ with the requirements:
+        $$\frac{|p_T^{reco} - p_T^{gen}|}{p_T^{gen}} < 0.2, |\eta_{gen} - \eta_{reco}|
+          < 0.3, remainder(|\phi_{gen} - \phi_{reco}|, 2\pi) < 0.3.$$
 \end{itemize}
 
 The plots of the acceptance extracted from the 2018 MC sample are given in Figs. \ref{fig:acc_dimu} and \ref{fig:acc_dstar} for $\Upsilon$ and D$^*$, respectively.
 
 \begin{figure}[!htm]{15cm}
-  \caption{$\Upsilon$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{$\Upsilon$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:acc_dimu}
   \subfloat[][]{\label{subfig:acc_dimu_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:acc_dimu_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_rap_2018.png}}}\hfill\\
-    \subfloat[][]{\label{subfig:acc_dimu_2D}%
+  \subfloat[][]{\label{subfig:acc_dimu_2D}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dimu_2018.png}}}\\
   \legend{$\Upsilon$ acceptance extracted from the 2018 MC data sample. The acceptance is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the acceptance, one.}
 \end{figure}
 
 \begin{figure}[!htm]{15cm}
-  \caption{D$^*$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{D$^*$ acceptance of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:acc_dstar}
   \subfloat[][]{\label{subfig:acc_dstar_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:acc_dstar_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_rap_2018.png}}}\hfill\\
-    \subfloat[][]{\label{subfig:acc_dstar_2D}%
+  \subfloat[][]{\label{subfig:acc_dstar_2D}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/acc_dstar_2018.png}}}\\
   \legend{D$^*$ acceptance extracted from the 2018 MC data sample. The acceptance is given with respect to the reconstructed D$^*$ $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the acceptance, one.}
 \end{figure}
@@ -504,25 +513,25 @@ The cuts considered for this efficiency component are the ones stated in the Tab
 The plots of the selection cuts efficiency extracted from the 2018 MC sample are given in Figs. \ref{fig:eff_cuts_dimu} and \ref{fig:eff_cuts_dstar} for $\Upsilon$ and D$^*$, respectively.
 
 \begin{figure}[!htm]{15cm}
-  \caption{$\Upsilon$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{$\Upsilon$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:eff_cuts_dimu}
   \subfloat[][]{\label{subfig:eff_cuts_dimu_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:eff_cuts_dimu_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_rap_2018.png}}}\hfill\\
-    \subfloat[][]{\label{subfig:eff_cuts_dimu_2D}%
+  \subfloat[][]{\label{subfig:eff_cuts_dimu_2D}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dimu_2018.png}}}\\
   \legend{$\Upsilon$ selection cuts efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
 \end{figure}
 
 \begin{figure}[!htm]{15cm}
-  \caption{D$^*$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{D$^*$ selection cuts efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:eff_cuts_dstar}
   \subfloat[][]{\label{subfig:eff_cuts_dstar_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:eff_cuts_dstar_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_rap_2018.png}}}\hfill\\
-    \subfloat[][]{\label{subfig:eff_cuts_dstar_2D}%
+  \subfloat[][]{\label{subfig:eff_cuts_dstar_2D}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_cuts_dstar_2018.png}}}\\
   \legend{D$^*$ selection cuts efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the D$^*$ $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
 \end{figure}
@@ -537,22 +546,22 @@ The triggers used depend only on the dimuons, therefore, their efficiency is onl
 The plots of the trigger efficiency extracted from the 2018 MC sample are given in Fig. \ref{fig:eff_trigger}.
 
 \begin{figure}[!htm]{15cm}
-  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:eff_trigger}
   \subfloat[][]{\label{subfig:eff_trigger_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:eff_trigger_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_rap_2018.png}}}\hfill\\
-    \subfloat[][]{\label{subfig:eff_trigger_2D}%
+  \subfloat[][]{\label{subfig:eff_trigger_2D}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_trigger_2018.png}}}\\
   \legend{Trigger efficiency extracted from the 2018 MC data sample. This efficiency is given with respect to the dimuon $p_T$ in (a), $y$ in (b), and in both $p_T$ and $y$ in (c). In (a) and (b). The horizontal dashed line is set to the upper limit of the efficiency.}
 \end{figure}
 
 \subsection{Association efficiency}
 
-The last efficiency is related to the association between $\Upsilon$ and $D^*$. It is given by
+The last efficiency is related to the association between $\Upsilon$ and D$^*$. It is given by
 \begin{equation}
-  \epsilon_{association} = 
+  \epsilon_{association} =
   \frac{N_{reco\&cuts\&trigger\&association}^{\Upsilon D^*}}{N_{reco\&cuts\&trigger}^{\Upsilon D^*}},
 \end{equation}
 where the denominator is the number events that passed all the previous selections and the numerator is the number of events after the addition of the association cut, which is the $\mu\mu\pi_s$ vertex probability $> 0.01$.
@@ -560,28 +569,28 @@ where the denominator is the number events that passed all the previous selectio
 The plots of the trigger efficiency extracted from the 2018 MC sample are given in Fig. \ref{fig:eff_asso}.
 
 \begin{figure}[!htm]{15cm}
-  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.} 
+  \caption{Trigger efficiency of the selected associated $\Upsilon +$ D$^*$ extracted from 2018 MC sample.}
   \label{fig:eff_asso}
   \subfloat[][]{\label{subfig:eff_asso_pt}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_asso_pt_2018.png}}}\hfill
   \subfloat[][]{\label{subfig:eff_asso_rap}%
     \fbox{\includegraphics[width=0.47\textwidth]{figures/efficiency/eff_asso_rap_2018.png}}}\hfill\\
-  \legend{Associuation efficiency extracted from the 2018 MC data sample. The efficiency maps are given with respect to the dimuon and D$^*$ $p_T$ in (a) and $y$ in (b).}
+  \legend{Association efficiency extracted from the 2018 MC data sample. The efficiency maps are given with respect to the dimuon and D$^*$ $p_T$ in (a) and $y$ in (b).}
 \end{figure}
 
 \subsection{Total efficiency}\label{sec:total_eff}
 
-The shown efficiency maps are used to calculate efficiency that will be used in the cross section determination. The final efficiency for each subsample is shown in Tab. \ref{tab:totaleff}.
+All the efficiency maps can be found in the Appendix \ref{app:efficiencies}. They are used to calculate the total efficiency that will be used in the cross section determination. The final efficiency for each subsample is shown in Tab. \ref{tab:totaleff}.
 
 \begin{table}[!htbp]{15cm}
   \caption{Total efficiency per data sample.}
   \begin{tabular}{ l | c }
     \hline
     \multicolumn{1}{c|}{Sample} & \multicolumn{1}{c}{Total Efficiency (\%)} \\ \hline
-    2016APV & $7.5^{+1.0}_{-1.6}$ \\ \hline
-    2016    & $9.3^{+1.1}_{-2.6}$ \\ \hline
-    2017    & $6.9^{+1.2}_{-1.7}$ \\ \hline
-    2018    & $4.4^{+1.5}_{-1.7}$ \\ \hline
+    2016APV                     & $7.5^{+1.0}_{-1.6}$                       \\ \hline
+    2016                        & $9.3^{+1.1}_{-2.6}$                       \\ \hline
+    2017                        & $6.9^{+1.2}_{-1.7}$                       \\ \hline
+    2018                        & $4.4^{+1.5}_{-1.7}$                       \\ \hline
   \end{tabular}
   \legend{Total efficiency per data sample. The uncertainties shown are only statistical.}
   \label{tab:totaleff}
@@ -605,22 +614,22 @@ Table \ref{tab:DPS_xsec} presents the fiducial cross section for each data sampl
   \caption{$\Upsilon(nS)$ + D$^{*}$ fiducial cross section per data sample.}
   \begin{tabular}{ l | l | c }
     \hline
-    Associated measurement & Sample & Cross section (pb) \\ \hline
-    \multirow[c]{4}{*}{$\Upsilon(1S)$ + D$^{*\pm}$} 
-    & 2016APV & $444^{+77}_{-107}$ \bigstrut\\\cline{2-3} 
-    & 2016    & $462^{+66}_{-134}$ \bigstrut\\\cline{2-3} 
-    & 2017    & $495^{+96}_{-128}$ \bigstrut\\\cline{2-3} 
-    & 2018    & $680^{+237}_{-266}$ \\ \hline
-    \multirow[c]{4}{*}{$\Upsilon(2S)$ + D$^{*\pm}$} 
-    & 2016APV & $221^{+41}_{-55}$ \bigstrut\\\cline{2-3} 
-    & 2016    & $216^{+34}_{-64}$ \bigstrut\\\cline{2-3} 
-    & 2017    & $239^{+47}_{-62}$ \bigstrut\\\cline{2-3} 
-    & 2018    & $349^{+122}_{-137}$ \\ \hline
-    \multirow[c]{4}{*}{$\Upsilon(3S)$ + D$^{*\pm}$} 
-    & 2016APV & $131^{+26}_{-34}$ \bigstrut\\\cline{2-3} 
-    & 2016    & $155^{+25}_{-47}$ \bigstrut\\\cline{2-3} 
-    & 2017    & $169^{+34}_{-44}$ \bigstrut\\\cline{2-3} 
-    & 2018    & $200^{+70}_{-79}$ \\ \hline
+    Associated measurement & Sample  & Cross section (pb)           \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(1S)$ + D$^{*\pm}$}
+                           & 2016APV & $444^{+77}_{-107}$ \bigstrut \\\cline{2-3}
+                           & 2016    & $462^{+66}_{-134}$ \bigstrut \\\cline{2-3}
+                           & 2017    & $495^{+96}_{-128}$ \bigstrut \\\cline{2-3}
+                           & 2018    & $680^{+237}_{-266}$          \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(2S)$ + D$^{*\pm}$}
+                           & 2016APV & $221^{+41}_{-55}$ \bigstrut  \\\cline{2-3}
+                           & 2016    & $216^{+34}_{-64}$ \bigstrut  \\\cline{2-3}
+                           & 2017    & $239^{+47}_{-62}$ \bigstrut  \\\cline{2-3}
+                           & 2018    & $349^{+122}_{-137}$          \\ \hline
+    \multirow[c]{4}{*}{$\Upsilon(3S)$ + D$^{*\pm}$}
+                           & 2016APV & $131^{+26}_{-34}$ \bigstrut  \\\cline{2-3}
+                           & 2016    & $155^{+25}_{-47}$ \bigstrut  \\\cline{2-3}
+                           & 2017    & $169^{+34}_{-44}$ \bigstrut  \\\cline{2-3}
+                           & 2018    & $200^{+70}_{-79}$            \\ \hline
   \end{tabular}
   \legend{$\Upsilon(nS)$ + D$^{*}$ cross section per data sample. The cross section is determined for each of the $\Upsilon$ states and its uncertainties are only statistical.}
   \label{tab:DPS_xsec}
@@ -628,11 +637,11 @@ Table \ref{tab:DPS_xsec} presents the fiducial cross section for each data sampl
 
 Finally, the combined cross section for each $\Upsilon$ state are:
 \begin{equation}
-\begin{split}
-  \sigma_{Y(1S)D^{*\pm}} &= 474^{+44}_{-68} \; \text{pb},\\
-  \sigma_{Y(2S)D^{*\pm}} &= 230^{+23}_{-34} \; \text{pb},\\
-  \sigma_{Y(3S)D^{*\pm}} &= 152^{+16}_{-22} \; \text{pb},
-\end{split} 
+  \begin{split}
+    \sigma_{Y(1S)D^{*\pm}} &= 474^{+44}_{-68} \; \text{pb},\\
+    \sigma_{Y(2S)D^{*\pm}} &= 230^{+23}_{-34} \; \text{pb},\\
+    \sigma_{Y(3S)D^{*\pm}} &= 152^{+16}_{-22} \; \text{pb},
+  \end{split}
 \end{equation}
 where only statistical errors are considered.
 
@@ -654,18 +663,18 @@ The inclusive cross section of $\Upsilon(nS)$ and D$^*$ can be found in Tab. \re
   \caption{Fiducial cross section of $\Upsilon(nS)$ and D$^*$.}
   \begin{tabular}{ c | c | c }
     \hline
-    Particle & Fiducial cross section & Kinematic region \\ \hline
-    $\Upsilon(1S)$ & $87.7 \pm 1.4 \text{(stat)} \pm 5.3 \text{(syst)}$ pb  & \multirow[c]{3}{*}{$20 < p_T < 130$ GeV, $|y| < 1.2$} \bigstrut\\\cline{1-2}  
-    $\Upsilon(2S)$ & $39.4 \pm 1.0 \text{(stat)} \pm 2.4 \text{(syst)}$ pb  &  \bigstrut\\\cline{1-2} 
-    $\Upsilon(3S)$ & $28.2 \pm 0.9 \text{(stat)} \pm 1.9 \text{(syst)}$ pb  & \bigstrut\\\cline{1-3} 
-    $D^*$          & $380 \pm 17 \text{(stat)} \pm 46 \text{(syst)}$ $\mu$b & $4 < p_T < 100$ GeV, $|\eta| < 2.1$ \\ \hline
+    Particle       & Fiducial cross section                                 & Kinematic region                                                \\ \hline
+    $\Upsilon(1S)$ & $87.7 \pm 1.4 \text{(stat)} \pm 5.3 \text{(syst)}$ pb  & \multirow[c]{3}{*}{$20 < p_T < 130$ GeV, $|y| < 1.2$} \bigstrut \\\cline{1-2}
+    $\Upsilon(2S)$ & $39.4 \pm 1.0 \text{(stat)} \pm 2.4 \text{(syst)}$ pb  & \bigstrut                                                       \\\cline{1-2}
+    $\Upsilon(3S)$ & $28.2 \pm 0.9 \text{(stat)} \pm 1.9 \text{(syst)}$ pb  & \bigstrut                                                       \\\cline{1-3}
+    D$^*$          & $380 \pm 17 \text{(stat)} \pm 46 \text{(syst)}$ $\mu$b & $4 < p_T < 100$ GeV, $|\eta| < 2.1$                             \\ \hline
   \end{tabular}
   \legend{Fiducial cross section of $\Upsilon(nS)$ and D$^*$ derived from the differencial cross section from the sources.}
   \label{tab:inclusive_xsec}
   \source{\cite{CMS:2017dju, CMS:2021lab}}
 \end{table}
 
-Since the kinematic region in Tab. \ref{tab:inclusive_xsec} are different from the ones chosen in the cross section determination in Sec. \ref{subsec:fiducial_xsec} these numbers cannot be used directly in the $\sigma_{eff}$ calculation. One simple way to solve this problem is to restrict the associated $\Upsilon$ + D$^*$ fiducial cross section to match the phase space of the inclusive measurement. This restriction have the effect of lowering the number of events of the samples, which is bad for the fit procedure, in special for the $\Upsilon(2S)$ and $\Upsilon(3S)$ in the 2016 and 2016APV subsamples, which have less statistics as shown in Fig. \ref{fig:fit2D_upsilondstar_rest}. For this reason, the lower limit for effective cross section will be determined only for $\Upsilon(1S) +$ D$^*$, but it is intended to extend the phase space of the inclusive cross sections to the ones used in the Sec. \ref{subsec:fiducial_xsec} so that we can refine our measurement with more statistics. 
+Since the kinematic region in Tab. \ref{tab:inclusive_xsec} are different from the ones chosen in the cross section determination in Sec. \ref{subsec:fiducial_xsec} these numbers cannot be used directly in the $\sigma_{eff}$ calculation. One simple way to solve this problem is to restrict the associated $\Upsilon$ + D$^*$ fiducial cross section to match the phase space of the inclusive measurement. This restriction have the effect of lowering the number of events of the samples, which is bad for the fit procedure, in special for the $\Upsilon(2S)$ and $\Upsilon(3S)$ in the 2016 and 2016APV subsamples, which have less statistics as shown in Fig. \ref{fig:fit2D_upsilondstar_rest}. For this reason, the lower limit for effective cross section will be determined only for $\Upsilon(1S) +$ D$^*$, but it is intended to extend the phase space of the inclusive cross sections to the ones used in the Sec. \ref{subsec:fiducial_xsec} so that we can refine our measurement with more statistics.
 
 Table \ref{tab:xsec_eff} displays a summary the values for the $\sigma_{eff}$ lower bound, as well as other important parameters.
 
@@ -673,11 +682,11 @@ Table \ref{tab:xsec_eff} displays a summary the values for the $\sigma_{eff}$ lo
   \caption{Lower bound for $\Upsilon(1S)$ + D$^{*}$ effective cross section per data sample.}
   \begin{tabular}{ c | c | c | c | c }
     \hline
-    Sample & eff (\%) & N & $\sigma$ (pb) & $\sigma_{eff}$ (mb) \\ \hline
-    2016APV & $8.4^{+1.0}_{-1.5}$ & $147 \pm 33$ & $136^{+35}_{-40}$ & $>9.9^{+2.6}_{-2.9}$ \\ \hline 
-    2016    & $10.5^{+1.1}_{-2.6}$ & $190 \pm 42$ & $162^{+40}_{-54}$ & $>8.3^{+2.1}_{-2.8}$ \\ \hline 
-    2017    & $8.2^{+1.2}_{-1.7}$ & $250 \pm 34$ & $170^{+33}_{-42}$ & $>7.9^{+1.6}_{-2.0}$ \\ \hline 
-    2018    & $6.0^{+1.4}_{-1.6}$ & $479 \pm 51$ & $203^{+51}_{-59}$ & $>6.6^{+1.7}_{-2.0}$ \\ \hline
+    Sample  & eff (\%)             & N            & $\sigma$ (pb)     & $\sigma_{eff}$ (mb)  \\ \hline
+    2016APV & $8.4^{+1.0}_{-1.5}$  & $147 \pm 33$ & $136^{+35}_{-40}$ & $>9.9^{+2.6}_{-2.9}$ \\ \hline
+    2016    & $10.5^{+1.1}_{-2.6}$ & $190 \pm 42$ & $162^{+40}_{-54}$ & $>8.3^{+2.1}_{-2.8}$ \\ \hline
+    2017    & $8.2^{+1.2}_{-1.7}$  & $250 \pm 34$ & $170^{+33}_{-42}$ & $>7.9^{+1.6}_{-2.0}$ \\ \hline
+    2018    & $6.0^{+1.4}_{-1.6}$  & $479 \pm 51$ & $203^{+51}_{-59}$ & $>6.6^{+1.7}_{-2.0}$ \\ \hline
   \end{tabular}
   \legend{Lower bound for $\Upsilon(1S)$ + D$^{*}$ effective cross section per data sample. For the lower bound determination, the fraction of DPS is assumed to be one. All the uncertainties displayed are only statistical.}
   \label{tab:xsec_eff}
@@ -690,7 +699,7 @@ Finally, combining all the values from Tab. \ref{tab:xsec_eff}, it is possible t
 
 \begin{landscape}
   \begin{figure}[!htm]{23.7cm}
-    \caption{Projections of the two dimensional fit to the selected associated $\Upsilon +$ D$^{*\pm}$ on the restricted phase space sample.} 
+    \caption{Projections of the two dimensional fit to the selected associated $\Upsilon +$ D$^{*\pm}$ on the restricted phase space sample.}
     \label{fig:fit2D_upsilondstar_rest}
     \subfloat[][2016APV $\Upsilon$ projection.]{\label{subfig:fit2D_rest_upsilon_proj_2016APV}%
       \fbox{\includegraphics[width=0.23\textwidth]{figures/fit_rest/fit2D_upsilon_proj_2016APV.png}}}\hfill
@@ -719,18 +728,18 @@ The systematic uncertainties include all the uncertainties that do not arise fro
 That being said, the complete systematic uncertainty definition is not finished in this analysis due to time constraints, but some of them are discussed in the following lines.
 
 \begin{itemize}
-  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainties are given in Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and are summarized in Tab. \ref{tab:triggers}. 
+  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainties are given in Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and are summarized in Tab. \ref{tab:triggers}.
   \item \textbf{Branching Fraction}: The uncertainties on the branching fractions of each considered decay channel are given in Ref. \cite{Workman:2022ynf}. The values are pointed out in Sec. \ref{sec:theoryY+D}
   \item \textbf{Determination of the yields}: This systematic depends on the models used to determine the signal and background yields, in general, the models used to describe the shapes of the distributions. For D$^*$ signal, the model was changed to a double Gaussian and for the background another threshold function was used \cite{CMS:2021lab}, with the form
-  \begin{equation}
-    f = \left[ 1- \exp{\left( -\frac{\Delta m - m_\pi}{p_0} \right)} \right]\left( \frac{\Delta m}{m_\pi} \right)^{p_1} +p_2 \left( \frac
-    {\Delta m}{m_\pi} - 1 \right),
-  \end{equation}
-  where $m_\pi$ is taken as the pion mass and $p_0$, $p_1$ and $p_2$ are free parameters. The deviations from the yields were taken as systematic uncertainties.
+        \begin{equation}
+          f = \left[ 1- \exp{\left( -\frac{\Delta m - m_\pi}{p_0} \right)} \right]\left( \frac{\Delta m}{m_\pi} \right)^{p_1} +p_2 \left( \frac
+          {\Delta m}{m_\pi} - 1 \right),
+        \end{equation}
+        where $m_\pi$ is taken as the pion mass and $p_0$, $p_1$ and $p_2$ are free parameters. The deviations from the yields were taken as systematic uncertainties.
 
-  For $\Upsilon$ signal, a change from CBs to Gaussians resulted to bad fits, as the later one cannot describe well the tails of the invariant mass distribution. Another method is to evaluate the CB shape changes with the change of its parameters. The tail parameters $n$ and $\alpha$ are specially sensitive as they are strongly correlated. $n$ was left as free parameter and $\alpha$ was moved by $\pm 2\sigma$. Half of the maximum observed variation was taken as systematic, because these variations are correlated. Another parameter analyzed was the mean of the CBs, which is defined from a common factor and the mass of the $\Upsilon$ state taken from Ref. \cite{Workman:2022ynf}. The means were left as a free parameter and the deviation in the yield is taken as a systematic.
+        For $\Upsilon$ signal, a change from CBs to Gaussians resulted to bad fits, as the later one cannot describe well the tails of the invariant mass distribution. Another method is to evaluate the CB shape changes with the change of its parameters. The tail parameters $n$ and $\alpha$ are specially sensitive as they are strongly correlated. $n$ was left as free parameter and $\alpha$ was moved by $\pm 2\sigma$. Half of the maximum observed variation was taken as systematic, because these variations are correlated. Another parameter analyzed was the mean of the CBs, which is defined from a common factor and the mass of the $\Upsilon$ state taken from Ref. \cite{Workman:2022ynf}. The means were left as a free parameter and the deviation in the yield is taken as a systematic.
 
-  Finally, the $\Upsilon$ background model was modified to a 3rd order Chebychev polynomials and the deviation was taken as systematic.
+        Finally, the $\Upsilon$ background model was modified to a 3rd order Chebychev polynomials and the deviation was taken as systematic.
   \item \textbf{Selection Cuts}: A study on the choice of the selection cuts on the cross section determination was made by slightly changing the cuts and recalculating the cross section. The maximum observed variation on the cross section was taken as systematic.
   \item \textbf{Tracking Efficiencies}: The tracking efficiency for charged hadrons is given by Ref. \cite{CMS-DP-2022-012}, using the branching ratios two D$^*$ decays: $D^* \rightarrow K\pi\pi_s$ and $D^* \rightarrow K3\pi\pi_s$. The uncertainty is given depending on the sample and it is combined for the two D$^0$ tracks. For the slow pion, a different procedure should be done, since it has a soft $p_T$ distribution. The value of 5.2 \%, given in Ref. \cite{CMS:2021lab} is used.
 \end{itemize}
@@ -741,15 +750,15 @@ A summary of the systematic uncertainties for each of the calculated cross secti
   \caption{Systematic Uncertainties for $\Upsilon(1S) + $D$^{*}$ cross section measurement.}
   \begin{tabular}{ c | c | c | c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
-    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
-    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
-    $\Upsilon(1S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
-    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
-    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
-    Selection Cuts & 6.1 \% & 8.2 \% & 7.5 \% & 5.3 \% \\ \hline
-    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
-    Total & 11.8 \% & 13.7 \% & 11.1 \% & 10.8 \% \\ \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
+                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
+    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
+    $\Upsilon(1S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
+    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
+    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
+    Selection Cuts                            & 6.1 \%                                 & 8.2 \%  & 7.5 \%  & 5.3 \%  \\ \hline
+    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
+    Total                                     & 11.8 \%                                & 13.7 \% & 11.1 \% & 10.8 \% \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(1S) + $D$^*$ cross section measurement.}
   \label{tab:systematics1S}
@@ -759,15 +768,15 @@ A summary of the systematic uncertainties for each of the calculated cross secti
   \caption{Systematic Uncertainties for $\Upsilon(2S) + $D$^{*}$ cross section measurement.}
   \begin{tabular}{ c | c | c | c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
-    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
-    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
-    $\Upsilon(2S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
-    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
-    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
-    Selection Cuts & 5.9 \% & 14.9 \% & 8.3 \% & 6.0 \% \\ \hline
-    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
-    Total & 14.8 \% & 20.6 \% & 14.6 \% & 14.2 \% \\ \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
+                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
+    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
+    $\Upsilon(2S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
+    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
+    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
+    Selection Cuts                            & 5.9 \%                                 & 14.9 \% & 8.3 \%  & 6.0 \%  \\ \hline
+    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
+    Total                                     & 14.8 \%                                & 20.6 \% & 14.6 \% & 14.2 \% \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(2S) + $D$^*$ cross section measurement.}
   \label{tab:systematics2S}
@@ -777,15 +786,15 @@ A summary of the systematic uncertainties for each of the calculated cross secti
   \caption{Systematic Uncertainties for $\Upsilon(3S) + $D$^{*}$ cross section measurement.}
   \begin{tabular}{ c | c | c | c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut\\\cline{2-5}  
-    & 2016APV & 2016 & 2017 & 2018 \\ \hline 
-    Integrated Luminosity & 2.5 \% & 2.5 \% & 2.3 \% & 2.5 \% \\ \hline
-    $\Upsilon(3S)$ Branching fraction & \multicolumn{4}{c}{2.0 \%} \\ \hline
-    D$^*$ Branching fraction & \multicolumn{4}{c}{1.1 \%} \\ \hline
-    Determination of the yields & 7.6 \% & 8.8 \% & 4.9 \% & 6.7 \% \\ \hline
-    Selection Cuts & 23.7 \% & 18.7 \% & 15.9 \% & 8.5 \% \\ \hline
-    Tracking Efficiency & 6.3 \% & 6.3 \% & 5.9 \% & 5.9 \% \\ \hline
-    Total & 27.5 \% & 23.8 \% & 20.3 \% & 15.9 \% \\ \hline
+    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
+                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
+    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
+    $\Upsilon(3S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
+    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
+    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
+    Selection Cuts                            & 23.7 \%                                & 18.7 \% & 15.9 \% & 8.5 \%  \\ \hline
+    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
+    Total                                     & 27.5 \%                                & 23.8 \% & 20.3 \% & 15.9 \% \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(3S) + $D$^*$ cross section measurement.}
   \label{tab:systematics3S}
@@ -793,17 +802,17 @@ A summary of the systematic uncertainties for each of the calculated cross secti
 
 \section{Discussion of the results}\label{sec:discussion}
 
-The final measurement of the fiducial cross section with systematics are 
+The final measurement of the fiducial cross section with systematics are
 \begin{equation}
-\begin{split}
-  \sigma_{Y(1S)D^{*\pm}} &= 474^{+44}_{-68} \text{(stat)} \pm 30 \text{(syst)} \; \text{pb},\\
-  \sigma_{Y(2S)D^{*\pm}} &= 230^{+23}_{-34} \text{(stat)} \pm 19 \text{(syst)} \; \text{pb},\\
-  \sigma_{Y(3S)D^{*\pm}} &= 152^{+16}_{-22} \text{(stat)} \pm 17 \text{(syst)} \; \text{pb}.
-\end{split} 
+  \begin{split}
+    \sigma_{Y(1S)D^{*\pm}} &= 474^{+44}_{-68} \text{(stat)} \pm 30 \text{(syst)} \; \text{pb},\\
+    \sigma_{Y(2S)D^{*\pm}} &= 230^{+23}_{-34} \text{(stat)} \pm 19 \text{(syst)} \; \text{pb},\\
+    \sigma_{Y(3S)D^{*\pm}} &= 152^{+16}_{-22} \text{(stat)} \pm 17 \text{(syst)} \; \text{pb}.
+  \end{split}
 \end{equation}
 The addition other systematic uncertainty sources are being developed, e.g. the uncertainties on the $\Upsilon$ polarization on the trigger efficiencies, which still need more treatment.
 
-A determination of the contamination of non-prompt \footnote{result from decays of B-hadrons} D$^*$ is also lacking, but it is expected to be negligible because of the cuts on the cosine of the pointing angle and the vertex fit of the two muons and the slow pion.
+A determination of the contamination of non-prompt\footnote{result from decays of B-hadrons} D$^*$ is also lacking, but it is expected to be negligible because of the cuts on the cosine of the pointing angle, which selects events that are aligned to the PV, and the vertex fit of the two muons and the slow pion selects only events created in the same vertex of the dimuon.
 
 And the lower bound of $\sigma_{eff}$, with only statistical uncertainties is
 \begin{equation}
@@ -814,11 +823,11 @@ The effective cross section value is within the expected region as shown in Fig.
 
 Also, another method of extracting the $\sigma_{eff}$ is being studied, by manipulating the Eq. \ref{eq:sigmaeff_YD} one can write
 \begin{equation}
-\begin{split}
-  \sigma_{eff} &= \frac{\sigma_{\Upsilon(nS)} \cdot \sigma_{D^*}}{\sigma_{\Upsilon(nS) D^*}^{DPS}} \\
-  &= \frac{N_{\Upsilon(nS)}}{L \cdot eff_{\Upsilon(nS)} \cdot BR_{\Upsilon(nS)}} \cdot \frac{N_{D^*}}{L \cdot eff_{D^*} \cdot BR_{D^*}} \cdot \frac{L \cdot eff_{\Upsilon(nS) D^*} \cdot BR_{\Upsilon(nS)} \cdot BR_{D^*}}{N_{\Upsilon(nS) D^*}} \\
-  \sigma_{eff} &= \frac{N_{\Upsilon(nS)} \cdot N_{D^*}}{L \cdot N_{\Upsilon(nS) D^*}} \cdot \frac{eff_{\Upsilon(nS) D^*}}{eff_{\Upsilon(nS)} \cdot eff_{D^*}}.
-\end{split}
+  \begin{split}
+    \sigma_{eff} &= \frac{\sigma_{\Upsilon(nS)} \cdot \sigma_{D^*}}{\sigma_{\Upsilon(nS) D^*}^{DPS}} \\
+    &= \frac{N_{\Upsilon(nS)}}{L \cdot eff_{\Upsilon(nS)} \cdot BR_{\Upsilon(nS)}} \cdot \frac{N_{D^*}}{L \cdot eff_{D^*} \cdot BR_{D^*}} \cdot \frac{L \cdot eff_{\Upsilon(nS) D^*} \cdot BR_{\Upsilon(nS)} \cdot BR_{D^*}}{N_{\Upsilon(nS) D^*}} \\
+    \sigma_{eff} &= \frac{N_{\Upsilon(nS)} \cdot N_{D^*}}{L \cdot N_{\Upsilon(nS) D^*}} \cdot \frac{eff_{\Upsilon(nS) D^*}}{eff_{\Upsilon(nS)} \cdot eff_{D^*}}.
+  \end{split}
 \end{equation}
 
 This approach has many advantages - the statistics are higher, since we can extend the measurements to the full CMS phase space, also many terms that are source of systematic uncertainties cancel out (e.g. the branching ratios and the trigger efficiency), resulting in a much more precise measurements.

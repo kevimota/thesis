@@ -6,11 +6,11 @@ This chapter will discuss about the cross section measurement of the associated 
 \section{Datasets and Simulation}
 \subsection{Data Samples}
 
-The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-2018 at a center-of-mass energy of 13 TeV and are composed only by events certified as good for physics analysis. The Table \ref{tab:datasamples} displays all the data samples used. The total recorded luminosity of all data samples is 137.61 fb$^{-1}$.
+The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-2018 at a center-of-mass energy of 13 TeV and are composed only by events certified as good for physics analysis. The Table \ref{tab:datasamples} displays all the data samples used. The total recorded luminosity of all data samples is 137.6 fb$^{-1}$.
 
 \begin{table}[!htbp]{15cm}
   \caption{Data samples considered in this work}\label{tab:datasamples}
-  \begin{tabular}{ c }
+  \begin{tabular}{ l }
     Dataset                                               \\
     \hline
     /MuOnia/Run2016B-21Feb2020\_ver1\_UL2016\_HIPM-v1/AOD \\
@@ -38,27 +38,33 @@ The data samples were recorded by the CMS detector during the LHC Run 2 in 2016-
   \legend{Data Samples used in the analysis corresponding to the full CMS Run 2 data taking.}
 \end{table}
 
-From the analysis point view, data samples are divided into four subsamples (2016APV, 2016, 2017 and 2018), to take into account the differences in the detector in the course of Run 2 (e.g. lose in the efficiency due to aging and installation of new detectors).
+From the analysis point of view, data samples are divided into four subsamples (2016APV, 2016, 2017 and 2018), to take into account the differences in the detector in the course of Run 2 (e.g. less in the efficiency due to aging and better acceptance due to installation of new detectors).
 
 \subsection{Simulation Samples}
 
-The simulation samples are done via Monte Carlo (MC) simulation, where the MC method is used in programs to model the physics processes. The starting point of the simulation is the event generation, where the events following a set of physics processes of interest are created by the MC generator.
+The simulated samples are done via Monte Carlo (MC) simulation, where the MC method is used in programs to model the physics processes. The starting point of the simulation is the event generation, where the events following a set of physics processes of interest are created by the MC generator.
 
-First, the parton level matrix element of the process is calculated perturbatively up to a fixed order. After, the parton showering is done to take into account the higher order effects, such as initial and final state radiation (ISR and FSR). This is followed by the hadronization, where the quarks and gluons form the quarks. Finally, the simulation should also handle the particles decay.
+First, the parton level matrix element of the process is calculated perturbatively up to a fixed order. Next, the parton showering is done to take into account the higher order effects, such as initial and final state radiation (ISR and FSR). This is followed by the hadronization, where the quarks and gluons form the hadrons and finally, the particles decay.
 
-The detector simulation follows the event generation. Here, the interaction of the generated particles with the detector is simulated. In CMS, the detector response is simulated using \textsc{Geant4} \cite{GEANT4:2002zbu}. The simulated detector response pass through the same processing chain as the real data forming the final simulated sample.
+The interaction of the generated particles with the detector follows the event generation. In CMS, the detector response is simulated using \textsc{Geant4} \cite{GEANT4:2002zbu}. The result pass through the same processing chain as the real data forming the final simulated sample.
 
-The MC samples were used in this analysis to simulate the two components of the signal, the SPS and DPS. The only background was not simulated, since it is only combinatorial
+The MC samples were used in this analysis to simulate the two components of the signal, the SPS and DPS, and to extract the acceptance and efficiencies. No significant contribution from other physical processes to our experimental signature is expected, only the combinatorial background. For this reason, no MC sample has been needed and background is estimated from the fits.
 
-The DPS was created using the \textsc{Pythia8} \cite{Sjostrand:2014zea} as event generator, parton showering and for hadronization. For the decays of the heavy flavour hadrons, \textsc{EvtGen} \cite{Lange:2001uf} was used. The SPS sample is similar to the DPS, with the addition of the \textsc{HELAC-Onia} \cite{Shao:2012iz, Shao:2015vga}, which was used for event generation.
+The DPS samples were produced using the \textsc{Pythia8} \cite{Sjostrand:2014zea} for event generation, parton showering and hadronization. For decaying the heavy flavour hadrons, \textsc{EvtGen} \cite{Lange:2001uf} was used. The SPS sample is similar to the DPS, with the addition of the \textsc{HELAC-Onia} \cite{Shao:2012iz, Shao:2015vga}, which replaced \textsc{Pythia8} in the event generation.
 
-In the same way as the data, the MC samples are divided into subsamples to take into account the detector differences in the course of Run 2. The detector simulation is tunned to better represent the detector conditions in each subsample.
+In the same way as the data, the MC samples are divided into subsamples to take into account the detector differences in the course of Run 2. The detector simulation is tunned to better represent the detector conditions in each subsample. Also, to be able to reach a higher $p_T$ region, the MC was divided into four dimuon $p_T$ regions - [9, 30], [30, 60], [60, 120] and [120, inf] GeV. 
 
-\textcolor{red}{colocar imagens da simulação}
+Finally, some procedures were done to correct the MC to better represent data:
+\begin{itemize}
+  \item Pileup reweighting: The simulated samples' pileup distribution is different from the data one. A rescaling factor is applied to each event, defined as the ratio between the normalized pileup distribution for data and MC.
+  \item Muon distribution: The muon efficiencies differs in data and MC. The muon efficiency is calculated to both data and MC and a scale factor defined by the ratio between data and monte carlo.
+\end{itemize}
+
+In this work, a private MC was used with limited statistics, in special in the lowest $p_T$ range, a higher statistics one is being produced, but could not be finished due to time constraints.
 
 \section{\texorpdfstring{$\Upsilon$ + D$^{*\pm}$}{Y+D*} Reconstruction}
 
-The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in an event. As shown in Fig. \ref{fig:drawing_event}, there are five different particles in the final state an event - three coming from D$^*$ and two from $\Upsilon$. The D$^*$ have a low combinatorial background when compared with other open charm mesons because of it very characteristic signature - very small difference of mass between D$^*$ and D$^0$ restricting the phase space of the slow pion. Also, the kaon and pion can be identified even without a particle identification detector, since it should have a opposite charge to the slow pion, removing the ambiguity of the D$^0$ reconstruction.
+The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in an event. As shown in Fig. \ref{fig:drawing_event}, there are five different tracks in the final state of an event - three coming from the D$^*$ and two from the $\Upsilon$. The D$^*$ has a low combinatorial background when compared with other open charm mesons because of characteristic signature of a very small difference of mass between D$^*$ and and its decay product D$^0$, restricting the phase space of the slow pion. Also, the kaon and pion can be identified even without a particle identification detector, since the kaon should have a opposite charge to the slow pion, removing the ambiguity in the D$^0$ reconstruction.
 
 \begin{figure}[!htm]{15cm}
   \caption{Drawing of an event of associated production of $\Upsilon$ and D$^{*+}$}%
@@ -97,30 +103,30 @@ The $\Upsilon$ + D$^*$ reconstruction is done from the reconstructed tracks in a
       (SV) circle (4pt) node[below right] {SV};
     \end{tikzpicture}
   }
-  \legend{Drawing of an event of associated production of $\Upsilon$ and D$^*$. $\Upsilon$ decays into two opposite charge muons, while D$^{*+}$ decays into a pion and D$^0$, which later decays into a kaon and a pion.}
+  \legend{Drawing of an event of associated production of $\Upsilon$ and D$^*$. $\Upsilon$ decays into two opposite charge muons, while D$^{*+}$ decays into a pion and a D$^0$, which later decays into a kaon and a pion.}
 \end{figure}
 
-The D$^*$ reconstruction starts by finding a suitable D$^0$ candidate. For this, two tracks of opposite charge are paired to check whether they form a common vertex using the Kalman Filter method \cite{Fruhwirth:1991pm, Speer:927395}. If the fit is valid and its p-value is greater than 1\%, the D$^0$ candidate is selected. The vertex determination also allows for a better calculation of the kinematic variables of the tracks and it is called secondary vertex (SV).
+The D$^*$ reconstruction starts by finding a suitable D$^0$ candidate. For this, two tracks of opposite charge are paired to check whether they form a common vertex using the Kalman Filter method \cite{Fruhwirth:1991pm, Speer:927395}. If the fit is valid and its p-value is greater than 1\%, and the invariant mass is in the range between 1.5 and 2.3 GeV, the D$^0$ candidate is selected. The vertex determination also allows for a better calculation of the kinematic variables of the tracks and it is called secondary vertex (SV).
 
-A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest to the SV in order to calculate the decay length, defined as
+A primary vertex (PV) is assigned to the D$^0$ candidate as the one closest in the z coordinate to the SV in order to calculate the decay length, defined as
 \begin{equation}
   dl = \frac{|\Vec{p}_{D^0} \cdot \Delta\Vec{l}|}{|\Vec{p}_{D^0}|},
 \end{equation}
-where $\Vec{p}_{D^0}$ is the D$^0$ trimomentum and $\Delta\Vec{l}$ is the distance between the PV and SV, the decay length significance is very important because it can be used to filter a lot of background, it is defined as
+where $\Vec{p}_{D^0}$ is the D$^0$ tri-momentum and $\Delta\Vec{l}$ is the distance between the PV and SV. The decay length significance is very important because it can be used to filter a lot of background and is defined as
 \begin{equation}
   dl_{sig} = \frac{dl}{dl_{err}},
 \end{equation}
-where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cosine of the angle between the PV and SV position vectors (pointing angle)
+where $dl_{err}$ is the uncertainty of $dl$. Finally, another important variable is the cosine of the angle between the D$^0$ momentum vector and the PV-SV displacement vector (pointing angle)
 \begin{equation}
-  \cos{\alpha} = \frac{dl}{\Delta\Vec{l}} \; ,
+  \cos{\alpha} = \frac{dl}{|\Delta\Vec{l}|} \; ,
 \end{equation}
-which hints the alignment between the PV and the SV.
+which express the degree of alignment between these two vectors, expected to be high for real D$^0$s.
 
-After the D$^0$ candidates is reconstructed, a new track coming from the same PV of the D$^0$ is added to form the D$^*$ candidate and its momentum resolution is improved by adding the PV to the track fit.
+After the D$^0$ candidate is reconstructed, a new track coming from the same PV is added to form the D$^*$ candidate. The track momentum resolution is improved by adding the PV position to the track fit, reevaluating its four-momentum.
+ 
+The $\Upsilon(nS)$ reconstruction is performed in a similar way to the D$^0$. Two muons with opposite charge are selected and its vertex is determined from the fit. If the vertex is valid and has a p-value greater than 1\% we have a dimuon candidate. The invariant mass of the dimuon should be in the range of $8.5 < m_{\mu\mu} < 11.5$ GeV in order to be accepted as a $\Upsilon(nS)$ candidate.
 
-The $\Upsilon(nS)$ reconstruction is done in a similar way to the D$^0$. Two muons with opposite charge are selected and its vertex is determined from the fit. If the vertex is valid and has a p-value greater than 1\% we have a dimuon candidate. The invariant mass of the dimuon should be in the range of $8.5 < m_{\mu\mu} < 11.5$ GeV in order to be classified as a $\Upsilon(nS)$ candidate.
-
-Finally, in order to pair the $\Upsilon(nS)$ and the D$^*$, a vertex fit of the two muons and the slow pion is performed. If valid, the vertex p-value is determined.
+Finally, in order to pair the $\Upsilon(nS)$ and the D$^*$, a vertex fit of the two muons and the slow pion is performed. The pion slow is used in this fit because it comes directly from the D$^*$ decay, the other tracks are displaced because the D$^0$ have a considerable mean life. If valid, the vertex p-value is determined.
 
 In this stage of the reconstruction, very loose cuts are applied to the candidates, those are specified in the Sec. \ref{subsec:preselcuts}.
 
@@ -143,7 +149,7 @@ Preselection cuts are used to mitigate some of the combinatorial background and 
     of $\pi_s$ track ($d_{xy}$ and $d_z$)                                       &                                \\ \hline
     Longitudinal distance between D$^0$ vertex and PV                           & $< 2$ cm                       \\ \hline
     Transverse momentum of D$^0$ ($p_T^{D^0}$)                                  & $> 0.9$ GeV                    \\ \hline
-    D$^0$ of D$^{*\pm}$ mass cut ($m_{D^0}$)                                    & $1.5 < m_{D^0} < 2.3$ GeV      \\ \hline
+    D$^0$ mass cut ($m_{D^0}$)                                    & $1.5 < m_{D^0} < 2.3$ GeV      \\ \hline
     Mass difference between D$^{*\pm}$ and D$^0$ ($\Delta m$)                   & $< 0.17$ GeV                   \\ \hline
     $D^0$ candidate vertex probability                                          & $> 0.01$                       \\ \hline
 
@@ -174,9 +180,9 @@ Figure \ref{fig:invmass_preselection} shows the dimuon invariant mass and the D$
 
 \subsection{Trigger}\label{sec:trigger}
 
-The trigger strategy chosen was to use the HLT Paths that filters dimuons, it was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and lower $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers} all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum different for each trigger path.
+The trigger strategy chosen was to use the HLT Paths that filter dimuons. It was required that the trigger had the maximum possible rapidity coverage, to use for discrimination between DPS and SPS, and minimum $p_T$ threshold. The used trigger paths are specified in Tab. \ref{tab:triggers}, all of them required two muons with opposite charge, invariant mass between 8.5 and 11.5 GeV, reconstructed pseudorapidity < 2.5 and are unprescaled. In addition to those, there is a cut in transverse momentum, which differs for each trigger path.
 
-In the year 2017, the chosen trigger was not available in the whole data-taking resulting in a lower recorded luminosity (the total was 41.48 fb$^{-1}$ in full 2017 data). This should not pose a problem, since the statistics are large (123.1 fb$^{-1}$ for the three years) and the other triggers did only cover the central area of the detector, which can turn the discrimination between SPS and DPS more complicated.
+In 2017, the chosen trigger was not available during the whole data-taking period, resulting in a lower recorded luminosity (27.12 out of 41.48 fb$^{-1}$ in full 2017 data). This should not pose a problem, since the statistics are large (123.1 fb$^{-1}$ for the three years) and the other dimuon triggers available did only cover the central area of the detector, which can turn the discrimination between SPS and DPS more complicated.
 
 \begin{table}[!htbp]{15cm}
   \caption{Triggers used in this study in each year of data taking}
@@ -189,13 +195,13 @@ In the year 2017, the chosen trigger was not available in the whole data-taking 
     \multirow[c]{2}{*}{2018} & HLT\_Dimuon24       & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{59.82} & \multirow[c]{2}{*}{2.5 \%} \\
                              & \_Upsilon\_noCorrL1 &                             &                           &                            \\ \hline
   \end{tabular}
-  \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year can be found in \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002}}
+  \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year was taken from Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002}}
   \label{tab:triggers}
 \end{table}
 
 \subsection{Selection Cuts} \label{sec:selcuts}
 
-The analysis cuts are tighter cuts applied to the data in order to define the fiducial volume and to improve the signal to background ratio. A summary of them are displayed in the Tabs. \ref{tab:fiducialvol} and \ref{tab:selectioncuts}.
+The analysis cuts are tighter cuts applied to the data in order to define the fiducial volume and to improve the signal to background ratio. A summary of them is displayed in the Tabs. \ref{tab:fiducialvol} and \ref{tab:selectioncuts}.
 
 \begin{table}[!htbp]{15cm}
   \caption{Kinematic cuts that define the fiducial volume.}
@@ -266,6 +272,10 @@ Figure \ref{fig:invmass_selection} shows the dimuon invariant mass and the D$^*$
     \fbox{\includegraphics[width=0.47\textwidth]{figures/sel_data_hists/2018/DimuDstar/dstar_deltamr_2018.png}}}\\
   \legend{Dimuon Invariant mass (a) and D$^*$ $\Delta$m (b) after the selection cuts in 2018 data. Both signals from $\Upsilon$ and D$^*$ are well defined.}
 \end{figure}
+
+\subsection{Kinematical Distributions}
+
+Plots are shown in this Section comparing the data and the signal MC using the sample \textcolor{red}{xxxxxxxx}. Unfortunately, the reduced statistics in the lower MC region is a problem for the comparison. The plots for all the samples can be found in Appendix xxx
 
 \section{Signal Extraction}\label{sec:sig_extraction}
 
@@ -606,7 +616,7 @@ All the efficiency maps can be found in the Appendix \ref{app:efficiencies}. The
   \label{tab:totaleff}
 \end{table}
 
-It is worth noting that the efficiencies displayed here are measured using a private MC with reduced statistics, resulting in a bigger uncertainties, in special for the sample 2018, with uncertainty of $\approx$ 30 \%. A new generation, with higher statistics is being processed, so it is expected that the efficiency will be better determined in the future.
+It is worth noting that, in special for the sample 2018, the uncertainty in the efficiency is $\approx$ 30 \%, because of the reduced MC statistics. After the new generation with higher statistics is done processing, it is expected that the efficiency is better determined.
 
 \section{Associated \texorpdfstring{$\Upsilon(nS)$ + D$^{*}$}{Y+D*} Cross Section}
 

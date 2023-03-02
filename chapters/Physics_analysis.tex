@@ -188,14 +188,14 @@ In 2017, the chosen trigger was not available during the whole data-taking perio
   \caption{Triggers used in this study in each year of data taking}
   \begin{tabular}{ c | c | c | c | c }
     Year                     & Trigger Path        & $p_T$ Cut (GeV)             & Recorded L ($fb^{-1}$)    & L Uncertainty              \\  \hline
-    \multirow[c]{2}{*}{2016} & HLT\_Dimuon13       & \multirow[c]{2}{*}{$>12.9$} & \multirow[c]{2}{*}{36.18} & \multirow[c]{2}{*}{2.5 \%} \\
+    \multirow[c]{2}{*}{2016} & HLT\_Dimuon13       & \multirow[c]{2}{*}{$>12.9$} & \multirow[c]{2}{*}{36.18} & \multirow[c]{2}{*}{1.2 \%} \\
                              & \_Upsilon           &                             &                                                        \\ \hline
     \multirow[c]{2}{*}{2017} & HLT\_Dimuon24       & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{27.12} & \multirow[c]{2}{*}{2.3 \%} \\
                              & \_Upsilon\_noCorrL1 &                             &                           &                            \\ \hline
     \multirow[c]{2}{*}{2018} & HLT\_Dimuon24       & \multirow[c]{2}{*}{$>13.9$} & \multirow[c]{2}{*}{59.82} & \multirow[c]{2}{*}{2.5 \%} \\
                              & \_Upsilon\_noCorrL1 &                             &                           &                            \\ \hline
   \end{tabular}
-  \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year was taken from Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002}}
+  \legend{Triggers used in this study in each year of data taking. The luminosity uncertainty for each year was taken from Refs. \cite{CMS:2021xjt, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002}}
   \label{tab:triggers}
 \end{table}
 
@@ -626,9 +626,7 @@ The cross section of the associated $\Upsilon$ + D$^{*}$ is calculated by the fo
 \begin{equation}
   \sigma_{\Upsilon(nS) D^*} = \frac{N_{\Upsilon(nS) D^*}}{L\cdot eff \cdot BR(\Upsilon(nS))BR(D^*)},
 \end{equation}
-where $nS$ refers to the $\Upsilon$ states (1S, 2S and 3S), $N_{\Upsilon(nS) D^*}$ is the number of associated $\Upsilon(nS)$ + D$^*$ extracted from the 2D fit, $L$ is the integrated luminosity of the sample (Sec. \ref{sec:trigger}), $eff$ is the total efficiency (Sec. \ref{sec:total_eff}) and $BR(\Upsilon(nS))$ and $BR(D^*)$ are the branch ratios of $\Upsilon$ and D$^*$, respectively.
-
-Table \ref{tab:DPS_xsec} presents the fiducial cross section for each data sample and $\Upsilon$ state. The values are compatible with each other so that the can be combined.
+where $nS$ refers to the $\Upsilon$ states (1S, 2S and 3S), $N_{\Upsilon(nS) D^*}$ is the number of associated $\Upsilon(nS)$ + D$^*$ extracted from the 2D fit, $L$ is the integrated luminosity of the sample (Sec. \ref{sec:trigger}), $eff$ is the total efficiency (Sec. \ref{sec:total_eff}) and $BR(\Upsilon(nS))$ and $BR(D^*)$ are the branch ratios of $\Upsilon$ and D$^*$, respectively. The Tab. \ref{tab:DPS_xsec} presents the fiducial cross section for each data sample and $\Upsilon$ state.
 
 \begin{table}[!htbp]{15cm}
   \caption{$\Upsilon(nS)$ + D$^{*}$ fiducial cross section per data sample.}
@@ -655,7 +653,7 @@ Table \ref{tab:DPS_xsec} presents the fiducial cross section for each data sampl
   \label{tab:DPS_xsec}
 \end{table}
 
-Finally, the combined cross section for each $\Upsilon$ state are:
+Finally, the combined cross section for each $\Upsilon$ state is calculated by combining the values for each sample:
 \begin{equation}
   \begin{split}
     \sigma_{Y(1S)D^{*\pm}} &= 478 \pm 68 \; \text{pb},\\
@@ -748,7 +746,7 @@ The systematic uncertainties include all the uncertainties that do not arise fro
 That being said, the complete systematic uncertainty definition is not finished in this analysis due to time constraints, but some of them are discussed in the following lines.
 
 \begin{itemize}
-  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainties are given in Refs. \cite{CMS-PAS-LUM-17-001, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and are summarized in Tab. \ref{tab:triggers}.
+  \item \textbf{Integrated Luminosity}: The integrated luminosity uncertainties are given in Refs. \cite{CMS:2021xjt, CMS-PAS-LUM-17-004, CMS-PAS-LUM-18-002} and are summarized in Tab. \ref{tab:triggers}, The combined uncertainty for the full Run 2 dataset is 1.6 \%.
   \item \textbf{Branching Fraction}: The uncertainties on the branching fractions of each considered decay channel are given in Ref. \cite{Workman:2022ynf}. The values are pointed out in Sec. \ref{sec:theoryY+D}
   \item \textbf{Determination of the yields}: This systematic depends on the models used to determine the signal and background yields, in general, the models used to describe the shapes of the distributions. For D$^*$ signal, the model was changed to a double Gaussian and for the background another threshold function was used \cite{CMS:2021lab}, with the form
         \begin{equation}
@@ -764,21 +762,20 @@ That being said, the complete systematic uncertainty definition is not finished 
   \item \textbf{Tracking Efficiencies}: The tracking efficiency for charged hadrons is given by Ref. \cite{CMS-DP-2022-012}, using the branching ratios two D$^*$ decays: $D^* \rightarrow K\pi\pi_s$ and $D^* \rightarrow K3\pi\pi_s$. The uncertainty is given depending on the sample and it is combined for the two D$^0$ tracks. For the slow pion, a different procedure should be done, since it has a soft $p_T$ distribution. The value of 5.2 \%, given in Ref. \cite{CMS:2021lab} is used.
 \end{itemize}
 
-A summary of the systematic uncertainties for each of the calculated cross sections are given in Tabs. \ref{tab:systematics1S}, \ref{tab:systematics2S} and \ref{tab:systematics3S}.
+A summary of the discussed systematic uncertainties after combination are given in Tabs. \ref{tab:systematics1S}, \ref{tab:systematics2S} and \ref{tab:systematics3S}, for each of the calculated cross sections.
 
 \begin{table}[!htbp]{15cm}
   \caption{Systematic Uncertainties for $\Upsilon(1S) + $D$^{*}$ cross section measurement.}
-  \begin{tabular}{ c | c | c | c | c }
+  \begin{tabular}{ c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
-                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
-    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
-    $\Upsilon(1S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
-    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
-    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
-    Selection Cuts                            & 6.1 \%                                 & 8.2 \%  & 7.5 \%  & 5.3 \%  \\ \hline
-    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
-    Total                                     & 11.8 \%                                & 13.7 \% & 11.1 \% & 10.8 \% \\ \hline
+    Source of uncertainty             & Uncertainty \\ \hline
+    Integrated Luminosity             & 1.6 \%      \\ \hline
+    $\Upsilon(1S)$ Branching fraction & 2.0 \%      \\ \hline
+    D$^*$ Branching fraction          & 1.1 \%      \\ \hline
+    Determination of the yields       & 4.9 \%      \\ \hline
+    Selection Cuts                    & 6.5 \%      \\ \hline
+    Tracking Efficiency               & 4.1 \%      \\ \hline
+    Total                             & 9.5 \%      \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(1S) + $D$^*$ cross section measurement.}
   \label{tab:systematics1S}
@@ -786,17 +783,16 @@ A summary of the systematic uncertainties for each of the calculated cross secti
 
 \begin{table}[!htbp]{15cm}
   \caption{Systematic Uncertainties for $\Upsilon(2S) + $D$^{*}$ cross section measurement.}
-  \begin{tabular}{ c | c | c | c | c }
+  \begin{tabular}{ c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
-                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
-    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
-    $\Upsilon(2S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
-    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
-    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
-    Selection Cuts                            & 5.9 \%                                 & 14.9 \% & 8.3 \%  & 6.0 \%  \\ \hline
-    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
-    Total                                     & 14.8 \%                                & 20.6 \% & 14.6 \% & 14.2 \% \\ \hline
+    Source of uncertainty             & Uncertainty \\ \hline
+    Integrated Luminosity             & 1.6 \%      \\ \hline
+    $\Upsilon(2S)$ Branching fraction & 8.8 \%      \\ \hline
+    D$^*$ Branching fraction          & 1.1 \%      \\ \hline
+    Determination of the yields       & 4.8 \%      \\ \hline
+    Selection Cuts                    & 7.3 \%      \\ \hline
+    Tracking Efficiency               & 3.8 \%      \\ \hline
+    Total                             & 13.1 \%      \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(2S) + $D$^*$ cross section measurement.}
   \label{tab:systematics2S}
@@ -804,17 +800,16 @@ A summary of the systematic uncertainties for each of the calculated cross secti
 
 \begin{table}[!htbp]{15cm}
   \caption{Systematic Uncertainties for $\Upsilon(3S) + $D$^{*}$ cross section measurement.}
-  \begin{tabular}{ c | c | c | c | c }
+  \begin{tabular}{ c | c }
     \hline
-    \multirow[c]{2}{*}{Source of uncertainty} & \multicolumn{4}{ c }{Sample} \bigstrut                               \\\cline{2-5}
-                                              & 2016APV                                & 2016    & 2017    & 2018    \\ \hline
-    Integrated Luminosity                     & 2.5 \%                                 & 2.5 \%  & 2.3 \%  & 2.5 \%  \\ \hline
-    $\Upsilon(3S)$ Branching fraction         & \multicolumn{4}{c}{2.0 \%}                                           \\ \hline
-    D$^*$ Branching fraction                  & \multicolumn{4}{c}{1.1 \%}                                           \\ \hline
-    Determination of the yields               & 7.6 \%                                 & 8.8 \%  & 4.9 \%  & 6.7 \%  \\ \hline
-    Selection Cuts                            & 23.7 \%                                & 18.7 \% & 15.9 \% & 8.5 \%  \\ \hline
-    Tracking Efficiency                       & 6.3 \%                                 & 6.3 \%  & 5.9 \%  & 5.9 \%  \\ \hline
-    Total                                     & 27.5 \%                                & 23.8 \% & 20.3 \% & 15.9 \% \\ \hline
+    Source of uncertainty             & Uncertainty \\ \hline
+    Integrated Luminosity             & 1.6 \%      \\ \hline
+    $\Upsilon(3S)$ Branching fraction & 9.6 \%      \\ \hline
+    D$^*$ Branching fraction          & 1.1 \%      \\ \hline
+    Determination of the yields       & 6.0 \%      \\ \hline
+    Selection Cuts                    & 16.1 \%      \\ \hline
+    Tracking Efficiency               & 3.8 \%      \\ \hline
+    Total                             & 20.1 \%      \\ \hline
   \end{tabular}
   \legend{Summary of the sources of systematic uncertainties for the $\Upsilon(3S) + $D$^*$ cross section measurement.}
   \label{tab:systematics3S}
@@ -825,9 +820,9 @@ A summary of the systematic uncertainties for each of the calculated cross secti
 The final measurement of the fiducial cross section with systematics are
 \begin{equation}
   \begin{split}
-    \sigma_{Y(1S)D^{*\pm}} &= 478 \pm 68 \text{(stat)} \pm 30 \text{(syst)} \; \text{pb},\\
-    \sigma_{Y(2S)D^{*\pm}} &= 233 \pm 34 \text{(stat)} \pm 19 \text{(syst)} \; \text{pb},\\
-    \sigma_{Y(3S)D^{*\pm}} &= 152 \pm 22 \text{(stat)} \pm 17 \text{(syst)} \; \text{pb}.
+    \sigma_{Y(1S)D^{*\pm}} &= 478 \pm 68 \text{(stat)} \pm 46 \text{(syst)} \; \text{pb},\\
+    \sigma_{Y(2S)D^{*\pm}} &= 233 \pm 34 \text{(stat)} \pm 31 \text{(syst)} \; \text{pb},\\
+    \sigma_{Y(3S)D^{*\pm}} &= 152 \pm 22 \text{(stat)} \pm 31 \text{(syst)} \; \text{pb}.
   \end{split}
 \end{equation}
 The addition other systematic uncertainty sources are being developed, e.g. the uncertainties on the $\Upsilon$ polarization on the trigger efficiencies, which still need more treatment.

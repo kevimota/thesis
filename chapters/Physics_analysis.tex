@@ -273,9 +273,87 @@ Figure \ref{fig:invmass_selection} shows the dimuon invariant mass and the D$^*$
   \legend{Dimuon Invariant mass (a) and D$^*$ $\Delta$m (b) after the selection cuts in 2018 data. Both signals from $\Upsilon$ and D$^*$ are well defined.}
 \end{figure}
 
-\subsection{Kinematical Distributions}
+\subsection{Kinematic Distributions}
 
-The plots shown in this section compare shapes of the distributions od the data and the signal MC using both the SPS and DPS simulation. Unfortunately, the reduced statistics in the lower dimuon $p_T$ region ($15 < p_T < 30 GeV$) is a problem for the comparison. The plots for all the samples can be found in Appendix xxx.
+The plots shown in this section compare shapes of the distributions of the data and the signal MC using both the SPS and DPS simulations. Figure \ref{fig:dimu_dists} present the p$_T$, $y$, $\phi$ and invariant mass distributions of the dimuon candidate. Figure \ref{fig:dstar_dists} present the p$_T$, $y$, $\phi$ and $\Delta$m distributions of the D$^*$ candidate. The D$^0$ p$_T$, $y$, $\phi$, invariant mass, $\cos{\alpha}$ and dl$_{sig}$ distributions are presented in Fig. \ref{fig:dstar_d0_dists}. Finally, Fig. \ref{fig:dimudstar_dists} shows the p$_T$, $y$, $\phi$, invariant mass of the associated $\Upsilon$ and D$^*$ and Fig. \ref{fig:dimudstar_delta_dists} shows the difference of the p$_T$, $y$ and $\phi$ of the associated $\Upsilon$ and D$^*$. 
+
+The $\Delta$y has a broader distribution in the DPS than in the SPS simulation. This occurs because, in the SPS, a high separation in the rapidity implies high momentum transfer and are strongly suppressed. In DPS the only suppression is the yields in the high y region, since the two particles are uncorrelated \cite{Lansberg:2019adr}. Because of this difference in the distributions, the rapidity separation was proposed help in the determination of the DPS fraction in \cite{Kom:2011bd}.
+
+In all Figures, the black dots represent the data collected by CMS, the blue histogram the DPS signal MC and the orange histogram the SPS signal MC. Also, distributions were normalized in order to compare their shapes. The lack of background simulation and the reduced statistics in the lower dimuon $p_T$ region ($15 < p_T < 30$ GeV), in special for the DPS MC, is a great source of difference between the distributions.
+
+The plots for all the samples can be found in Appendix \ref{app:dists}.
+
+\begin{figure}[!htm]{15cm}
+  \caption{Dimuon distributions for 2017 sample}
+  \label{fig:dimu_dists}
+  \subfloat[][]{\label{subfig:dimu_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dimu_pt_log_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dimu_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dimu_rap_2017.png}}}\\
+  \subfloat[][]{\label{subfig:dimu_phi}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dimu_phi_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dimu_mass}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dimu_mass_2017.png}}}\\
+  \legend{p$_T$ (a), $y$ (b) and $\phi$ (c), invariant mass (d) distributions for the $\Upsilon$ candidate using the 2017 data sample. The black dots represent the CMS Run 2 data, while the blue distribution represent the signal DPS MC simulation and the orange one the signal SPS MC simulation.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{D$^*$ distributions for 2017 sample}
+  \label{fig:dstar_dists}
+  \subfloat[][]{\label{subfig:dstar_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dstar_pt_log_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dstar_rap_2017.png}}}\\
+  \subfloat[][]{\label{subfig:dstar_phi}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dstar_phi_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_deltam}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/dstar_deltamr_2017.png}}}\\
+  \legend{p$_T$ (a), $y$ (b), $\phi$ (c) and $\Delta m$ (d) distributions for the D$^*$ candidate using the 2017 data sample. The black dots represent the CMS Run 2 data, while the blue distribution represent the signal DPS MC simulation and the orange one the signal SPS MC simulation.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{D$^0$ distributions for 2017 sample}
+  \label{fig:dstar_d0_dists}
+  \subfloat[][]{\label{subfig:dstar_d0_pt}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_pt_log_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_d0_eta}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_eta_2017.png}}}\\
+    \subfloat[][]{\label{subfig:dstar_d0_phi}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_phi_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_d0_mass}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_dlSig_2017.png}}}\\
+  \subfloat[][]{\label{subfig:dstar_d0_cosphi}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_cosphi_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dstar_d0_dlSig}%
+    \fbox{\includegraphics[width=0.42\textwidth]{figures/comparison/2017/dstar_d0_dlSig_2017.png}}}\\
+  \legend{p$_T$ (a), $\eta$ (b), $\phi$ (c), invariant mass (d), $\cos{\alpha}$ (e) and dl$_{sig}$ (f) distributions for the D$^0$ using the 2017 data sample. The black dots represent the CMS Run 2 data, while the blue distribution represent the signal DPS MC simulation and the orange one the signal SPS MC simulation.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{Associated $\Upsilon$ and D$^*$ distributions for 2017 sample}
+  \label{fig:dimudstar_dists}
+  \subfloat[][]{\label{subfig:dimudstar_pt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/pt_log_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dimudstar_rap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/rap_2017.png}}}\\
+  \subfloat[][]{\label{subfig:dimudstar_phi}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/phi_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dimudstar_mass}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/mass_2017.png}}}\\
+  \legend{p$_T$ (a), $y$ (b), $\phi$ (c) and invariant mass (d) distributions for the associated $\Upsilon$ and D$^*$ candidate using the 2017 data sample. The black dots represent the CMS Run 2 data, while the blue distribution represent the signal DPS MC simulation and the orange one the signal SPS MC simulation.}
+\end{figure}
+
+\begin{figure}[!htm]{15cm}
+  \caption{Associated $\Upsilon$ and D$^*$ $\Delta p_T$, $\Delta$y and $\Delta\phi$ distributions for 2017 sample}
+  \label{fig:dimudstar_delta_dists}
+  \subfloat[][]{\label{subfig:dimudstar_deltapt}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/deltapt_log_2017.png}}}\hfill
+  \subfloat[][]{\label{subfig:dimudstar_deltarap}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/deltarap_2017.png}}}\\
+  \subfloat[][]{\label{subfig:dimudstar_deltaphi}%
+    \fbox{\includegraphics[width=0.47\textwidth]{figures/comparison/2017/deltaphi_2017.png}}}\\
+  \legend{$\Delta p_T$ (a), $\Delta y$ (b) and $\Delta \phi$ (c) distributions for the assocuated $\Upsilon$ and D$^*$ candidate using the 2017 data sample. The black dots represent the CMS Run 2 data, while the blue distribution represent the signal DPS MC simulation and the orange one the signal SPS MC simulation.}
+\end{figure}
 
 \section{Signal Extraction}\label{sec:sig_extraction}
 
